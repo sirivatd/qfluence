@@ -15,6 +15,7 @@
 		F66EA0912585A0D600952008 /* qfluenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA0902585A0D600952008 /* qfluenceTests.swift */; };
 		F66EA09C2585A0D600952008 /* qfluenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA09B2585A0D600952008 /* qfluenceUITests.swift */; };
 		F66EA0AA2585C89A00952008 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA0A92585C89A00952008 /* VideoCollectionViewCell.swift */; };
+		F66EA0AC2585FA6500952008 /* test_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F66EA0AB2585F78100952008 /* test_video.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F66EA09B2585A0D600952008 /* qfluenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qfluenceUITests.swift; sourceTree = "<group>"; };
 		F66EA09D2585A0D600952008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F66EA0A92585C89A00952008 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		F66EA0AB2585F78100952008 /* test_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test_video.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		F66EA07A2585A0D400952008 /* qfluence */ = {
 			isa = PBXGroup;
 			children = (
+				F66EA0AB2585F78100952008 /* test_video.mp4 */,
 				F66EA07B2585A0D400952008 /* AppDelegate.swift */,
 				F66EA07D2585A0D500952008 /* ViewController.swift */,
 				F66EA0A92585C89A00952008 /* VideoCollectionViewCell.swift */,
@@ -232,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F66EA0AC2585FA6500952008 /* test_video.mp4 in Resources */,
 				F66EA0862585A0D600952008 /* LaunchScreen.storyboard in Resources */,
 				F66EA0832585A0D600952008 /* Assets.xcassets in Resources */,
 				F66EA0812585A0D500952008 /* Main.storyboard in Resources */,
