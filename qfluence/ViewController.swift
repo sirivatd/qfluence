@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         for _ in 0..<10 {
-            let model = VideoModel(question: "What is your favorite intrument to play?", username: "Tobias Harris", videoFileName: "test_video", videoFileFormat: "mp4")
+            let model = VideoModel(question: "What is your favorite instrument to play?", username: "Tobias Harris", videoFileName: "test_video", videoFileFormat: "mp4")
             data.append(model)
         }
         let layout = UICollectionViewFlowLayout()
