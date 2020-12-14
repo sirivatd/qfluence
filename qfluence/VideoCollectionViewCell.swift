@@ -40,25 +40,25 @@ class VideoCollectionViewCell: UICollectionViewCell {
     // Buttons
     private let profileButton: UIButton = {
         let profileButton = UIButton()
-        profileButton.setBackgroundImage(UIImage(named: "profile_button"), for: .normal)
+        profileButton.setBackgroundImage(UIImage(named: "icons8-user-30"), for: .normal)
         return profileButton
     }()
     
     private let likeButton: UIButton = {
         let likeButton = UIButton()
-        likeButton.setBackgroundImage(UIImage(named: "person.circle"), for: .normal)
+        likeButton.setBackgroundImage(UIImage(named: "icons8-facebook-like-30"), for: .normal)
         return likeButton
     }()
     
     private let commentButton: UIButton = {
         let commentButton = UIButton()
-        commentButton.setBackgroundImage(UIImage(named: "person.circle"), for: .normal)
+        commentButton.setBackgroundImage(UIImage(named: "icons8-chat-bubble-30"), for: .normal)
         return commentButton
     }()
     
     private let shareButton: UIButton = {
         let shareButton = UIButton()
-        shareButton.setBackgroundImage(UIImage(named: "person.circle"), for: .normal)
+        shareButton.setBackgroundImage(UIImage(named: "icons8-share-30"), for: .normal)
         return shareButton
     }()
     
@@ -164,14 +164,13 @@ class VideoCollectionViewCell: UICollectionViewCell {
         videoContainer.frame = contentView.bounds
         
         // Buttons
-        let size = contentView.frame.size.width/8
+        let size = contentView.frame.size.width/11
         let width = contentView.frame.width
-        let height = contentView.frame.height
         
-        shareButton.frame = CGRect(x: width-size, y: height-size, width: size, height: size)
-        commentButton.frame = CGRect(x: width-size, y: height-(size*2)-10, width: size, height: size)
-        profileButton.frame = CGRect(x: width-size, y: height-(size*3)-10, width: size, height: size)
-        likeButton.frame = CGRect(x: width-size, y: height-(size*4)-10, width: size, height: size)
+        shareButton.frame = CGRect(x: width-size-15, y: size+50, width: size, height: size)
+        commentButton.frame = CGRect(x: width-size-15, y: size*2+70, width: size, height: size)
+        profileButton.frame = CGRect(x: width-size-15, y: size*3+90, width: size, height: size)
+        likeButton.frame = CGRect(x: width-size-15, y: size*4+110, width: size, height: size)
     }
     
     required init?(coder aDecoder: NSCoder) {
