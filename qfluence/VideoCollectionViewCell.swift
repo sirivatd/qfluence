@@ -27,13 +27,16 @@ class VideoCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.textAlignment = .left
         label.textColor = .white
+        label.font = UIFont(name: "Avenir Next", size: 17)
         return label
     }()
     
     private let questionLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.textColor = .white
+        label.font = UIFont(name: "AvenirNext-Bold", size: 25)
+        
         return label
     }()
     
@@ -166,11 +169,16 @@ class VideoCollectionViewCell: UICollectionViewCell {
         // Buttons
         let size = contentView.frame.size.width/11
         let width = contentView.frame.width
+        let height = contentView.frame.height
         
         shareButton.frame = CGRect(x: width-size-15, y: size+50, width: size, height: size)
         commentButton.frame = CGRect(x: width-size-15, y: size*2+70, width: size, height: size)
         profileButton.frame = CGRect(x: width-size-15, y: size*3+90, width: size, height: size)
         likeButton.frame = CGRect(x: width-size-15, y: size*4+110, width: size, height: size)
+        
+        // Labels
+        questionLabel.frame = CGRect(x: 10, y: height-200, width: width-size-10, height: 50)
+        usernameLabel.frame = CGRect(x: 10, y: height-225, width: width-size-10, height: 50)
     }
     
     required init?(coder aDecoder: NSCoder) {

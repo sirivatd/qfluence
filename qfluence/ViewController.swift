@@ -56,7 +56,25 @@ extension ViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoCollectionViewCell.identifer, for: indexPath) as! VideoCollectionViewCell
         
         cell.configure(with: model)
+        cell.delegate = self
         return cell
     }
 }
 
+extension ViewController: VideoCollectionViewCellDelegate {
+    func didTapLikeButton(with model: VideoModel) {
+        print("Like button tapped")
+    }
+    
+    func didTapProfileButton(with model: VideoModel) {
+        print("Profile button tapped")
+    }
+    
+    func didTapShareButton(with model: VideoModel) {
+        print("Share button tapped")
+    }
+    
+    func didTapCommentButton(with model: VideoModel) {
+        print("Comment button tapped")
+    }
+}
