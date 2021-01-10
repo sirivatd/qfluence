@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Explore-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="qfluence" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,11 +20,14 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explore" image="icons8-compass-60" id="Bye-y3-Xk1"/>
+                    <navigationItem key="navigationItem" id="8As-0q-kNq"/>
+                    <connections>
+                        <segue destination="9YI-gQ-MFO" kind="show" identifier="showInfluencer" id="b5C-Js-Qbw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2511.1999999999998" y="-134.48275862068968"/>
+            <point key="canvasLocation" x="-2414" y="-134"/>
         </scene>
         <!--Profile-->
         <scene sceneID="0K4-DQ-JzK">
@@ -49,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vhh-EJ-jdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-684" y="-134.48275862068968"/>
+            <point key="canvasLocation" x="210" y="-134"/>
         </scene>
         <!--Spotlight View Controller-->
         <scene sceneID="Qau-SK-6dF">
@@ -116,7 +119,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wai-t7-DGO">
-                                <rect key="frame" x="7" y="210" width="361" height="408"/>
+                                <rect key="frame" x="14" y="203" width="361" height="408"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VOj-19-C8i">
@@ -185,9 +188,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z37-Kn-Idk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4034" y="585"/>
+            <point key="canvasLocation" x="-3294" y="626"/>
         </scene>
-        <!--Search-->
+        <!--View Controller-->
         <scene sceneID="u4V-5l-LJT">
             <objects>
                 <viewController id="Onm-7T-gIv" sceneMemberID="viewController">
@@ -206,11 +209,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7Fr-Ml-9U9"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="icons8-search-60" id="Qi1-D4-4f6"/>
+                    <navigationItem key="navigationItem" id="GxG-D6-ldE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXC-w5-HmS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1599.2" y="-134.48275862068968"/>
+            <point key="canvasLocation" x="-650" y="-134"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="WpK-hz-Sf3">
@@ -225,8 +228,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="81w-FY-ano" kind="relationship" relationship="viewControllers" id="Won-zn-Qr6"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Zj1-jN-fRA"/>
-                        <segue destination="Onm-7T-gIv" kind="relationship" relationship="viewControllers" id="XNT-Oi-4df"/>
+                        <segue destination="KgC-cx-dEK" kind="relationship" relationship="viewControllers" id="Zj1-jN-fRA"/>
+                        <segue destination="ogw-Uf-O8n" kind="relationship" relationship="viewControllers" id="XNT-Oi-4df"/>
                         <segue destination="fJt-Kg-mrG" kind="relationship" relationship="viewControllers" id="oca-iH-5gk"/>
                     </connections>
                 </tabBarController>
@@ -243,6 +246,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JZX-vx-prA">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.42101879190000002" blue="0.2605157736" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -250,8 +254,48 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqY-v1-4Ic" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarItem title="Spotlight" image="icons8-spotlight-60" id="OuK-5q-mlF"/>
             </objects>
             <point key="canvasLocation" x="-4758" y="-134"/>
+        </scene>
+        <!--Explore-->
+        <scene sceneID="6u0-mz-LCh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KgC-cx-dEK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Explore" image="icons8-compass-60" id="Bye-y3-Xk1"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LdZ-KN-sCL">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0TZ-V4-fDx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="888-m3-bhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3295" y="-134"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="lTi-hJ-VmR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ogw-Uf-O8n" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="icons8-search-60" id="Qi1-D4-4f6"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I9f-Ph-Aac">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.42101879190000002" blue="0.2605157736" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Onm-7T-gIv" kind="relationship" relationship="rootViewController" id="6oy-Pj-Ihu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QFx-wX-hTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1617" y="-134"/>
         </scene>
     </scenes>
     <resources>
@@ -260,4 +304,7 @@
         <image name="icons8-spotlight-60" width="30" height="30"/>
         <image name="icons8-test-account-60" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Mi1-Jy-Diq"/>
+    </inferredMetricsTieBreakers>
 </document>

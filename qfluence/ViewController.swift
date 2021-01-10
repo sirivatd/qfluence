@@ -40,6 +40,17 @@ class ViewController: UIViewController {
         view.addSubview(collectionView!)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView?.frame = view.bounds
@@ -70,6 +81,7 @@ extension ViewController: VideoCollectionViewCellDelegate {
     
     func didTapProfileButton(with model: VideoModel) {
         print("Profile button tapped")
+        performSegue(withIdentifier: "showInfluencer", sender: self)
     }
     
     func didTapShareButton(with model: VideoModel) {
