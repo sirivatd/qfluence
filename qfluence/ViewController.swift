@@ -59,6 +59,8 @@ extension ViewController: UICollectionViewDataSource {
         cell.delegate = self
         return cell
     }
+    
+    
 }
 
 extension ViewController: VideoCollectionViewCellDelegate {

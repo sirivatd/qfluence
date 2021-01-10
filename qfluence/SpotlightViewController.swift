@@ -19,7 +19,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
     
     private var popularObjects = [SpotlightObject]()
     private var featuredObjects = [SpotlightObject]()
-    
+    private var selectedObject: SpotlightObject?
     override func viewDidLoad() {
         super.viewDidLoad()
         popularCollectionView.dataSource = self
@@ -79,6 +79,16 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        if collectionView == self.popularCollectionView {
+            selectedObject = popularObjects[indexPath.row]
+        } else {
+            selectedObject = featuredObjects[indexPath.row]
+        }
+        performSegue(withIdentifier: "showInfluencer", sender: self)
+    }
+    
     func addObjects() {
         // Backfill popular section
         let popularObject = SpotlightObject(image: UIImage(named: "popular_music")!, label: "Music")
@@ -124,5 +134,11 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         featuredObjects.append(feauturedObject12)
         featuredObjects.append(feauturedObject13)
         featuredObjects.append(feauturedObject14)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? InfluencerMainViewController {
+            destination.title = selectedObject?.label
+        }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F61DD0BE25AAEABD00424CB0 /* InfluencerMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61DD0BD25AAEABD00424CB0 /* InfluencerMainViewController.swift */; };
 		F66EA07C2585A0D400952008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA07B2585A0D400952008 /* AppDelegate.swift */; };
 		F66EA07E2585A0D500952008 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA07D2585A0D500952008 /* ViewController.swift */; };
 		F66EA0812585A0D500952008 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66EA07F2585A0D500952008 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F61DD0BD25AAEABD00424CB0 /* InfluencerMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerMainViewController.swift; sourceTree = "<group>"; };
 		F66EA0782585A0D400952008 /* qfluence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qfluence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66EA07B2585A0D400952008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F66EA07D2585A0D500952008 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				F66EA0A92585C89A00952008 /* VideoCollectionViewCell.swift */,
 				F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */,
 				F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */,
+				F61DD0BD25AAEABD00424CB0 /* InfluencerMainViewController.swift */,
 				F66EA07F2585A0D500952008 /* Main.storyboard */,
 				F66EA0822585A0D600952008 /* Assets.xcassets */,
 				F66EA0842585A0D600952008 /* LaunchScreen.storyboard */,
@@ -271,6 +274,7 @@
 			files = (
 				F66EA0AA2585C89A00952008 /* VideoCollectionViewCell.swift in Sources */,
 				F6AF3EDE25873D7900474738 /* SpotlightViewController.swift in Sources */,
+				F61DD0BE25AAEABD00424CB0 /* InfluencerMainViewController.swift in Sources */,
 				F66EA07E2585A0D500952008 /* ViewController.swift in Sources */,
 				F66EA07C2585A0D400952008 /* AppDelegate.swift in Sources */,
 				F6AF3EE2258740A600474738 /* SpotlightCollectionViewCell.swift in Sources */,
