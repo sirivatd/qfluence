@@ -1,0 +1,883 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02C25C107F3BA8B4E95D3BBD199501F7 /* UITextView+TCCustomFont.h in Headers */ = {isa = PBXBuildFile; fileRef = A440A81BD95FB1323779E2BCB72833F1 /* UITextView+TCCustomFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D56B11001D92DA800985E428FD212CE /* UITextField+PlaceholderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5562569040AA3A6E798682567B963A /* UITextField+PlaceholderColor.m */; };
+		29088493185D0AF16C00EFC67323D587 /* CSAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 927A951084AB0CB0E317C8E74581FE4B /* CSAnimationView.m */; };
+		2B0C30F38CEC2E74C9B089FF4DB234E9 /* CSBlurView.h in Headers */ = {isa = PBXBuildFile; fileRef = F11D2CDF65F924AEE3351AEE07B2291A /* CSBlurView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		395AAA96CA70B7263B21823BB93BD296 /* CSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459C592A4F0DC661A84F2460EF569625 /* CSNavigationController.m */; };
+		3E488A91D54D0624D96628031AAAA071 /* UIButton+TCCustomFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 12EC96AD7A4F1AD2A42F211D46F46994 /* UIButton+TCCustomFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4649A2438C5F30FDA8F31666421EE428 /* Pods-qfluence-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 399C2FBF93D78CD263F739C5B9315A9E /* Pods-qfluence-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		487CFF744307AECE5A070431E0463DED /* Pods-qfluence-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1574247D02BCB1AF0189C6A9A2F6A7EE /* Pods-qfluence-dummy.m */; };
+		5E4052EFBD71034F16E3FC6F376E7405 /* UIImage+ImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = 91471D038DEE0AB8F40C8E235B5CE898 /* UIImage+ImageEffects.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63362AD87B1CAE3C77A8D9F11012F393 /* AFBlurSegue.h in Headers */ = {isa = PBXBuildFile; fileRef = 9124608B4DC4170CC28D4C7C46728D4A /* AFBlurSegue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63BF4F48D2ADDB8E14417F26FDAA666A /* CSAnimationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 75931E2BA43ABBFE57417DEB5E8F5CA7 /* CSAnimationView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64341493F77D2A1E8F67EC6CB476E217 /* Canvas.h in Headers */ = {isa = PBXBuildFile; fileRef = FD33D18FE5427000DA71AAB6E1F71C24 /* Canvas.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64FFAC756E368D2EFA4FF13527934AC3 /* AFBlurSegue-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 56D241C708BED2F6E6BA41577EF25AA6 /* AFBlurSegue-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65D6438CA048946A437346BE8413FCCA /* CSAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3328CFD84667CB27EB2CA49586664316 /* CSAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E91D902633FC7878C0E4EDB2634598C /* UITextView+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C467032EB3BCAE65A925794522DF187 /* UITextView+TCCustomFont.m */; };
+		6EE50D48A017FE8C2048DFA955E49712 /* UILabel+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = C96DE2125EAAD0AADA4F79FD14809EAA /* UILabel+TCCustomFont.m */; };
+		775723AFEAC6A90974AA87AA39CC21CF /* Canvas-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F5AB04CD0EF86C54E9B675029BE89E /* Canvas-dummy.m */; };
+		7DA101480D903747723E00D2DB09529C /* CSBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9065F0C62AEEDFFC6BDD03495E4C0C8 /* CSBlurView.m */; };
+		840C9484F961367A1AE2C601996690BA /* AFBlurSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7149DAFCEF9CDC8B6D43196E262B4681 /* AFBlurSegue.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		84504C892652F1CCB7F030CE77C7180F /* UITextField+PlaceholderColor.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB321CC6D87FB16D9EDD329B358DEC5 /* UITextField+PlaceholderColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91CDC13D1ADC15048B3B2D308791CFB2 /* UITextField+TCCustomFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 88FA66DBB374C6EF9E6CF308B2C46D34 /* UITextField+TCCustomFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CC4F1C5ADD9435702B4D10EEA6E642E /* AFBlurSegue-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F5A257F319C2548E3EA46CCC64101 /* AFBlurSegue-dummy.m */; };
+		A0119510C617DF9B447C2EC8CE6DDF75 /* UITextField+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 0958C2FEBE7FC8046057804123AFAE33 /* UITextField+TCCustomFont.m */; };
+		A35391E9A903E93CDAEDC2529E4166C3 /* UINavigationBar+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = F76B87E396576825F6F459975868DF18 /* UINavigationBar+TCCustomFont.m */; };
+		A385C3CD04FFDF68FE5CD9A4AE4295E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		AAA879EC005ED84BD95C23903750F08B /* Canvas-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9491D83C9DD04F9A23DDC2BD575AB0FE /* Canvas-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB6199E88480D945AAE1EBBE8AD1404F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		B2CEC7BC40C1349F97D2D7DAADC22003 /* UILabel+TCCustomFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 905A5EF1F0E66ED2E8376872CBBB476B /* UILabel+TCCustomFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B628E23FE219C8651A7AE7E2F3BF4C0A /* UINavigationBar+TCCustomFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B575DBFF95D84072417727959D06054 /* UINavigationBar+TCCustomFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E242C802A4F614A0FEACD49C3C2A63D7 /* UIButton+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BB6C0EB257F20206414A5127E681EB /* UIButton+TCCustomFont.m */; };
+		EA30AAE4398A2ADECBEC11A716FF6997 /* CSNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 466D391B6B2F5EAA1AB32E44C2BEF21C /* CSNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EBD8D5226FDF6E985365059C2D56D7FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		FD81C52EBD813851B21DD9882FFBEAC6 /* CSAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C2FD4CBFE402E400062D1EAB085664 /* CSAnimation.m */; };
+		FF17A42D8AA0FF185CBF7ED523481C11 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE6380D30220338322665E10B487191 /* UIImage+ImageEffects.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		56360360EA5ABA0689B93102D507CD57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E95AC4C15E822F1C7D47D2F06A9218F5;
+			remoteInfo = Canvas;
+		};
+		BDBE10E0FEAABF51B15B220D73D50919 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B60DA0BCCD66CD30B43F30BB64F03FFD;
+			remoteInfo = AFBlurSegue;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0731EB8A3E9C6FB1F6D3BADD99E3F30A /* Pods-qfluence.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-qfluence.modulemap"; sourceTree = "<group>"; };
+		0958C2FEBE7FC8046057804123AFAE33 /* UITextField+TCCustomFont.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+TCCustomFont.m"; path = "CanvasLibrary/UITextField+TCCustomFont.m"; sourceTree = "<group>"; };
+		12EC96AD7A4F1AD2A42F211D46F46994 /* UIButton+TCCustomFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+TCCustomFont.h"; path = "CanvasLibrary/UIButton+TCCustomFont.h"; sourceTree = "<group>"; };
+		1574247D02BCB1AF0189C6A9A2F6A7EE /* Pods-qfluence-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-qfluence-dummy.m"; sourceTree = "<group>"; };
+		25D51AECAB0ED5EE25A9A2FB4DF2E92D /* Canvas-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Canvas-Info.plist"; sourceTree = "<group>"; };
+		2EA8144BA8A06D88D5CF791F012AB0FE /* Canvas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Canvas.debug.xcconfig; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3328CFD84667CB27EB2CA49586664316 /* CSAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSAnimation.h; path = CanvasLibrary/CSAnimation.h; sourceTree = "<group>"; };
+		34F5AB04CD0EF86C54E9B675029BE89E /* Canvas-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Canvas-dummy.m"; sourceTree = "<group>"; };
+		38BB6C0EB257F20206414A5127E681EB /* UIButton+TCCustomFont.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+TCCustomFont.m"; path = "CanvasLibrary/UIButton+TCCustomFont.m"; sourceTree = "<group>"; };
+		399C2FBF93D78CD263F739C5B9315A9E /* Pods-qfluence-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-qfluence-umbrella.h"; sourceTree = "<group>"; };
+		3D5895063CEB413D4BCBD1053835456A /* Canvas.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Canvas.modulemap; sourceTree = "<group>"; };
+		4045A18B770D613A9AD2304F5BC411B0 /* Canvas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Canvas.release.xcconfig; sourceTree = "<group>"; };
+		40C2FD4CBFE402E400062D1EAB085664 /* CSAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSAnimation.m; path = CanvasLibrary/CSAnimation.m; sourceTree = "<group>"; };
+		459C592A4F0DC661A84F2460EF569625 /* CSNavigationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSNavigationController.m; path = CanvasLibrary/CSNavigationController.m; sourceTree = "<group>"; };
+		466D391B6B2F5EAA1AB32E44C2BEF21C /* CSNavigationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSNavigationController.h; path = CanvasLibrary/CSNavigationController.h; sourceTree = "<group>"; };
+		4DBDF2D2CB7E6549A96B775C56758264 /* AFBlurSegue.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AFBlurSegue.modulemap; sourceTree = "<group>"; };
+		56D241C708BED2F6E6BA41577EF25AA6 /* AFBlurSegue-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFBlurSegue-umbrella.h"; sourceTree = "<group>"; };
+		5A1514BEAFAA5A5C7BAEEDC9AADF6E99 /* Pods-qfluence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-qfluence.release.xcconfig"; sourceTree = "<group>"; };
+		64645EE6EAA4AD9042447A1F40C0F92D /* Pods-qfluence-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-qfluence-acknowledgements.markdown"; sourceTree = "<group>"; };
+		664817E3CB8BE59A600272BD370388CD /* AFBlurSegue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFBlurSegue.debug.xcconfig; sourceTree = "<group>"; };
+		6C467032EB3BCAE65A925794522DF187 /* UITextView+TCCustomFont.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextView+TCCustomFont.m"; path = "CanvasLibrary/UITextView+TCCustomFont.m"; sourceTree = "<group>"; };
+		6FE6380D30220338322665E10B487191 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Classes/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		70AC00136AEAA35DED41D2E87170CC5A /* AFBlurSegue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AFBlurSegue.framework; path = AFBlurSegue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7149DAFCEF9CDC8B6D43196E262B4681 /* AFBlurSegue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFBlurSegue.m; path = Classes/AFBlurSegue.m; sourceTree = "<group>"; };
+		72152936E956045D2575FC7B4C338118 /* Pods-qfluence.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-qfluence.debug.xcconfig"; sourceTree = "<group>"; };
+		75931E2BA43ABBFE57417DEB5E8F5CA7 /* CSAnimationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSAnimationView.h; path = CanvasLibrary/CSAnimationView.h; sourceTree = "<group>"; };
+		7849F63619C317B580D63E9E9D597DFF /* Canvas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Canvas.framework; path = Canvas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83642EC02CB5BBE31EBE0D87DF4EB03C /* Pods-qfluence-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-qfluence-acknowledgements.plist"; sourceTree = "<group>"; };
+		84B28DFE1CA49698F3F59A0D9DB193A9 /* AFBlurSegue-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AFBlurSegue-Info.plist"; sourceTree = "<group>"; };
+		88FA66DBB374C6EF9E6CF308B2C46D34 /* UITextField+TCCustomFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+TCCustomFont.h"; path = "CanvasLibrary/UITextField+TCCustomFont.h"; sourceTree = "<group>"; };
+		8B5562569040AA3A6E798682567B963A /* UITextField+PlaceholderColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+PlaceholderColor.m"; path = "CanvasLibrary/UITextField+PlaceholderColor.m"; sourceTree = "<group>"; };
+		8B575DBFF95D84072417727959D06054 /* UINavigationBar+TCCustomFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+TCCustomFont.h"; path = "CanvasLibrary/UINavigationBar+TCCustomFont.h"; sourceTree = "<group>"; };
+		905A5EF1F0E66ED2E8376872CBBB476B /* UILabel+TCCustomFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+TCCustomFont.h"; path = "CanvasLibrary/UILabel+TCCustomFont.h"; sourceTree = "<group>"; };
+		9124608B4DC4170CC28D4C7C46728D4A /* AFBlurSegue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFBlurSegue.h; path = Classes/AFBlurSegue.h; sourceTree = "<group>"; };
+		91471D038DEE0AB8F40C8E235B5CE898 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Classes/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		927A951084AB0CB0E317C8E74581FE4B /* CSAnimationView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSAnimationView.m; path = CanvasLibrary/CSAnimationView.m; sourceTree = "<group>"; };
+		9491D83C9DD04F9A23DDC2BD575AB0FE /* Canvas-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Canvas-umbrella.h"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E9DBCDCBC994CD10B74719FD34CFC18 /* AFBlurSegue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFBlurSegue.release.xcconfig; sourceTree = "<group>"; };
+		A440A81BD95FB1323779E2BCB72833F1 /* UITextView+TCCustomFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextView+TCCustomFont.h"; path = "CanvasLibrary/UITextView+TCCustomFont.h"; sourceTree = "<group>"; };
+		B66F5A257F319C2548E3EA46CCC64101 /* AFBlurSegue-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFBlurSegue-dummy.m"; sourceTree = "<group>"; };
+		C96DE2125EAAD0AADA4F79FD14809EAA /* UILabel+TCCustomFont.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+TCCustomFont.m"; path = "CanvasLibrary/UILabel+TCCustomFont.m"; sourceTree = "<group>"; };
+		CE912527EE6B39FCBEDA154209B0C289 /* Pods_qfluence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_qfluence.framework; path = "Pods-qfluence.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB321CC6D87FB16D9EDD329B358DEC5 /* UITextField+PlaceholderColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+PlaceholderColor.h"; path = "CanvasLibrary/UITextField+PlaceholderColor.h"; sourceTree = "<group>"; };
+		E68ADC35C8FC5BC87B95089436839E26 /* AFBlurSegue-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFBlurSegue-prefix.pch"; sourceTree = "<group>"; };
+		E8506C309AED0FBFA2547D0CF4C0FA93 /* Pods-qfluence-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-qfluence-frameworks.sh"; sourceTree = "<group>"; };
+		EFE1249B7137115F9DCDD8EDAB980492 /* Pods-qfluence-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-qfluence-Info.plist"; sourceTree = "<group>"; };
+		F11D2CDF65F924AEE3351AEE07B2291A /* CSBlurView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSBlurView.h; path = CanvasLibrary/CSBlurView.h; sourceTree = "<group>"; };
+		F66B22B2D172DCFC15368447E0EDC883 /* Canvas-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Canvas-prefix.pch"; sourceTree = "<group>"; };
+		F76B87E396576825F6F459975868DF18 /* UINavigationBar+TCCustomFont.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+TCCustomFont.m"; path = "CanvasLibrary/UINavigationBar+TCCustomFont.m"; sourceTree = "<group>"; };
+		F9065F0C62AEEDFFC6BDD03495E4C0C8 /* CSBlurView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSBlurView.m; path = CanvasLibrary/CSBlurView.m; sourceTree = "<group>"; };
+		FD33D18FE5427000DA71AAB6E1F71C24 /* Canvas.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Canvas.h; path = CanvasLibrary/Canvas.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7CFBC70F4D548A35522874CC46A6CD23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A385C3CD04FFDF68FE5CD9A4AE4295E1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE3EF6C1B4B36A877F435D34AB5E47E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB6199E88480D945AAE1EBBE8AD1404F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE5CE1529D7C55FDC31B6EAD073D9EDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBD8D5226FDF6E985365059C2D56D7FD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		040A2811C22A01C40CFA8BFB9D804A5A /* AFBlurSegue */ = {
+			isa = PBXGroup;
+			children = (
+				9124608B4DC4170CC28D4C7C46728D4A /* AFBlurSegue.h */,
+				7149DAFCEF9CDC8B6D43196E262B4681 /* AFBlurSegue.m */,
+				91471D038DEE0AB8F40C8E235B5CE898 /* UIImage+ImageEffects.h */,
+				6FE6380D30220338322665E10B487191 /* UIImage+ImageEffects.m */,
+				5B9DADFC0324562348200A2E95FD2089 /* Support Files */,
+			);
+			name = AFBlurSegue;
+			path = AFBlurSegue;
+			sourceTree = "<group>";
+		};
+		15BDFCEA7C5BB58E64FDB42B85B8FDEF /* Pods-qfluence */ = {
+			isa = PBXGroup;
+			children = (
+				0731EB8A3E9C6FB1F6D3BADD99E3F30A /* Pods-qfluence.modulemap */,
+				64645EE6EAA4AD9042447A1F40C0F92D /* Pods-qfluence-acknowledgements.markdown */,
+				83642EC02CB5BBE31EBE0D87DF4EB03C /* Pods-qfluence-acknowledgements.plist */,
+				1574247D02BCB1AF0189C6A9A2F6A7EE /* Pods-qfluence-dummy.m */,
+				E8506C309AED0FBFA2547D0CF4C0FA93 /* Pods-qfluence-frameworks.sh */,
+				EFE1249B7137115F9DCDD8EDAB980492 /* Pods-qfluence-Info.plist */,
+				399C2FBF93D78CD263F739C5B9315A9E /* Pods-qfluence-umbrella.h */,
+				72152936E956045D2575FC7B4C338118 /* Pods-qfluence.debug.xcconfig */,
+				5A1514BEAFAA5A5C7BAEEDC9AADF6E99 /* Pods-qfluence.release.xcconfig */,
+			);
+			name = "Pods-qfluence";
+			path = "Target Support Files/Pods-qfluence";
+			sourceTree = "<group>";
+		};
+		222F1F525C67B2E27EC38D19AA513126 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				15BDFCEA7C5BB58E64FDB42B85B8FDEF /* Pods-qfluence */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2DCAE5A3F3D5736F8F887ABE3B747904 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3D5895063CEB413D4BCBD1053835456A /* Canvas.modulemap */,
+				34F5AB04CD0EF86C54E9B675029BE89E /* Canvas-dummy.m */,
+				25D51AECAB0ED5EE25A9A2FB4DF2E92D /* Canvas-Info.plist */,
+				F66B22B2D172DCFC15368447E0EDC883 /* Canvas-prefix.pch */,
+				9491D83C9DD04F9A23DDC2BD575AB0FE /* Canvas-umbrella.h */,
+				2EA8144BA8A06D88D5CF791F012AB0FE /* Canvas.debug.xcconfig */,
+				4045A18B770D613A9AD2304F5BC411B0 /* Canvas.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Canvas";
+			sourceTree = "<group>";
+		};
+		5B9DADFC0324562348200A2E95FD2089 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4DBDF2D2CB7E6549A96B775C56758264 /* AFBlurSegue.modulemap */,
+				B66F5A257F319C2548E3EA46CCC64101 /* AFBlurSegue-dummy.m */,
+				84B28DFE1CA49698F3F59A0D9DB193A9 /* AFBlurSegue-Info.plist */,
+				E68ADC35C8FC5BC87B95089436839E26 /* AFBlurSegue-prefix.pch */,
+				56D241C708BED2F6E6BA41577EF25AA6 /* AFBlurSegue-umbrella.h */,
+				664817E3CB8BE59A600272BD370388CD /* AFBlurSegue.debug.xcconfig */,
+				9E9DBCDCBC994CD10B74719FD34CFC18 /* AFBlurSegue.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AFBlurSegue";
+			sourceTree = "<group>";
+		};
+		69F3D246C7E46184148D0F1D6BDB9858 /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				FD33D18FE5427000DA71AAB6E1F71C24 /* Canvas.h */,
+				3328CFD84667CB27EB2CA49586664316 /* CSAnimation.h */,
+				40C2FD4CBFE402E400062D1EAB085664 /* CSAnimation.m */,
+				75931E2BA43ABBFE57417DEB5E8F5CA7 /* CSAnimationView.h */,
+				927A951084AB0CB0E317C8E74581FE4B /* CSAnimationView.m */,
+				F11D2CDF65F924AEE3351AEE07B2291A /* CSBlurView.h */,
+				F9065F0C62AEEDFFC6BDD03495E4C0C8 /* CSBlurView.m */,
+				466D391B6B2F5EAA1AB32E44C2BEF21C /* CSNavigationController.h */,
+				459C592A4F0DC661A84F2460EF569625 /* CSNavigationController.m */,
+				12EC96AD7A4F1AD2A42F211D46F46994 /* UIButton+TCCustomFont.h */,
+				38BB6C0EB257F20206414A5127E681EB /* UIButton+TCCustomFont.m */,
+				905A5EF1F0E66ED2E8376872CBBB476B /* UILabel+TCCustomFont.h */,
+				C96DE2125EAAD0AADA4F79FD14809EAA /* UILabel+TCCustomFont.m */,
+				8B575DBFF95D84072417727959D06054 /* UINavigationBar+TCCustomFont.h */,
+				F76B87E396576825F6F459975868DF18 /* UINavigationBar+TCCustomFont.m */,
+				CEB321CC6D87FB16D9EDD329B358DEC5 /* UITextField+PlaceholderColor.h */,
+				8B5562569040AA3A6E798682567B963A /* UITextField+PlaceholderColor.m */,
+				88FA66DBB374C6EF9E6CF308B2C46D34 /* UITextField+TCCustomFont.h */,
+				0958C2FEBE7FC8046057804123AFAE33 /* UITextField+TCCustomFont.m */,
+				A440A81BD95FB1323779E2BCB72833F1 /* UITextView+TCCustomFont.h */,
+				6C467032EB3BCAE65A925794522DF187 /* UITextView+TCCustomFont.m */,
+				2DCAE5A3F3D5736F8F887ABE3B747904 /* Support Files */,
+			);
+			name = Canvas;
+			path = Canvas;
+			sourceTree = "<group>";
+		};
+		83685364AD561D9BD974D7EAA3082960 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				040A2811C22A01C40CFA8BFB9D804A5A /* AFBlurSegue */,
+				69F3D246C7E46184148D0F1D6BDB9858 /* Canvas */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9D5C1707EEF226FC6BDF896DE0971E11 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70AC00136AEAA35DED41D2E87170CC5A /* AFBlurSegue.framework */,
+				7849F63619C317B580D63E9E9D597DFF /* Canvas.framework */,
+				CE912527EE6B39FCBEDA154209B0C289 /* Pods_qfluence.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				83685364AD561D9BD974D7EAA3082960 /* Pods */,
+				9D5C1707EEF226FC6BDF896DE0971E11 /* Products */,
+				222F1F525C67B2E27EC38D19AA513126 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5830B787901E6648E9F6E62FC9ED0B54 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAA879EC005ED84BD95C23903750F08B /* Canvas-umbrella.h in Headers */,
+				64341493F77D2A1E8F67EC6CB476E217 /* Canvas.h in Headers */,
+				65D6438CA048946A437346BE8413FCCA /* CSAnimation.h in Headers */,
+				63BF4F48D2ADDB8E14417F26FDAA666A /* CSAnimationView.h in Headers */,
+				2B0C30F38CEC2E74C9B089FF4DB234E9 /* CSBlurView.h in Headers */,
+				EA30AAE4398A2ADECBEC11A716FF6997 /* CSNavigationController.h in Headers */,
+				3E488A91D54D0624D96628031AAAA071 /* UIButton+TCCustomFont.h in Headers */,
+				B2CEC7BC40C1349F97D2D7DAADC22003 /* UILabel+TCCustomFont.h in Headers */,
+				B628E23FE219C8651A7AE7E2F3BF4C0A /* UINavigationBar+TCCustomFont.h in Headers */,
+				84504C892652F1CCB7F030CE77C7180F /* UITextField+PlaceholderColor.h in Headers */,
+				91CDC13D1ADC15048B3B2D308791CFB2 /* UITextField+TCCustomFont.h in Headers */,
+				02C25C107F3BA8B4E95D3BBD199501F7 /* UITextView+TCCustomFont.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCBD683E7791DA835E361BF9D3A8E20F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4649A2438C5F30FDA8F31666421EE428 /* Pods-qfluence-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F878F9881B4125DE46C9F8C506E45E2D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64FFAC756E368D2EFA4FF13527934AC3 /* AFBlurSegue-umbrella.h in Headers */,
+				63362AD87B1CAE3C77A8D9F11012F393 /* AFBlurSegue.h in Headers */,
+				5E4052EFBD71034F16E3FC6F376E7405 /* UIImage+ImageEffects.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		99DB69E3BA4D025611886DC0AB56E6B7 /* Pods-qfluence */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 986834A5B7E94AF69BAD49D743BB2C8B /* Build configuration list for PBXNativeTarget "Pods-qfluence" */;
+			buildPhases = (
+				DCBD683E7791DA835E361BF9D3A8E20F /* Headers */,
+				40667BE4D1E4DA9536D7137952E52410 /* Sources */,
+				BE5CE1529D7C55FDC31B6EAD073D9EDA /* Frameworks */,
+				EE11B840130C96C1FF5C02A2A50A3D88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15729ED41570E25683391CC602017CF2 /* PBXTargetDependency */,
+				B26F5313DDE78BB882095BD7C356471F /* PBXTargetDependency */,
+			);
+			name = "Pods-qfluence";
+			productName = "Pods-qfluence";
+			productReference = CE912527EE6B39FCBEDA154209B0C289 /* Pods_qfluence.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B60DA0BCCD66CD30B43F30BB64F03FFD /* AFBlurSegue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3782ED1A11588EE92BE6BB321A26EEA /* Build configuration list for PBXNativeTarget "AFBlurSegue" */;
+			buildPhases = (
+				F878F9881B4125DE46C9F8C506E45E2D /* Headers */,
+				8DCB0DC5BEDE8D7BF0C5DB983AC3CEF6 /* Sources */,
+				7CFBC70F4D548A35522874CC46A6CD23 /* Frameworks */,
+				5C081887E16D4222F88E4423AAE96EDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AFBlurSegue;
+			productName = AFBlurSegue;
+			productReference = 70AC00136AEAA35DED41D2E87170CC5A /* AFBlurSegue.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E95AC4C15E822F1C7D47D2F06A9218F5 /* Canvas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6F07250161F0B6706A8DF18711E8B70 /* Build configuration list for PBXNativeTarget "Canvas" */;
+			buildPhases = (
+				5830B787901E6648E9F6E62FC9ED0B54 /* Headers */,
+				A65FE169BBC3C8BA54A3838F31DFEAB2 /* Sources */,
+				AE3EF6C1B4B36A877F435D34AB5E47E4 /* Frameworks */,
+				583CF73339E50FD973C3A46451FEE10E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Canvas;
+			productName = Canvas;
+			productReference = 7849F63619C317B580D63E9E9D597DFF /* Canvas.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 9D5C1707EEF226FC6BDF896DE0971E11 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B60DA0BCCD66CD30B43F30BB64F03FFD /* AFBlurSegue */,
+				E95AC4C15E822F1C7D47D2F06A9218F5 /* Canvas */,
+				99DB69E3BA4D025611886DC0AB56E6B7 /* Pods-qfluence */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		583CF73339E50FD973C3A46451FEE10E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C081887E16D4222F88E4423AAE96EDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE11B840130C96C1FF5C02A2A50A3D88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40667BE4D1E4DA9536D7137952E52410 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				487CFF744307AECE5A070431E0463DED /* Pods-qfluence-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DCB0DC5BEDE8D7BF0C5DB983AC3CEF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CC4F1C5ADD9435702B4D10EEA6E642E /* AFBlurSegue-dummy.m in Sources */,
+				840C9484F961367A1AE2C601996690BA /* AFBlurSegue.m in Sources */,
+				FF17A42D8AA0FF185CBF7ED523481C11 /* UIImage+ImageEffects.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A65FE169BBC3C8BA54A3838F31DFEAB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				775723AFEAC6A90974AA87AA39CC21CF /* Canvas-dummy.m in Sources */,
+				FD81C52EBD813851B21DD9882FFBEAC6 /* CSAnimation.m in Sources */,
+				29088493185D0AF16C00EFC67323D587 /* CSAnimationView.m in Sources */,
+				7DA101480D903747723E00D2DB09529C /* CSBlurView.m in Sources */,
+				395AAA96CA70B7263B21823BB93BD296 /* CSNavigationController.m in Sources */,
+				E242C802A4F614A0FEACD49C3C2A63D7 /* UIButton+TCCustomFont.m in Sources */,
+				6EE50D48A017FE8C2048DFA955E49712 /* UILabel+TCCustomFont.m in Sources */,
+				A35391E9A903E93CDAEDC2529E4166C3 /* UINavigationBar+TCCustomFont.m in Sources */,
+				0D56B11001D92DA800985E428FD212CE /* UITextField+PlaceholderColor.m in Sources */,
+				A0119510C617DF9B447C2EC8CE6DDF75 /* UITextField+TCCustomFont.m in Sources */,
+				6E91D902633FC7878C0E4EDB2634598C /* UITextView+TCCustomFont.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		15729ED41570E25683391CC602017CF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AFBlurSegue;
+			target = B60DA0BCCD66CD30B43F30BB64F03FFD /* AFBlurSegue */;
+			targetProxy = BDBE10E0FEAABF51B15B220D73D50919 /* PBXContainerItemProxy */;
+		};
+		B26F5313DDE78BB882095BD7C356471F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Canvas;
+			target = E95AC4C15E822F1C7D47D2F06A9218F5 /* Canvas */;
+			targetProxy = 56360360EA5ABA0689B93102D507CD57 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0B8C9F243DD68ABBC58465530BB45B4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EA8144BA8A06D88D5CF791F012AB0FE /* Canvas.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Canvas/Canvas-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Canvas/Canvas-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Canvas/Canvas.modulemap";
+				PRODUCT_MODULE_NAME = Canvas;
+				PRODUCT_NAME = Canvas;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		32C2FB3BD9A2402E2347CE50F405010A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		65E8432CA1AC1817F746BE6B5C4F067E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		6A99777681995644E3A91AFEFFF280D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72152936E956045D2575FC7B4C338118 /* Pods-qfluence.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-qfluence/Pods-qfluence-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-qfluence/Pods-qfluence.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		92D4B5C1E80A16594E544C33123BE9B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E9DBCDCBC994CD10B74719FD34CFC18 /* AFBlurSegue.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AFBlurSegue/AFBlurSegue-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFBlurSegue/AFBlurSegue-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AFBlurSegue/AFBlurSegue.modulemap";
+				PRODUCT_MODULE_NAME = AFBlurSegue;
+				PRODUCT_NAME = AFBlurSegue;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AD5B1E1943C1CDF2EC6036988786AD19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4045A18B770D613A9AD2304F5BC411B0 /* Canvas.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Canvas/Canvas-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Canvas/Canvas-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Canvas/Canvas.modulemap";
+				PRODUCT_MODULE_NAME = Canvas;
+				PRODUCT_NAME = Canvas;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B1129AB51C0371BC8355232E654CE583 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 664817E3CB8BE59A600272BD370388CD /* AFBlurSegue.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AFBlurSegue/AFBlurSegue-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFBlurSegue/AFBlurSegue-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AFBlurSegue/AFBlurSegue.modulemap";
+				PRODUCT_MODULE_NAME = AFBlurSegue;
+				PRODUCT_NAME = AFBlurSegue;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F702738E76169EA9D2AE80C85E49A7DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A1514BEAFAA5A5C7BAEEDC9AADF6E99 /* Pods-qfluence.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-qfluence/Pods-qfluence-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-qfluence/Pods-qfluence.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65E8432CA1AC1817F746BE6B5C4F067E /* Debug */,
+				32C2FB3BD9A2402E2347CE50F405010A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		986834A5B7E94AF69BAD49D743BB2C8B /* Build configuration list for PBXNativeTarget "Pods-qfluence" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A99777681995644E3A91AFEFFF280D3 /* Debug */,
+				F702738E76169EA9D2AE80C85E49A7DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3782ED1A11588EE92BE6BB321A26EEA /* Build configuration list for PBXNativeTarget "AFBlurSegue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1129AB51C0371BC8355232E654CE583 /* Debug */,
+				92D4B5C1E80A16594E544C33123BE9B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6F07250161F0B6706A8DF18711E8B70 /* Build configuration list for PBXNativeTarget "Canvas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B8C9F243DD68ABBC58465530BB45B4E /* Debug */,
+				AD5B1E1943C1CDF2EC6036988786AD19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

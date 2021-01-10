@@ -10,7 +10,6 @@ import UIKit
 
 class InfluencerHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var instagramButton: UIButton!
-    @IBOutlet weak var otherLinkButton: UIButton!
     @IBOutlet weak var askQuestionButton: UIButton!
     @IBOutlet weak var bioText: UILabel!
     

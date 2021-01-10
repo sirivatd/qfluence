@@ -1,0 +1,20 @@
+PODS:
+  - AFBlurSegue (1.2.1)
+  - Canvas (0.1.2)
+
+DEPENDENCIES:
+  - AFBlurSegue
+  - Canvas
+
+SPEC REPOS:
+  trunk:
+    - AFBlurSegue
+    - Canvas
+
+SPEC CHECKSUMS:
+  AFBlurSegue: 27e55f015360f4e11117d2c3a959dbb5316eef78
+  Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
+
+PODFILE CHECKSUM: a52394d7434b4cd99d54fe7c41fc994578d3dbc5
+
+COCOAPODS: 1.9.1

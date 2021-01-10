@@ -1,0 +1,6 @@
+framework module Pods_qfluence {
+  umbrella header "Pods-qfluence-umbrella.h"
+
+  export *
+  module * { export * }
+}
