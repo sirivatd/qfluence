@@ -108,7 +108,8 @@ class VideoCollectionViewCell: UICollectionViewCell {
             print("Cant find video")
             return
         }
-        player = AVPlayer(url: URL(fileURLWithPath: path))
+        let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/qfluence.appspot.com/o/Any%20advice%20for%20getting%20into%20the%20beauty%20business.mp4?alt=media&token=39cba640-3409-49e2-9496-af50e237372e")
+        player = AVPlayer(url: url!)
         
         let playerView = AVPlayerLayer()
         playerView.player = player
