@@ -31,7 +31,6 @@
 		F66EA0912585A0D600952008 /* qfluenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA0902585A0D600952008 /* qfluenceTests.swift */; };
 		F66EA09C2585A0D600952008 /* qfluenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA09B2585A0D600952008 /* qfluenceUITests.swift */; };
 		F66EA0AA2585C89A00952008 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA0A92585C89A00952008 /* VideoCollectionViewCell.swift */; };
-		F66EA0AC2585FA6500952008 /* test_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F66EA0AB2585F78100952008 /* test_video.mp4 */; };
 		F6AF3EDE25873D7900474738 /* SpotlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */; };
 		F6AF3EE2258740A600474738 /* SpotlightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -83,7 +82,6 @@
 		F66EA09B2585A0D600952008 /* qfluenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qfluenceUITests.swift; sourceTree = "<group>"; };
 		F66EA09D2585A0D600952008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F66EA0A92585C89A00952008 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
-		F66EA0AB2585F78100952008 /* test_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test_video.mp4; sourceTree = "<group>"; };
 		F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightViewController.swift; sourceTree = "<group>"; };
 		F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,7 +155,6 @@
 		F66EA07A2585A0D400952008 /* qfluence */ = {
 			isa = PBXGroup;
 			children = (
-				F66EA0AB2585F78100952008 /* test_video.mp4 */,
 				F66EA07B2585A0D400952008 /* AppDelegate.swift */,
 				F61818C125AC134E00A01613 /* StrokeColorAnimation.swift */,
 				F66EA07D2585A0D500952008 /* ViewController.swift */,
@@ -307,7 +304,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F61DD0C525AB0D8700424CB0 /* Podfile in Resources */,
-				F66EA0AC2585FA6500952008 /* test_video.mp4 in Resources */,
 				F66EA0862585A0D600952008 /* LaunchScreen.storyboard in Resources */,
 				F66EA0832585A0D600952008 /* Assets.xcassets in Resources */,
 				F66EA0812585A0D500952008 /* Main.storyboard in Resources */,
