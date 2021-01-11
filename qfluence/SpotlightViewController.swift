@@ -42,8 +42,27 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         featuredCollectionView.dataSource = self
         featuredCollectionView.delegate = self
         
+        loadingIndicator.tag = 100
+        self.view.addSubview(loadingIndicator)
         addObjects()
+        
+        NSLayoutConstraint.activate([
+            loadingIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            loadingIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            loadingIndicator.widthAnchor.constraint(equalToConstant: 50),
+            loadingIndicator.heightAnchor.constraint(equalTo: self.loadingIndicator.widthAnchor)
+            ])
+        
+        loadingIndicator.isAnimating = true
+        featuredCollectionView.isHidden = true
     }
+    
+    let loadingIndicator: ProgressView = {
+        let progress = ProgressView(colors: [.red, .green, .blue], lineWidth: 5)
+        progress.translatesAutoresizingMaskIntoConstraints = false
+        return progress
+    }()
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -174,6 +193,10 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
                 self.featuredObjects.append(featuredObject)
             }
             self.featuredCollectionView.reloadData()
+            self.featuredCollectionView.isHidden = false
+            
+            // Remove loading indicator
+            self.loadingIndicator.removeFromSuperview()
         })
         print(self.featuredObjects)
     }
