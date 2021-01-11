@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4EDDAD66C7BCCC70B1C9C787 /* Pods_qfluence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FA08AAC984A4C5ED0C4425 /* Pods_qfluence.framework */; };
+		F61818B625AC098900A01613 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61818B525AC098900A01613 /* QuestionTableViewCell.swift */; };
 		F61DD0BE25AAEABD00424CB0 /* InfluencerMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61DD0BD25AAEABD00424CB0 /* InfluencerMainViewController.swift */; };
 		F61DD0C025AAF98300424CB0 /* InfluencerHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61DD0BF25AAF98300424CB0 /* InfluencerHeaderTableViewCell.swift */; };
 		F61DD0C225AAF99300424CB0 /* InfluencerVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61DD0C125AAF99300424CB0 /* InfluencerVideoTableViewCell.swift */; };
@@ -51,6 +52,7 @@
 		6542272AE7C3352561D08FC2 /* Pods-qfluence.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qfluence.debug.xcconfig"; path = "Target Support Files/Pods-qfluence/Pods-qfluence.debug.xcconfig"; sourceTree = "<group>"; };
 		83FA08AAC984A4C5ED0C4425 /* Pods_qfluence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_qfluence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50E4099EF16CCFD024EFA22 /* Pods-qfluence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qfluence.release.xcconfig"; path = "Target Support Files/Pods-qfluence/Pods-qfluence.release.xcconfig"; sourceTree = "<group>"; };
+		F61818B525AC098900A01613 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		F61DD0BD25AAEABD00424CB0 /* InfluencerMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerMainViewController.swift; sourceTree = "<group>"; };
 		F61DD0BF25AAF98300424CB0 /* InfluencerHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		F61DD0C125AAF99300424CB0 /* InfluencerVideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerVideoTableViewCell.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				F61DD0BD25AAEABD00424CB0 /* InfluencerMainViewController.swift */,
 				F66EA07F2585A0D500952008 /* Main.storyboard */,
 				F61DD0C125AAF99300424CB0 /* InfluencerVideoTableViewCell.swift */,
+				F61818B525AC098900A01613 /* QuestionTableViewCell.swift */,
 				F61DD0BF25AAF98300424CB0 /* InfluencerHeaderTableViewCell.swift */,
 				F66EA0822585A0D600952008 /* Assets.xcassets */,
 				F66EA0842585A0D600952008 /* LaunchScreen.storyboard */,
@@ -363,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F66EA0AA2585C89A00952008 /* VideoCollectionViewCell.swift in Sources */,
+				F61818B625AC098900A01613 /* QuestionTableViewCell.swift in Sources */,
 				F6AF3EDE25873D7900474738 /* SpotlightViewController.swift in Sources */,
 				F61DD0C225AAF99300424CB0 /* InfluencerVideoTableViewCell.swift in Sources */,
 				F61DD0C025AAF98300424CB0 /* InfluencerHeaderTableViewCell.swift in Sources */,

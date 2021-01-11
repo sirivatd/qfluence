@@ -174,7 +174,6 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
                 self.featuredObjects.append(featuredObject)
             }
             self.featuredCollectionView.reloadData()
-            print(self.featuredObjects)
         })
         print(self.featuredObjects)
     }
@@ -182,6 +181,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? InfluencerMainViewController {
             destination.title = selectedObject?.label
+            destination.selectedInfluencerId = selectedObject?.influencerId
         }
     }
 }
