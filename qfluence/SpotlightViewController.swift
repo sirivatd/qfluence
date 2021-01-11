@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 struct SpotlightObject {
     let image: UIImage
@@ -20,6 +21,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
     private var popularObjects = [SpotlightObject]()
     private var featuredObjects = [SpotlightObject]()
     private var selectedObject: SpotlightObject?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         popularCollectionView.dataSource = self
@@ -28,7 +30,6 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         featuredCollectionView.delegate = self
         
         addObjects()
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,8 +71,6 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SpotlightCollectionViewCell", for: indexPath) as! SpotlightCollectionViewCell
-            print(indexPath.row)
-            print(featuredObjects)
             cell.featuredImage.image = featuredObjects[indexPath.row].image
             cell.featuredLabel.text = featuredObjects[indexPath.row].label
             
@@ -145,6 +144,14 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         featuredObjects.append(feauturedObject12)
         featuredObjects.append(feauturedObject13)
         featuredObjects.append(feauturedObject14)
+        
+        let ref = Database.database().reference(withPath: "influencers")
+        ref.observe(.value, with: { snapshot in
+            // This is the snapshot of the data at the moment in the Firebase database
+            // To get value from the snapshot, we user snapshot.value
+            print(snapshot.value as Any)
+        })z
+//        print(recentInfluencersQuery)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
