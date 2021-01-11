@@ -150,7 +150,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
             // This is the snapshot of the data at the moment in the Firebase database
             // To get value from the snapshot, we user snapshot.value
             print(snapshot.value as Any)
-        })z
+        })
 //        print(recentInfluencersQuery)
     }
     
