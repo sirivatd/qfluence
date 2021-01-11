@@ -31,6 +31,9 @@
 		F66EA0912585A0D600952008 /* qfluenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA0902585A0D600952008 /* qfluenceTests.swift */; };
 		F66EA09C2585A0D600952008 /* qfluenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA09B2585A0D600952008 /* qfluenceUITests.swift */; };
 		F66EA0AA2585C89A00952008 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA0A92585C89A00952008 /* VideoCollectionViewCell.swift */; };
+		F68FD69F25ACC859008257E0 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FD69E25ACC859008257E0 /* LandingViewController.swift */; };
+		F68FD6A125ACC862008257E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FD6A025ACC862008257E0 /* LoginViewController.swift */; };
+		F68FD6A325ACC870008257E0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FD6A225ACC870008257E0 /* SignUpViewController.swift */; };
 		F6AF3EDE25873D7900474738 /* SpotlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */; };
 		F6AF3EE2258740A600474738 /* SpotlightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +85,9 @@
 		F66EA09B2585A0D600952008 /* qfluenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qfluenceUITests.swift; sourceTree = "<group>"; };
 		F66EA09D2585A0D600952008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F66EA0A92585C89A00952008 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		F68FD69E25ACC859008257E0 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		F68FD6A025ACC862008257E0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F68FD6A225ACC870008257E0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightViewController.swift; sourceTree = "<group>"; };
 		F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +181,9 @@
 				F66EA0842585A0D600952008 /* LaunchScreen.storyboard */,
 				F66EA0872585A0D600952008 /* Info.plist */,
 				F61DD0CA25ABD0A100424CB0 /* GoogleService-Info.plist */,
+				F68FD69E25ACC859008257E0 /* LandingViewController.swift */,
+				F68FD6A025ACC862008257E0 /* LoginViewController.swift */,
+				F68FD6A225ACC870008257E0 /* SignUpViewController.swift */,
 			);
 			path = qfluence;
 			sourceTree = "<group>";
@@ -378,9 +387,11 @@
 			files = (
 				F66EA0AA2585C89A00952008 /* VideoCollectionViewCell.swift in Sources */,
 				F61818B625AC098900A01613 /* QuestionTableViewCell.swift in Sources */,
+				F68FD69F25ACC859008257E0 /* LandingViewController.swift in Sources */,
 				F6AF3EDE25873D7900474738 /* SpotlightViewController.swift in Sources */,
 				F61DD0C225AAF99300424CB0 /* InfluencerVideoTableViewCell.swift in Sources */,
 				F61DD0C025AAF98300424CB0 /* InfluencerHeaderTableViewCell.swift in Sources */,
+				F68FD6A325ACC870008257E0 /* SignUpViewController.swift in Sources */,
 				F61818C225AC134E00A01613 /* StrokeColorAnimation.swift in Sources */,
 				F61DD0BE25AAEABD00424CB0 /* InfluencerMainViewController.swift in Sources */,
 				F61818BA25AC0FDF00A01613 /* ProgressShapeLayer.swift in Sources */,
@@ -388,6 +399,7 @@
 				F61818BE25AC127500A01613 /* RotationAnimation.swift in Sources */,
 				F66EA07C2585A0D400952008 /* AppDelegate.swift in Sources */,
 				F6AF3EE2258740A600474738 /* SpotlightCollectionViewCell.swift in Sources */,
+				F68FD6A125ACC862008257E0 /* LoginViewController.swift in Sources */,
 				F61DD0C925AB0F1200424CB0 /* QuestionViewController.swift in Sources */,
 				F61818BC25AC101F00A01613 /* StrokeAnimation.swift in Sources */,
 				F61818B825AC0FBB00A01613 /* ProgressView.swift in Sources */,
