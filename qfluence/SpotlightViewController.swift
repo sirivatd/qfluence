@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import Canvas
 
 struct SpotlightObject {
     let image: UIImage
@@ -34,6 +35,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
     private var popularObjects = [SpotlightObject]()
     private var featuredObjects = [SpotlightObject]()
     private var selectedObject: SpotlightObject?
+    @IBOutlet weak var animationView: CSAnimationView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -164,6 +166,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
             
             // Remove loading indicator
             self.loadingIndicator.removeFromSuperview()
+            self.animationView.startCanvasAnimation()
         })
         print(self.featuredObjects)
     }
