@@ -36,6 +36,7 @@
 		F68FD6A325ACC870008257E0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FD6A225ACC870008257E0 /* SignUpViewController.swift */; };
 		F6AF3EDE25873D7900474738 /* SpotlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */; };
 		F6AF3EE2258740A600474738 /* SpotlightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */; };
+		F6F81F4025AD2E9C00B64B87 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F81F3F25AD2E9C00B64B87 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		F68FD6A225ACC870008257E0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightViewController.swift; sourceTree = "<group>"; };
 		F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6F81F3F25AD2E9C00B64B87 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 				F68FD69E25ACC859008257E0 /* LandingViewController.swift */,
 				F68FD6A025ACC862008257E0 /* LoginViewController.swift */,
 				F68FD6A225ACC870008257E0 /* SignUpViewController.swift */,
+				F6F81F3F25AD2E9C00B64B87 /* ProfileViewController.swift */,
 			);
 			path = qfluence;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				F68FD6A325ACC870008257E0 /* SignUpViewController.swift in Sources */,
 				F61818C225AC134E00A01613 /* StrokeColorAnimation.swift in Sources */,
 				F61DD0BE25AAEABD00424CB0 /* InfluencerMainViewController.swift in Sources */,
+				F6F81F4025AD2E9C00B64B87 /* ProfileViewController.swift in Sources */,
 				F61818BA25AC0FDF00A01613 /* ProgressShapeLayer.swift in Sources */,
 				F66EA07E2585A0D500952008 /* ViewController.swift in Sources */,
 				F61818BE25AC127500A01613 /* RotationAnimation.swift in Sources */,

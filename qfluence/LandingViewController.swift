@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class LandingViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
+    
+      var handle: AuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +39,18 @@ class LandingViewController: UIViewController {
         signUpButton.layer.shadowOpacity = 0.7
         signUpButton.layer.masksToBounds = false
         signUpButton.layer.shadowPath = UIBezierPath(roundedRect: signUpButton.bounds, cornerRadius: signUpButton.layer.cornerRadius).cgPath
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                self.performSegue(withIdentifier: "toMainApp", sender: self)
+            }
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(handle!)
     }
     
 
