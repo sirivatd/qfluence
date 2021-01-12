@@ -42,7 +42,6 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         featuredCollectionView.dataSource = self
         featuredCollectionView.delegate = self
         
-        loadingIndicator.tag = 100
         self.view.addSubview(loadingIndicator)
         addObjects()
         
@@ -58,7 +57,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     let loadingIndicator: ProgressView = {
-        let progress = ProgressView(colors: [.red, .green, .blue], lineWidth: 5)
+        let progress = ProgressView(colors: [.red, .orange, .darkGray], lineWidth: 5)
         progress.translatesAutoresizingMaskIntoConstraints = false
         return progress
     }()
@@ -139,43 +138,11 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         let popularObject4 = SpotlightObject(image: UIImage(named: "popular_fashion")!, label: "Fashion", influencerId: 1)
         let popularObject5 = SpotlightObject(image: UIImage(named: "popular_politics")!, label: "Politics", influencerId: 1)
 
-        
         popularObjects.append(popularObject)
         popularObjects.append(popularObject2)
         popularObjects.append(popularObject3)
         popularObjects.append(popularObject4)
         popularObjects.append(popularObject5)
-        
-        // Backfill featured section
-//        let feauturedObject = SpotlightObject(image: UIImage(named: "featured_zedd")!, label: "Zedd")
-//        let feauturedObject2 = SpotlightObject(image: UIImage(named: "featured_magnus")!, label: "Magnus Carlsen")
-//        let feauturedObject3 = SpotlightObject(image: UIImage(named: "featured_rihanna")!, label: "Rihanna")
-//        let feauturedObject4 = SpotlightObject(image: UIImage(named: "featured_gordon")!, label: "Gordon Ramsay")
-//        let feauturedObject5 = SpotlightObject(image: UIImage(named: "featured_cudi")!, label: "Kid Cudi")
-//        let feauturedObject6 = SpotlightObject(image: UIImage(named: "featured_nas")!, label: "Lil Nas X")
-//        let feauturedObject7 = SpotlightObject(image: UIImage(named: "featured_wolfe")!, label: "Wolfe Glicke")
-//        let feauturedObject8 = SpotlightObject(image: UIImage(named: "featured_ederson")!, label: "Ederson")
-//        let feauturedObject9 = SpotlightObject(image: UIImage(named: "featured_dele")!, label: "Dele Alli")
-//        let feauturedObject10 = SpotlightObject(image: UIImage(named: "featured_scarlett")!, label: "Scarlett Johanson")
-//        let feauturedObject11 = SpotlightObject(image: UIImage(named: "featured_miranda")!, label: "Miranda Kerr")
-//        let feauturedObject12 = SpotlightObject(image: UIImage(named: "featured_mila")!, label: "Mila Kunis")
-//        let feauturedObject13 = SpotlightObject(image: UIImage(named: "featured_elon")!, label: "Elon Musk")
-//        let feauturedObject14 = SpotlightObject(image: UIImage(named: "featured_ben")!, label: "Ben Shapiro")
-        
-//        featuredObjects.append(feauturedObject)
-//        featuredObjects.append(feauturedObject2)
-//        featuredObjects.append(feauturedObject3)
-//        featuredObjects.append(feauturedObject4)
-//        featuredObjects.append(feauturedObject5)
-//        featuredObjects.append(feauturedObject6)
-//        featuredObjects.append(feauturedObject7)
-//        featuredObjects.append(feauturedObject8)
-//        featuredObjects.append(feauturedObject9)
-//        featuredObjects.append(feauturedObject10)
-//        featuredObjects.append(feauturedObject11)
-//        featuredObjects.append(feauturedObject12)
-//        featuredObjects.append(feauturedObject13)
-//        featuredObjects.append(feauturedObject14)
         
         let ref = Database.database().reference(withPath: "influencers")
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
