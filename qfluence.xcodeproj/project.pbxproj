@@ -31,6 +31,7 @@
 		F66EA0912585A0D600952008 /* qfluenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA0902585A0D600952008 /* qfluenceTests.swift */; };
 		F66EA09C2585A0D600952008 /* qfluenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA09B2585A0D600952008 /* qfluenceUITests.swift */; };
 		F66EA0AA2585C89A00952008 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA0A92585C89A00952008 /* VideoCollectionViewCell.swift */; };
+		F6850E8225AD606B0048C2CC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6850E8125AD606B0048C2CC /* SearchViewController.swift */; };
 		F68FD69F25ACC859008257E0 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FD69E25ACC859008257E0 /* LandingViewController.swift */; };
 		F68FD6A125ACC862008257E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FD6A025ACC862008257E0 /* LoginViewController.swift */; };
 		F68FD6A325ACC870008257E0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FD6A225ACC870008257E0 /* SignUpViewController.swift */; };
@@ -86,6 +87,7 @@
 		F66EA09B2585A0D600952008 /* qfluenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qfluenceUITests.swift; sourceTree = "<group>"; };
 		F66EA09D2585A0D600952008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F66EA0A92585C89A00952008 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6850E8125AD606B0048C2CC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F68FD69E25ACC859008257E0 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		F68FD6A025ACC862008257E0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F68FD6A225ACC870008257E0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				F68FD6A025ACC862008257E0 /* LoginViewController.swift */,
 				F68FD6A225ACC870008257E0 /* SignUpViewController.swift */,
 				F6F81F3F25AD2E9C00B64B87 /* ProfileViewController.swift */,
+				F6850E8125AD606B0048C2CC /* SearchViewController.swift */,
 			);
 			path = qfluence;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				F61818C225AC134E00A01613 /* StrokeColorAnimation.swift in Sources */,
 				F61DD0BE25AAEABD00424CB0 /* InfluencerMainViewController.swift in Sources */,
 				F6F81F4025AD2E9C00B64B87 /* ProfileViewController.swift in Sources */,
+				F6850E8225AD606B0048C2CC /* SearchViewController.swift in Sources */,
 				F61818BA25AC0FDF00A01613 /* ProgressShapeLayer.swift in Sources */,
 				F66EA07E2585A0D500952008 /* ViewController.swift in Sources */,
 				F61818BE25AC127500A01613 /* RotationAnimation.swift in Sources */,

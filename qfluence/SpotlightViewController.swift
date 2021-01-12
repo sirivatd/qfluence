@@ -56,6 +56,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         
         loadingIndicator.isAnimating = true
         featuredCollectionView.isHidden = true
+        animationView.isHidden = true
     }
     
     let loadingIndicator: ProgressView = {
@@ -163,7 +164,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
             }
             self.featuredCollectionView.reloadData()
             self.featuredCollectionView.isHidden = false
-            
+            self.animationView.isHidden = false
             // Remove loading indicator
             self.loadingIndicator.removeFromSuperview()
             self.animationView.startCanvasAnimation()
