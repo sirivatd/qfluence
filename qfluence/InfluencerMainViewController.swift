@@ -30,10 +30,10 @@ extension InfluencerMainViewController: UITableViewDataSource {
             cell.questionText.text = questionObject.questionText
             
             // render video image
-            let url = URL(string: questionObject.imageUrl)
-            let data = try? Data(contentsOf: url!)
-            
-            cell.videoPreview.image = UIImage(data: data!)
+//            let url = URL(string: questionObject.imageUrl)
+//            let data = try? Data(contentsOf: url!)
+//            
+//            cell.videoPreview.image = UIImage(data: data!)
             
             return cell
         }

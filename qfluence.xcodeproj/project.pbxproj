@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4EDDAD66C7BCCC70B1C9C787 /* Pods_qfluence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FA08AAC984A4C5ED0C4425 /* Pods_qfluence.framework */; };
+		9C2B497625AEB18900AAC9F7 /* OHCircleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2B497525AEB18900AAC9F7 /* OHCircleSegue.swift */; };
 		F61818B625AC098900A01613 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61818B525AC098900A01613 /* QuestionTableViewCell.swift */; };
 		F61818B825AC0FBB00A01613 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61818B725AC0FBB00A01613 /* ProgressView.swift */; };
 		F61818BA25AC0FDF00A01613 /* ProgressShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61818B925AC0FDF00A01613 /* ProgressShapeLayer.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		6542272AE7C3352561D08FC2 /* Pods-qfluence.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qfluence.debug.xcconfig"; path = "Target Support Files/Pods-qfluence/Pods-qfluence.debug.xcconfig"; sourceTree = "<group>"; };
 		83FA08AAC984A4C5ED0C4425 /* Pods_qfluence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_qfluence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C2B497525AEB18900AAC9F7 /* OHCircleSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OHCircleSegue.swift; sourceTree = "<group>"; };
 		E50E4099EF16CCFD024EFA22 /* Pods-qfluence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qfluence.release.xcconfig"; path = "Target Support Files/Pods-qfluence/Pods-qfluence.release.xcconfig"; sourceTree = "<group>"; };
 		F61818B525AC098900A01613 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		F61818B725AC0FBB00A01613 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				F66EA07B2585A0D400952008 /* AppDelegate.swift */,
 				F61818C125AC134E00A01613 /* StrokeColorAnimation.swift */,
 				F66EA07D2585A0D500952008 /* ViewController.swift */,
+				9C2B497525AEB18900AAC9F7 /* OHCircleSegue.swift */,
 				F66EA0A92585C89A00952008 /* VideoCollectionViewCell.swift */,
 				F61DD0C825AB0F1200424CB0 /* QuestionViewController.swift */,
 				F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */,
@@ -404,6 +407,7 @@
 				F6850E8225AD606B0048C2CC /* SearchViewController.swift in Sources */,
 				F61818BA25AC0FDF00A01613 /* ProgressShapeLayer.swift in Sources */,
 				F66EA07E2585A0D500952008 /* ViewController.swift in Sources */,
+				9C2B497625AEB18900AAC9F7 /* OHCircleSegue.swift in Sources */,
 				F61818BE25AC127500A01613 /* RotationAnimation.swift in Sources */,
 				F66EA07C2585A0D400952008 /* AppDelegate.swift in Sources */,
 				F6AF3EE2258740A600474738 /* SpotlightCollectionViewCell.swift in Sources */,
@@ -591,7 +595,7 @@
 				DEVELOPMENT_TEAM = 7BWJ7S75KT;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = qfluence/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -612,7 +616,7 @@
 				DEVELOPMENT_TEAM = 7BWJ7S75KT;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = qfluence/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -68,21 +68,26 @@ class LoginViewController: UIViewController {
         errorPopup.layer.shadowOpacity = 0.7
         errorPopup.layer.masksToBounds = false
         errorPopup.layer.shadowPath = UIBezierPath(roundedRect: errorPopup.bounds, cornerRadius: errorPopup.layer.cornerRadius).cgPath
-        // Do any additional setup after loading the view.
-    }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    */
+    
+    @objc func keyboardWillShow(sender: NSNotification) {
+         self.view.frame.origin.y = -150 // Move view 150 points upward
+    }
+
+    @objc func keyboardWillHide(sender: NSNotification) {
+         self.view.frame.origin.y = 0 // Move view to original position
+    }
     
     func showErrorPopup(error: String) {
         errorText.text = error
         errorPopup.isHidden = false
         errorPopup.startCanvasAnimation()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
