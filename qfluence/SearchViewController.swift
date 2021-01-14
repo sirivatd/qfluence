@@ -17,8 +17,8 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var peopleLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var metricView: UIView!
-    @IBOutlet weak var peopleCount: UILabel!
-    @IBOutlet weak var questionCount: UILabel!
+    @IBOutlet weak var peopleCount: AnimatedLabel!
+    @IBOutlet weak var questionCount: AnimatedLabel!
     
     @IBAction func searchPressed(_ sender: Any) {
     }
@@ -92,8 +92,8 @@ class SearchViewController: UIViewController {
     }
     
     func updateMetricLabels(people: Int, questions: Int) {
-        self.peopleCount.text = String(people)
-        self.questionCount.text = String(questions)
+        self.peopleCount.countFromZero(to: Float(people))
+        self.questionCount.countFromZero(to: Float(questions))
     }
     
     func initializeHideKeyboard() {

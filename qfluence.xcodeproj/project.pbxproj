@@ -36,6 +36,7 @@
 		F68FD69F25ACC859008257E0 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FD69E25ACC859008257E0 /* LandingViewController.swift */; };
 		F68FD6A125ACC862008257E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FD6A025ACC862008257E0 /* LoginViewController.swift */; };
 		F68FD6A325ACC870008257E0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FD6A225ACC870008257E0 /* SignUpViewController.swift */; };
+		F696985725B0011900566999 /* CountingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696985625B0011900566999 /* CountingLabel.swift */; };
 		F6AF3EDE25873D7900474738 /* SpotlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */; };
 		F6AF3EE2258740A600474738 /* SpotlightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */; };
 		F6F81F4025AD2E9C00B64B87 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F81F3F25AD2E9C00B64B87 /* ProfileViewController.swift */; };
@@ -93,6 +94,7 @@
 		F68FD69E25ACC859008257E0 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		F68FD6A025ACC862008257E0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F68FD6A225ACC870008257E0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		F696985625B0011900566999 /* CountingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountingLabel.swift; sourceTree = "<group>"; };
 		F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightViewController.swift; sourceTree = "<group>"; };
 		F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6F81F3F25AD2E9C00B64B87 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				F68FD6A225ACC870008257E0 /* SignUpViewController.swift */,
 				F6F81F3F25AD2E9C00B64B87 /* ProfileViewController.swift */,
 				F6850E8125AD606B0048C2CC /* SearchViewController.swift */,
+				F696985625B0011900566999 /* CountingLabel.swift */,
 			);
 			path = qfluence;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				F66EA07E2585A0D500952008 /* ViewController.swift in Sources */,
 				9C2B497625AEB18900AAC9F7 /* OHCircleSegue.swift in Sources */,
 				F61818BE25AC127500A01613 /* RotationAnimation.swift in Sources */,
+				F696985725B0011900566999 /* CountingLabel.swift in Sources */,
 				F66EA07C2585A0D400952008 /* AppDelegate.swift in Sources */,
 				F6AF3EE2258740A600474738 /* SpotlightCollectionViewCell.swift in Sources */,
 				F68FD6A125ACC862008257E0 /* LoginViewController.swift in Sources */,
