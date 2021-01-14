@@ -47,7 +47,15 @@ extension InfluencerMainViewController: UITableViewDataSource {
 extension InfluencerMainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 305
+            return 550
+//            if self.selectedInfluencer != nil {
+//                let url = URL(string: selectedInfluencer!.imageUrl)
+//                let data = try? Data(contentsOf: url!)
+//
+//                return UIImage(data: data!)!.size.height
+//            } else {
+//                return 450
+//            }
         } else {
             return 145
         }
