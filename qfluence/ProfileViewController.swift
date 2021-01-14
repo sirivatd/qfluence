@@ -14,10 +14,7 @@ class ProfileViewController: UIViewController {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            if let viewController = mainStoryboard.instantiateViewController(withIdentifier: "landingScreen") as? UIViewController {
-                self.present(viewController, animated: true, completion: nil)
-            }
+            self.dismiss(animated: true, completion: nil)
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
         }

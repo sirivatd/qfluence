@@ -17,11 +17,11 @@ class InfluencerHeaderTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        profilePicture.layer.borderWidth = 1
-        profilePicture.layer.masksToBounds = false
-        profilePicture.layer.borderColor = UIColor.black.cgColor
-        profilePicture.layer.cornerRadius = profilePicture.frame.height/2
-        profilePicture.clipsToBounds = true
+//        profilePicture.layer.borderWidth = 1
+//        profilePicture.layer.masksToBounds = false
+//        profilePicture.layer.borderColor = UIColor.black.cgColor
+//        profilePicture.layer.cornerRadius = profilePicture.frame.height/2
+//        profilePicture.clipsToBounds = true
         
         askQuestionButton.layer.cornerRadius = 5.0
         askQuestionButton.layer.borderWidth = 0.5

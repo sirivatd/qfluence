@@ -86,8 +86,4 @@ class LoginViewController: UIViewController {
         errorPopup.isHidden = false
         errorPopup.startCanvasAnimation()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.dismiss(animated: true, completion: nil)
-    }
 }

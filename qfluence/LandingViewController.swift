@@ -52,8 +52,4 @@ class LandingViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         Auth.auth().removeStateDidChangeListener(handle!)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.dismiss(animated: true, completion: nil)
-    }
 }

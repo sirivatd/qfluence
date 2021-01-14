@@ -47,7 +47,7 @@ extension InfluencerMainViewController: UITableViewDataSource {
 extension InfluencerMainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 205
+            return 305
         } else {
             return 145
         }

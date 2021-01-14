@@ -22,11 +22,10 @@ class InfluencerVideoTableViewCell: UITableViewCell {
         cellView.layer.borderColor = UIColor.clear.cgColor
         cellView.layer.cornerRadius = 15
         cellView.clipsToBounds = true
-        cellView.layer.shadowColor = UIColor.darkGray.cgColor
-        cellView.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
-        cellView.layer.shadowRadius = 1.0
-        cellView.layer.shadowOpacity = 0.7
-        cellView.layer.shadowPath = UIBezierPath(roundedRect: cellView.bounds, cornerRadius: cellView.layer.cornerRadius).cgPath
+        cellView.layer.shadowColor = UIColor.black.cgColor
+        cellView.layer.shadowRadius = 10.0
+        cellView.layer.shadowOpacity = 1.0
+        cellView.layer.shadowOffset = CGSize(width: 8, height: 8)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
