@@ -28,12 +28,12 @@ extension InfluencerMainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "influencerVideo") as! InfluencerVideoTableViewCell
             let questionObject = questionObjects[indexPath.row - 1]
             cell.questionText.text = questionObject.questionText
-            
-            // render video image
-//            let url = URL(string: questionObject.imageUrl)
-//            let data = try? Data(contentsOf: url!)
-//            
-//            cell.videoPreview.image = UIImage(data: data!)
+
+            if indexPath.row % 2 == 0 {
+                cell.videoPreview.image = UIImage(named: "qfluence_cell_background_0")
+            } else {
+                cell.videoPreview.image = UIImage(named: "qfluence_cell_background_1")
+            }
             
             return cell
         }

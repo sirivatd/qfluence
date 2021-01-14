@@ -10,4 +10,5 @@ import UIKit
 
 class QuestionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var questionText: UITextView!
+    @IBOutlet weak var cellBackground: UIImageView!
 }

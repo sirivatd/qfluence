@@ -23,16 +23,12 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         if collectionView == self.videoCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath) as! QuestionCollectionViewCell
             cell.questionText.text = self.matchesVideos[indexPath.row].questionText
-            cell.contentView.layer.cornerRadius = 5.0
-            cell.contentView.layer.borderWidth = 0.5
-            cell.contentView.layer.borderColor = UIColor.clear.cgColor
-            cell.contentView.layer.masksToBounds = true
-            cell.layer.shadowColor = UIColor.darkGray.cgColor
-            cell.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
-            cell.layer.shadowRadius = 1.0
-            cell.layer.shadowOpacity = 0.7
-            cell.layer.masksToBounds = false
-            cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+            
+            if indexPath.row % 2 == 0 {
+                cell.cellBackground.image = UIImage(named: "qfluence_cell_background_0")
+            } else {
+                cell.cellBackground.image = UIImage(named: "qfluence_cell_background_1")
+            }
 
             return cell
         } else {
