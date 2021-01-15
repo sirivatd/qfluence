@@ -120,7 +120,6 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         fetchVideos()
         visibleIP = IndexPath.init(row: 0, section: 0)
-
         // Do any additional setup after loading the view.
     }
     
@@ -147,8 +146,10 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        for i in 0...self.exploreObjects.count-1 {
-            let cell = self.exploreTableView.cellForRow(at: IndexPath.init(row: i, section: 0)) as? ExploreTableViewCell
+        let indexPaths = self.exploreTableView.indexPathsForVisibleRows
+
+        for i in indexPaths! {
+            let cell = self.exploreTableView.cellForRow(at: i) as? ExploreTableViewCell
             cell?.stopPlayback()
         }
     }

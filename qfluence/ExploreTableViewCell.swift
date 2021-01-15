@@ -26,7 +26,6 @@ class ExploreTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         self.setupMoviePlayer()
     }
     
@@ -34,13 +33,12 @@ class ExploreTableViewCell: UITableViewCell {
         self.avPlayer = AVPlayer.init(playerItem: self.videoPlayerItem)
         avPlayerLayer = AVPlayerLayer(player: avPlayer)
         avPlayerLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        avPlayer?.volume = 3
+        avPlayer?.volume = 5
         avPlayer?.actionAtItemEnd = .none
-        
-        avPlayerLayer?.frame = self.frame
-        
-        self.backgroundColor = .red
+            
+        avPlayerLayer?.frame = self.videoPlayerSuperView.layer.bounds
         self.videoPlayerSuperView.layer.insertSublayer(avPlayerLayer!, at: 0)
+        
         NotificationCenter.default.addObserver(self,
                                                     selector: #selector(self.playerItemDidReachEnd(notification:)),
                                                     name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
@@ -64,5 +62,8 @@ class ExploreTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
-
+    
+    override func layoutSubviews() {
+        self.avPlayerLayer?.frame = self.bounds
+    }
 }
