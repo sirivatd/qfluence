@@ -99,14 +99,14 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
            }
        }
     
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if scrollView == self.exploreTableView {
-            let cellHeight = CGFloat(self.view.frame.height)
-                let y          = targetContentOffset.pointee.y + scrollView.contentInset.top + (cellHeight / 2)
-                let cellIndex  = floor(y / cellHeight)
-                targetContentOffset.pointee.y = cellIndex * cellHeight - scrollView.contentInset.top
-            }
-        }
+//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        if scrollView == self.exploreTableView {
+//            let cellHeight = CGFloat(self.view.frame.height)
+//                let y          = targetContentOffset.pointee.y + scrollView.contentInset.top + (cellHeight / 2)
+//                let cellIndex  = floor(y / cellHeight)
+//                targetContentOffset.pointee.y = cellIndex * cellHeight - scrollView.contentInset.top
+//            }
+//        }
     
     var visibleIP : IndexPath?
     var aboutToBecomeInvisibleCell = -1
@@ -120,7 +120,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         fetchVideos()
         visibleIP = IndexPath.init(row: 0, section: 0)
-        // Do any additional setup after loading the view.
+        self.exploreTableView.isPagingEnabled = true
     }
     
     func fetchVideos() {
