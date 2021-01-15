@@ -47,7 +47,7 @@ extension InfluencerMainViewController: UITableViewDataSource {
 extension InfluencerMainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 550
+            return self.view.frame.height - 200
 //            if self.selectedInfluencer != nil {
 //                let url = URL(string: selectedInfluencer!.imageUrl)
 //                let data = try? Data(contentsOf: url!)
@@ -125,13 +125,13 @@ class InfluencerMainViewController: UIViewController {
             let videoData = snapshot.value as! [[String : Any]]
             
             for video in videoData {
+                print(video)
                 let influencerId = video["influencerId"] as! Int
                 if influencerId == self.selectedInfluencerId! {
                     let questionText = video["questionText"] as! String
                     let videoUrlString = video["videoUrl"] as! String
-                    let imageUrlString = video["imageUrl"] as! String
                     
-                    let questionObject = QuestionObject(questionText: questionText, videoUrl: videoUrlString, imageUrl: imageUrlString)
+                    let questionObject = QuestionObject(questionText: questionText, videoUrl: videoUrlString, imageUrl: "")
                     
                     self.questionObjects.append(questionObject)
                 }

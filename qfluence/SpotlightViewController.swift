@@ -159,6 +159,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
                 let firstName = influencer["firstName"] as! String
                 let lastName = influencer["lastName"] as! String
                 let influencerName = firstName + " " + lastName
+                print(firstName + " " + lastName)
                 let featuredObject = SpotlightObject(image: UIImage(data: data!)!, label: influencerName, influencerId: influencer["influencerId"] as! Int)
                 self.featuredObjects.append(featuredObject)
             }
