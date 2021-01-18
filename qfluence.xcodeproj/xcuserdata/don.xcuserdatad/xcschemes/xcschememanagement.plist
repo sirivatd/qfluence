@@ -7,7 +7,25 @@
 		<key>qfluence.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>23</integer>
+			<integer>22</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>F66EA0772585A0D400952008</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F66EA08B2585A0D600952008</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F66EA0962585A0D600952008</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

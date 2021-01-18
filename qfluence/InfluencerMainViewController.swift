@@ -120,23 +120,33 @@ class InfluencerMainViewController: UIViewController {
     }()
     
     func fetchVideos() {
-        let ref = Database.database().reference(withPath: "videos")
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            let videoData = snapshot.value as! [[String : Any]]
-            
-            for video in videoData {
-                print(video)
-                let influencerId = video["influencerId"] as! Int
-                if influencerId == self.selectedInfluencerId! {
-                    let questionText = video["questionText"] as! String
-                    let videoUrlString = video["videoUrl"] as! String
+        let videoRef = Database.database().reference(withPath: "videos")
+        videoRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            for video in snapshot.children {
+                if let snapshot = video as? DataSnapshot {
+                    let dict = snapshot.value as? NSDictionary
+                    let influencerId = dict!["influencerId"] as? Int
+                    if influencerId == nil {
+                        print(snapshot.key)
+                    }
                     
-                    let questionObject = QuestionObject(questionText: questionText, videoUrl: videoUrlString, imageUrl: "")
+                        
+                    if self.selectedInfluencerId != influencerId {
+                        continue
+                    }
                     
+                    let questionText = dict!["questionText"] as! String
+                    let videoUrlString = dict!["videoUrl"] as! String
+                    let imageUrlString = dict!["imageUrl"] as! String
+                    
+                    let questionObject = QuestionObject(questionText: questionText, videoUrl: videoUrlString, imageUrl: imageUrlString)
+                        
                     self.questionObjects.append(questionObject)
                 }
             }
+            self.mainTableView.reloadData()
         })
+    
         
         let influencerRef = Database.database().reference(withPath: "influencers").child("\(self.selectedInfluencerId!)")
         influencerRef.observeSingleEvent(of: .value, with: { (snapshot) in

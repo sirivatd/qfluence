@@ -341,35 +341,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Here are some tips to help you get started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WA6-bv-5ly">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Here are some tips to help you get started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WA6-bv-5ly">
                                 <rect key="frame" x="4" y="104" width="366" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="We are so glad you're here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="L0j-vi-z8T">
-                                <rect key="frame" x="16" y="20" width="240" height="128"/>
+                                <rect key="frame" x="16" y="20" width="240" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8u-sp-659">
-                                <rect key="frame" x="32" y="513" width="312" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8u-sp-659">
+                                <rect key="frame" x="32" y="515" width="312" height="59"/>
                                 <color key="backgroundColor" red="1" green="0.22267030739999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JAP-LD-ndo">
-                                <rect key="frame" x="31" y="194" width="312" height="259"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAP-LD-ndo" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="172" width="375" height="298"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="45056-contact-us"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PxF-aI-SBJ"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JAP-LD-ndo" firstAttribute="centerX" secondItem="uCf-fG-4bT" secondAttribute="centerX" id="0Mx-FQ-y7x"/>
+                            <constraint firstAttribute="bottom" secondItem="JAP-LD-ndo" secondAttribute="bottom" constant="177" id="4ui-eF-37H"/>
+                            <constraint firstItem="b8u-sp-659" firstAttribute="top" secondItem="JAP-LD-ndo" secondAttribute="bottom" constant="45" id="7cM-5F-YLn"/>
+                            <constraint firstItem="JAP-LD-ndo" firstAttribute="top" secondItem="WA6-bv-5ly" secondAttribute="bottom" constant="8" id="CfB-00-VzQ"/>
+                            <constraint firstItem="JAP-LD-ndo" firstAttribute="leading" secondItem="PxF-aI-SBJ" secondAttribute="leading" id="LEg-gx-ypz"/>
+                            <constraint firstItem="JAP-LD-ndo" firstAttribute="centerX" secondItem="WA6-bv-5ly" secondAttribute="centerX" id="aIQ-8O-EKh"/>
+                            <constraint firstItem="JAP-LD-ndo" firstAttribute="top" secondItem="uCf-fG-4bT" secondAttribute="top" constant="172" id="akH-O6-wXb"/>
+                            <constraint firstItem="JAP-LD-ndo" firstAttribute="centerX" secondItem="b8u-sp-659" secondAttribute="centerX" id="f1a-1Q-TZY"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="animationView" destination="JAP-LD-ndo" id="VxD-2i-e20"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8g9-lF-EgB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1605,6 +1621,9 @@
             <point key="canvasLocation" x="-3588" y="-2859"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="JAP-LD-ndo"/>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="HCa-SR-u9b"/>
         <segue reference="1oT-Ce-Q7g"/>

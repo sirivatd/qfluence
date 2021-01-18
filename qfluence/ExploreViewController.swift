@@ -124,21 +124,20 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func fetchVideos() {
-        let videoRef = Database.database().reference(withPath: "videos")
+        let videoRef = Database.database().reference(withPath: "videos").queryLimited(toLast: 10)
         videoRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            var videoData = snapshot.value as! [[String : Any]]
-            videoData.shuffle()
-            videoData = Array(videoData[0..<10])
-            
-            for video in videoData {
-                let questionText = video["questionText"] as! String
-                let videoUrlString = video["videoUrl"] as! String
-                let imageUrlString = video["imageUrl"] as! String
-                    
-                let questionObject = QuestionObject(questionText: questionText, videoUrl: videoUrlString, imageUrl: imageUrlString)
-                    
-                self.exploreObjects.append(questionObject)
-                self.videoURLs.append(URL(string: videoUrlString)!)
+            for video in snapshot.children {
+                if let snapshot = video as? DataSnapshot {
+                    let dict = snapshot.value as? NSDictionary
+                    let questionText = dict!["questionText"] as! String
+                    let videoUrlString = dict!["videoUrl"] as! String
+                    let imageUrlString = dict!["imageUrl"] as! String
+                        
+                    let questionObject = QuestionObject(questionText: questionText, videoUrl: videoUrlString, imageUrl: imageUrlString)
+                        
+                    self.exploreObjects.append(questionObject)
+                    self.videoURLs.append(URL(string: videoUrlString)!)
+                }
             }
             
             self.exploreTableView.reloadData()

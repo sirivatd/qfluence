@@ -25,6 +25,7 @@
 		F61DD0CC25ABD0A200424CB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F61DD0CA25ABD0A100424CB0 /* GoogleService-Info.plist */; };
 		F61DD0CD25ABD0A200424CB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F61DD0CA25ABD0A100424CB0 /* GoogleService-Info.plist */; };
 		F6533F4D25B6358A006628C4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6533F4C25B6358A006628C4 /* OnboardingViewController.swift */; };
+		F6533FC625B63F37006628C4 /* 45056-contact-us.json in Resources */ = {isa = PBXBuildFile; fileRef = F6533FC525B63F37006628C4 /* 45056-contact-us.json */; };
 		F66EA07C2585A0D400952008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA07B2585A0D400952008 /* AppDelegate.swift */; };
 		F66EA07E2585A0D500952008 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA07D2585A0D500952008 /* ViewController.swift */; };
 		F66EA0812585A0D500952008 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66EA07F2585A0D500952008 /* Main.storyboard */; };
@@ -83,6 +84,7 @@
 		F61DD0C825AB0F1200424CB0 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		F61DD0CA25ABD0A100424CB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6533F4C25B6358A006628C4 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		F6533FC525B63F37006628C4 /* 45056-contact-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "45056-contact-us.json"; sourceTree = "<group>"; };
 		F66EA0782585A0D400952008 /* qfluence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qfluence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66EA07B2585A0D400952008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F66EA07D2585A0D500952008 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		F66EA07A2585A0D400952008 /* qfluence */ = {
 			isa = PBXGroup;
 			children = (
+				F6533FC525B63F37006628C4 /* 45056-contact-us.json */,
 				F66EA07B2585A0D400952008 /* AppDelegate.swift */,
 				F61818C125AC134E00A01613 /* StrokeColorAnimation.swift */,
 				F66EA07D2585A0D500952008 /* ViewController.swift */,
@@ -345,6 +348,7 @@
 				F61DD0C525AB0D8700424CB0 /* Podfile in Resources */,
 				F66EA0862585A0D600952008 /* LaunchScreen.storyboard in Resources */,
 				F66EA0832585A0D600952008 /* Assets.xcassets in Resources */,
+				F6533FC625B63F37006628C4 /* 45056-contact-us.json in Resources */,
 				F66EA0812585A0D500952008 /* Main.storyboard in Resources */,
 				F61DD0CB25ABD0A100424CB0 /* GoogleService-Info.plist in Resources */,
 			);
