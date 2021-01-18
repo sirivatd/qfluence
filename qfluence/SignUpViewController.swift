@@ -10,9 +10,18 @@ import UIKit
 import Firebase
 import Canvas
 
+struct UserObject {
+    let firstName: String
+    let lastName: String
+    let emailAddress: String
+    let joinedAt: String
+}
+var currentUser: UserObject?
+var isFirstTime: Bool = true
+
 class TextField: UITextField {
 
-    let padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 5)
+    let padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
 
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)
@@ -92,8 +101,19 @@ class SignUpViewController: UIViewController {
                 self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.dismissErrorMessage), userInfo: nil, repeats: false)
                 return
             }
-            print("\(user.email!) created")
-            self.performSegue(withIdentifier: "toMainApp", sender: self)
+            let ref = Database.database().reference(withPath: "users")
+            let userDict: [String: String] = ["firstName": self.firstNameField.text!, "lastName": self.lastNameField.text!, "emailAddress": "\(emailAddress)", "timeCreated": "\(Date())"]
+            ref.child(user.uid).setValue(userDict) {
+                (error: Error?, ref: DatabaseReference) in
+                if let error = error {
+                    print("Error saving user")
+                } else {
+                    print("Data saved successfully!")
+                    currentUser = UserObject(firstName: self.firstNameField.text!, lastName: self.lastNameField.text!, emailAddress: String(emailAddress), joinedAt: "\(Date())")
+                    isFirstTime = true
+                    self.performSegue(withIdentifier: "toMainApp", sender: nil)
+                }
+            }
         })
     }
     

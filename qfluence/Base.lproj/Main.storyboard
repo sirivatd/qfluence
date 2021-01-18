@@ -324,11 +324,56 @@
                         <outlet property="featuredCollectionView" destination="Wai-t7-DGO" id="TZa-PE-vKz"/>
                         <outlet property="popularCollectionView" destination="cKt-0K-dyT" id="TFw-Hd-IbT"/>
                         <segue destination="9YI-gQ-MFO" kind="show" identifier="showInfluencer" id="Mi1-Jy-Diq"/>
+                        <segue destination="djr-jS-YeL" kind="popoverPresentation" identifier="toOnboarding" popoverAnchorView="EIY-6W-YV2" id="d9M-6M-dkn">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIg-lo-wjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4034.4000000000001" y="-134.48275862068968"/>
+        </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="Tf3-s9-72O">
+            <objects>
+                <viewController id="djr-jS-YeL" customClass="OnboardingViewController" customModule="qfluence" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" alpha="0.94999999999999996" contentMode="scaleToFill" id="uCf-fG-4bT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Here are some tips to help you get started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WA6-bv-5ly">
+                                <rect key="frame" x="4" y="104" width="366" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="We are so glad you're here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="L0j-vi-z8T">
+                                <rect key="frame" x="16" y="20" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8u-sp-659">
+                                <rect key="frame" x="32" y="513" width="312" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.22267030739999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JAP-LD-ndo">
+                                <rect key="frame" x="31" y="194" width="312" height="259"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PxF-aI-SBJ"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8g9-lF-EgB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4759.1999999999998" y="625.63718140929541"/>
         </scene>
         <!--Influencer Main View Controller-->
         <scene sceneID="JaM-sI-d4m">
@@ -1561,10 +1606,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tAn-yI-k3c"/>
-        <segue reference="RJs-tV-OFs"/>
-        <segue reference="lnW-Sr-bl3"/>
-        <segue reference="b5C-Js-Qbw"/>
+        <segue reference="HCa-SR-u9b"/>
+        <segue reference="1oT-Ce-Q7g"/>
+        <segue reference="v3q-wk-36r"/>
+        <segue reference="Mi1-Jy-Diq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.icloud.fill" catalog="system" width="128" height="88"/>

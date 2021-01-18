@@ -47,6 +47,11 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         self.view.addSubview(loadingIndicator)
         addObjects()
         
+        if isFirstTime == true {
+            isFirstTime = false
+            self.performSegue(withIdentifier: "toOnboarding", sender: nil)
+        }
+        
         NSLayoutConstraint.activate([
             loadingIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             loadingIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
