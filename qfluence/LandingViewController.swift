@@ -29,16 +29,16 @@ class LandingViewController: UIViewController {
         loginButton.layer.masksToBounds = false
         loginButton.layer.shadowPath = UIBezierPath(roundedRect: loginButton.bounds, cornerRadius: loginButton.layer.cornerRadius).cgPath
         
-        signUpButton.layer.cornerRadius = 5.0
-        signUpButton.layer.borderWidth = 0.5
-        signUpButton.layer.borderColor = UIColor.clear.cgColor
-        signUpButton.layer.masksToBounds = true
-        signUpButton.layer.shadowColor = UIColor.darkGray.cgColor
-        signUpButton.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
-        signUpButton.layer.shadowRadius = 1.0
-        signUpButton.layer.shadowOpacity = 0.7
-        signUpButton.layer.masksToBounds = false
-        signUpButton.layer.shadowPath = UIBezierPath(roundedRect: signUpButton.bounds, cornerRadius: signUpButton.layer.cornerRadius).cgPath
+//        signUpButton.layer.cornerRadius = 5.0
+//        signUpButton.layer.borderWidth = 0.5
+//        signUpButton.layer.borderColor = UIColor.clear.cgColor
+//        signUpButton.layer.masksToBounds = true
+//        signUpButton.layer.shadowColor = UIColor.darkGray.cgColor
+//        signUpButton.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
+//        signUpButton.layer.shadowRadius = 1.0
+//        signUpButton.layer.shadowOpacity = 0.7
+//        signUpButton.layer.masksToBounds = false
+//        signUpButton.layer.shadowPath = UIBezierPath(roundedRect: signUpButton.bounds, cornerRadius: signUpButton.layer.cornerRadius).cgPath
     }
     
     override func viewDidAppear(_ animated: Bool) {

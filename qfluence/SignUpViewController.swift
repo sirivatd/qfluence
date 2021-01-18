@@ -10,6 +10,23 @@ import UIKit
 import Firebase
 import Canvas
 
+class TextField: UITextField {
+
+    let padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 5)
+
+    override open func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+
+    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+
+    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+}
+
 class SignUpViewController: UIViewController {
     var handle: AuthStateDidChangeListenerHandle?
     
@@ -19,15 +36,14 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
     @IBOutlet weak var errorPopup: CSAnimationView!
-    @IBOutlet weak var closePopupButton: UIButton!
     @IBOutlet weak var errorText: UITextView!
+    @IBOutlet weak var buttonView: CSAnimationView!
     
-    @IBAction func closePopupPressed(_ sender: Any) {
-        errorPopup.isHidden = true
-    }
+    var timer = Timer()
     
     @IBAction func signUpPressed(_ sender: Any) {
-        print("Sign up pressed")
+        view.endEditing(true)
+
         let firstName = firstNameField.text!
         let lastName = lastNameField.text!
         let emailAddress = emailAddressField.text!
@@ -36,30 +52,44 @@ class SignUpViewController: UIViewController {
         
         // Client side error handling
         if firstName == "" {
-            showErrorPopup(error: "First name can't be blank")
+            showErrorPopup(error: "First name can't be left blank")
+            self.buttonView.startCanvasAnimation()
+            self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.dismissErrorMessage), userInfo: nil, repeats: false)
             return
         } else if lastName == "" {
-            showErrorPopup(error: "Last name can't be blank")
+            showErrorPopup(error: "Last name can't be left blank")
+            self.buttonView.startCanvasAnimation()
+            self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.dismissErrorMessage), userInfo: nil, repeats: false)
             return
         } else if emailAddress == "" {
-            showErrorPopup(error: "Email address can't be blank")
+            showErrorPopup(error: "Email address can't be left blank")
+            self.buttonView.startCanvasAnimation()
+            self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.dismissErrorMessage), userInfo: nil, repeats: false)
             return
         } else if password == "" {
-            showErrorPopup(error: "Password can't be blank")
+            showErrorPopup(error: "Password can't be left blank")
+            self.buttonView.startCanvasAnimation()
+            self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.dismissErrorMessage), userInfo: nil, repeats: false)
             return
         } else if confirmPassword == "" {
-            showErrorPopup(error: "Confirm password can't be blank")
+            showErrorPopup(error: "Confirm password can't be left blank")
+            self.buttonView.startCanvasAnimation()
+            self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.dismissErrorMessage), userInfo: nil, repeats: false)
             return
         }
         
         if password != confirmPassword {
-            showErrorPopup(error: "Passwords don't match")
+            showErrorPopup(error: "Please double check your passwords match and try again")
+            self.buttonView.startCanvasAnimation()
+            self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.dismissErrorMessage), userInfo: nil, repeats: false)
             return
         }
         
         Auth.auth().createUser(withEmail: emailAddress, password: password, completion: { authResult, error in
             guard let user = authResult?.user, error == nil else {
                 self.showErrorPopup(error: error!.localizedDescription)
+                self.buttonView.startCanvasAnimation()
+                self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.dismissErrorMessage), userInfo: nil, repeats: false)
                 return
             }
             print("\(user.email!) created")
@@ -67,21 +97,15 @@ class SignUpViewController: UIViewController {
         })
     }
     
+    @objc func dismissErrorMessage() {
+        self.errorPopup.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         errorPopup.isHidden = true
-        
-        closePopupButton.layer.cornerRadius = 5.0
-        closePopupButton.layer.borderWidth = 0.5
-        closePopupButton.layer.borderColor = UIColor.clear.cgColor
-        closePopupButton.layer.masksToBounds = true
-        closePopupButton.layer.shadowColor = UIColor.darkGray.cgColor
-        closePopupButton.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
-        closePopupButton.layer.shadowRadius = 1.0
-        closePopupButton.layer.shadowOpacity = 0.7
-        closePopupButton.layer.masksToBounds = false
-        closePopupButton.layer.shadowPath = UIBezierPath(roundedRect: closePopupButton.bounds, cornerRadius: closePopupButton.layer.cornerRadius).cgPath
-        
+        initializeHideKeyboard()
+
         errorPopup.layer.cornerRadius = 5.0
         errorPopup.layer.borderWidth = 0.5
         errorPopup.layer.borderColor = UIColor.clear.cgColor
@@ -109,5 +133,14 @@ class SignUpViewController: UIViewController {
         errorText.text = error
         errorPopup.isHidden = false
         errorPopup.startCanvasAnimation()
+    }
+    
+    func initializeHideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissMyKeyboard))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard() {
+        view.endEditing(true)
     }
 }

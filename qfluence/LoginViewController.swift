@@ -14,22 +14,26 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailAddressField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var errorText: UITextView!
-    @IBOutlet weak var closePopupButton: UIButton!
     @IBOutlet weak var errorPopup: CSAnimationView!
+    @IBOutlet weak var buttonView: CSAnimationView!
     
-    @IBAction func closePopupPressed(_ sender: Any) {
-        errorPopup.isHidden = true
-    }
+    var timer = Timer()
     
     @IBAction func loginPressed(_ sender: Any) {
+        view.endEditing(true)
         let emailAddress = emailAddressField.text!
         let password = passwordField.text!
         
         if emailAddress == "" {
-            showErrorPopup(error: "Email address can't be blank")
+            showErrorPopup(error: "Email address can't be left blank")
+            self.buttonView.startCanvasAnimation()
+            self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.dismissErrorMessage), userInfo: nil, repeats: false)
+            
             return
         } else if password == "" {
-            showErrorPopup(error: "Password can't be blank")
+            showErrorPopup(error: "Password can't be left blank")
+            self.buttonView.startCanvasAnimation()
+            self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.dismissErrorMessage), userInfo: nil, repeats: false)
         }
         
         Auth.auth().signIn(withEmail: emailAddress, password: password) { [weak self] authResult, error in
@@ -37,27 +41,23 @@ class LoginViewController: UIViewController {
             if let error = error {
                 let authError = error as NSError
                 strongSelf.showErrorPopup(error: authError.localizedDescription)
-                    } else {
-                            strongSelf.performSegue(withIdentifier: "toMainApp", sender: self)
-                    }
+                strongSelf.buttonView.startCanvasAnimation()
+                strongSelf.timer = Timer.scheduledTimer(timeInterval: 3, target: strongSelf, selector: #selector(strongSelf.dismissErrorMessage), userInfo: nil, repeats: false)
+                } else {
+                    strongSelf.performSegue(withIdentifier: "toMainApp", sender: self)
             }
+        }
+    }
+    
+    @objc func dismissErrorMessage() {
+        self.errorPopup.isHidden = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         errorPopup.isHidden = true
-        
-        closePopupButton.layer.cornerRadius = 5.0
-        closePopupButton.layer.borderWidth = 0.5
-        closePopupButton.layer.borderColor = UIColor.clear.cgColor
-        closePopupButton.layer.masksToBounds = true
-        closePopupButton.layer.shadowColor = UIColor.darkGray.cgColor
-        closePopupButton.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
-        closePopupButton.layer.shadowRadius = 1.0
-        closePopupButton.layer.shadowOpacity = 0.7
-        closePopupButton.layer.masksToBounds = false
-        closePopupButton.layer.shadowPath = UIBezierPath(roundedRect: closePopupButton.bounds, cornerRadius: closePopupButton.layer.cornerRadius).cgPath
-        
+        initializeHideKeyboard()
+
         errorPopup.layer.cornerRadius = 5.0
         errorPopup.layer.borderWidth = 0.5
         errorPopup.layer.borderColor = UIColor.clear.cgColor
@@ -85,5 +85,14 @@ class LoginViewController: UIViewController {
         errorText.text = error
         errorPopup.isHidden = false
         errorPopup.startCanvasAnimation()
+    }
+    
+    func initializeHideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissMyKeyboard))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard() {
+        view.endEditing(true)
     }
 }
