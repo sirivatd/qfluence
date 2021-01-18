@@ -684,6 +684,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="zgF-qD-r3m" kind="presentation" modalPresentationStyle="fullScreen" id="1oT-Ce-Q7g"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BIV-NC-YvP" customClass="CSAnimationView">
                                 <rect key="frame" x="175" y="564" width="178" height="55"/>
@@ -1153,10 +1156,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Em-bo-OOr" customClass="CSAnimationView">
                                 <rect key="frame" x="54.5" y="294.5" width="266" height="78"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" text="What would you do if you had enough money to not need a job?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="55f-nR-TBF">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What would you do if you had enough money to not need a job?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="55f-nR-TBF">
                                         <rect key="frame" x="0.0" y="0.0" width="266" height="111"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -1166,13 +1169,22 @@
                                     <constraint firstAttribute="trailing" secondItem="55f-nR-TBF" secondAttribute="trailing" id="l72-mV-7AV"/>
                                     <constraint firstItem="55f-nR-TBF" firstAttribute="leading" secondItem="6Em-bo-OOr" secondAttribute="leading" id="zo5-TD-IGf"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="type" value="fadeIn"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sb7-Uc-h9K">
-                                <rect key="frame" x="54" y="250.5" width="202" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sb7-Uc-h9K">
+                                <rect key="frame" x="54" y="253.5" width="202" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="mmK-Qj-KTe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1184,12 +1196,12 @@
                             <constraint firstItem="6Em-bo-OOr" firstAttribute="centerX" secondItem="CRZ-x1-e0C" secondAttribute="centerX" id="Cnt-rV-b4i"/>
                             <constraint firstItem="jGr-E3-Mv0" firstAttribute="centerY" secondItem="6Em-bo-OOr" secondAttribute="centerY" id="GcS-4Y-ntF"/>
                             <constraint firstItem="jGr-E3-Mv0" firstAttribute="bottom" secondItem="fnS-UI-SpZ" secondAttribute="bottom" id="JML-wZ-ThI"/>
-                            <constraint firstItem="6Em-bo-OOr" firstAttribute="top" secondItem="Sb7-Uc-h9K" secondAttribute="bottom" constant="8" symbolic="YES" id="Jnt-zt-Pjd"/>
+                            <constraint firstItem="6Em-bo-OOr" firstAttribute="top" secondItem="Sb7-Uc-h9K" secondAttribute="bottom" constant="5" id="Jnt-zt-Pjd"/>
                             <constraint firstItem="jGr-E3-Mv0" firstAttribute="bottom" secondItem="Egi-bh-D5W" secondAttribute="bottom" id="Lvo-fb-Tbw"/>
                             <constraint firstItem="jGr-E3-Mv0" firstAttribute="top" secondItem="fnS-UI-SpZ" secondAttribute="top" id="QIb-93-2lv"/>
                             <constraint firstItem="xtN-La-FSH" firstAttribute="top" secondItem="fnS-UI-SpZ" secondAttribute="top" constant="67" id="UnN-U6-cgw"/>
                             <constraint firstItem="jGr-E3-Mv0" firstAttribute="leading" secondItem="Egi-bh-D5W" secondAttribute="leading" id="ZBo-TE-iD3"/>
-                            <constraint firstItem="Sb7-Uc-h9K" firstAttribute="top" secondItem="xtN-La-FSH" secondAttribute="bottom" constant="63.5" id="ZzB-0d-W8E"/>
+                            <constraint firstItem="Sb7-Uc-h9K" firstAttribute="top" secondItem="xtN-La-FSH" secondAttribute="bottom" constant="66.5" id="ZzB-0d-W8E"/>
                             <constraint firstItem="xtN-La-FSH" firstAttribute="leading" secondItem="fnS-UI-SpZ" secondAttribute="leading" constant="42" id="e1x-gY-TPv"/>
                             <constraint firstItem="fnS-UI-SpZ" firstAttribute="trailing" secondItem="Sb7-Uc-h9K" secondAttribute="trailing" constant="119" id="j0s-Au-fPI"/>
                             <constraint firstItem="jGr-E3-Mv0" firstAttribute="trailing" secondItem="Egi-bh-D5W" secondAttribute="trailing" id="lRs-lM-PnB"/>
@@ -1204,6 +1216,8 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="CRZ-x1-e0C" id="Huw-Cf-dJn"/>
+                        <outlet property="questionText" destination="55f-nR-TBF" id="06Q-Qz-5fu"/>
+                        <outlet property="questionView" destination="6Em-bo-OOr" id="x6e-tr-Vad"/>
                         <outlet property="signUpButton" destination="Egi-bh-D5W" id="62j-KV-bWt"/>
                         <segue destination="PrJ-Xk-DZ1" kind="presentation" identifier="toMainApp" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="tAn-yI-k3c"/>
                     </connections>
@@ -1220,6 +1234,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="q_auth_background" translatesAutoresizingMaskIntoConstraints="NO" id="4v2-QU-BLK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Enter your email address and password to get access to your account." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajv-Ia-wYC">
                                 <rect key="frame" x="21" y="202" width="338" height="82"/>
                                 <constraints>
@@ -1393,9 +1410,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="q_auth_background" translatesAutoresizingMaskIntoConstraints="NO" id="4v2-QU-BLK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pjG-9W-k8Y"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
