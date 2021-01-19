@@ -87,6 +87,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var peopleCount: AnimatedLabel!
     @IBOutlet weak var questionCount: AnimatedLabel!
     @IBOutlet weak var resultsView: CSAnimationView!
+    @IBOutlet var initialView: UIView!
     
     @IBAction func searchPressed(_ sender: Any) {
         self.view.endEditing(true)
@@ -193,6 +194,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             return video.questionText.lowercased().contains(queryString.lowercased())
         }
         
+        self.initialView.isHidden = true
         self.updateResults()
     }
     
