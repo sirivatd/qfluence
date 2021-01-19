@@ -84,7 +84,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var peopleLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var metricView: UIView!
     @IBOutlet weak var peopleCount: AnimatedLabel!
     @IBOutlet weak var questionCount: AnimatedLabel!
     @IBOutlet weak var resultsView: CSAnimationView!
@@ -96,7 +95,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         
         self.resultsView.isHidden = true
-        self.metricView.isHidden = true
         self.displayLoading()
         self.processSearch(queryString: searchField.text!)
     }
