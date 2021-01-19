@@ -110,8 +110,14 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             for influencer in influencerData {
                 let firstName = influencer["firstName"] as! String
                 let lastName = influencer["lastName"] as! String
-                let influencerName = firstName + " " + lastName
-                let featuredObject = SpotlightObject(imageUrl: influencer["imageUrl"] as! String, label: influencerName, influencerId: influencer["influencerId"] as! Int)
+                var influencerName: String?
+                if lastName.lowercased() == "n/a" {
+                    influencerName = firstName
+                } else {
+                    influencerName = firstName + " " + lastName
+                }
+                
+                let featuredObject = SpotlightObject(imageUrl: influencer["imageUrl"] as! String, label: influencerName!, influencerId: influencer["influencerId"] as! Int)
                 
                 self.influencers.append(featuredObject)
             }
@@ -158,18 +164,11 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func processSearch(queryString: String) {
-        for influencer in self.influencers {
-            let searchString = influencer.label
-            if searchString.contains(queryString) {
-                self.matchedInfluencers.append(influencer)
-            }
+        self.matchedInfluencers = self.influencers.filter{ (influencer: SpotlightObject) -> Bool in
+            return influencer.label.lowercased().contains(queryString.lowercased())
         }
-        
-        for video in self.videos {
-            let searchString = video.questionText
-            if searchString.contains(queryString) {
-                self.matchesVideos.append(video)
-            }
+        self.matchesVideos = self.videos.filter { (video: QuestionObject) -> Bool in
+            return video.questionText.lowercased().contains(queryString.lowercased())
         }
         
         self.updateResults()
