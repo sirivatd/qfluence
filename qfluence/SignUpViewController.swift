@@ -17,7 +17,7 @@ struct UserObject {
     let joinedAt: String
 }
 var currentUser: UserObject?
-var isFirstTime: Bool = true
+var isFirstTime: Bool = false
 
 class TextField: UITextField {
 

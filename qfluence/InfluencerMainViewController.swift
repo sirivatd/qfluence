@@ -133,6 +133,9 @@ class InfluencerMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+
         self.view.addSubview(loadingIndicator)
         fetchVideos()
         

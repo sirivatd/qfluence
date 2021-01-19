@@ -109,12 +109,6 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
             cell.contentView.layer.borderWidth = 0.5
             cell.contentView.layer.borderColor = UIColor.clear.cgColor
             cell.contentView.layer.masksToBounds = true
-            cell.layer.shadowColor = UIColor.darkGray.cgColor
-            cell.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
-            cell.layer.shadowRadius = 1.0
-            cell.layer.shadowOpacity = 0.7
-            cell.layer.masksToBounds = false
-            cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
             
             return cell
         } else {
@@ -126,12 +120,6 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
             cell.contentView.layer.borderWidth = 0.5
             cell.contentView.layer.borderColor = UIColor.clear.cgColor
             cell.contentView.layer.masksToBounds = true
-            cell.layer.shadowColor = UIColor.darkGray.cgColor
-            cell.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
-            cell.layer.shadowRadius = 1.0
-            cell.layer.shadowOpacity = 0.7
-            cell.layer.masksToBounds = false
-            cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
             
             return cell
         }
@@ -141,10 +129,11 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         collectionView.deselectItem(at: indexPath, animated: true)
         if collectionView == self.popularCollectionView {
             self.selectedCategory = popularObjects[indexPath.row]
+            performSegue(withIdentifier: "toCategory", sender: self)
         } else {
             self.selectedObject = featuredObjects[indexPath.row]
+            performSegue(withIdentifier: "toInfluencer", sender: self)
         }
-        performSegue(withIdentifier: "showInfluencer", sender: self)
     }
     
     func addObjects() {
@@ -185,6 +174,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
             self.featuredCollectionView.reloadData()
             self.featuredCollectionView.isHidden = false
             self.animationView.isHidden = false
+            
             // Remove loading indicator
             self.loadingIndicator.removeFromSuperview()
             self.animationView.startCanvasAnimation()
@@ -194,9 +184,16 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? InfluencerMainViewController {
-            destination.title = selectedObject?.label
-            destination.selectedInfluencerId = selectedObject?.influencerId
+        if segue.identifier == "toInfluencer" {
+            if let destination = segue.destination as? InfluencerMainViewController {
+                destination.title = selectedObject?.label
+                destination.selectedInfluencerId = selectedObject?.influencerId
+            }
+        } else if segue.identifier == "toCategory" {
+            if let destination = segue.destination as? CategoryViewController {
+                destination.title = selectedCategory?.label
+                destination.selectedCategory = selectedCategory?.label
+            }
         }
     }
 }
