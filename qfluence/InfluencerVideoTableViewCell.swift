@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import LNParallaxTVCell
 
-class InfluencerVideoTableViewCell: UITableViewCell {
+class InfluencerVideoTableViewCell: LNParallaxTVCell {
     @IBOutlet weak var videoPreview: UIImageView!
     @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var cellView: UIView!
@@ -26,6 +27,8 @@ class InfluencerVideoTableViewCell: UITableViewCell {
         cellView.layer.shadowRadius = 10.0
         cellView.layer.shadowOpacity = 1.0
         cellView.layer.shadowOffset = CGSize(width: 8, height: 8)
+        
+        videoPreview.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

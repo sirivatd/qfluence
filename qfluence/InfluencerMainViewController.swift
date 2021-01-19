@@ -35,10 +35,14 @@ extension InfluencerMainViewController: UITableViewDataSource {
             let questionObject = questionObjects[indexPath.row - 1]
             cell.questionText.text = questionObject.questionText
 
-            if indexPath.row % 2 == 0 {
-                cell.videoPreview.image = UIImage(named: "qfluence_cell_background_0")
+            if indexPath.row % 4 == 0 {
+                cell.parallaxImage.image = UIImage(named: "q_black_cell_0")
+            } else if indexPath.row % 4 == 1 {
+                cell.parallaxImage.image = UIImage(named: "q_orange_cell_0")
+            } else if indexPath.row % 4 == 2 {
+                cell.parallaxImage.image = UIImage(named: "q_black_cell_0")
             } else {
-                cell.videoPreview.image = UIImage(named: "qfluence_cell_background_1")
+                cell.parallaxImage.image = UIImage(named: "q_red_cell_0")
             }
             
             return cell
@@ -55,7 +59,7 @@ extension InfluencerMainViewController: UITableViewDelegate {
         if indexPath.row == 0 {
             return self.view.frame.height - 200
         } else {
-            return 145
+            return 155
         }
     }
     
@@ -92,6 +96,16 @@ extension InfluencerMainViewController: UITableViewDelegate {
             let y = scrollView.contentOffset.y.magnitude
             let height = max(self.originalCellHeight! - Float(y/3), 0)
             cell!.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: CGFloat(Float(height)))
+        } else {
+            let offsetY = self.mainTableView.contentOffset.y
+            if let questionCell = self.mainTableView.visibleCells.first as? InfluencerVideoTableViewCell {
+                let x = questionCell.videoPreview.frame.origin.x
+                let w = questionCell.videoPreview.bounds.width
+                let h = questionCell.videoPreview.bounds.height
+                let y = ((offsetY - questionCell.frame.origin.y) / h) * 25
+                
+                questionCell.videoPreview.frame = CGRect(x: x, y: y, width: w, height: h)
+            }
         }
     }
 }

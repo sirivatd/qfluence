@@ -21,6 +21,23 @@ class InfluencerHeaderTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.layer.borderWidth = 1
+        self.layer.masksToBounds = false
+        self.layer.borderColor = UIColor.clear.cgColor
+        self.layer.cornerRadius = 15
+        
+        profilePicture.layer.borderWidth = 1
+        profilePicture.layer.masksToBounds = false
+        profilePicture.layer.borderColor = UIColor.clear.cgColor
+        profilePicture.layer.cornerRadius = 15
+        tintView.layer.borderWidth = 1
+        tintView.layer.masksToBounds = false
+        tintView.layer.borderColor = UIColor.clear.cgColor
+        tintView.layer.cornerRadius = 15
+        
+        self.profilePicture.clipsToBounds = true
+        self.tintView.clipsToBounds = true
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
