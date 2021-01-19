@@ -11,6 +11,12 @@ import FirebaseDatabase
 import Canvas
 
 struct SpotlightObject {
+    let imageUrl: String
+    let label: String
+    let influencerId: Int
+}
+
+struct CategoryObject {
     let image: UIImage
     let label: String
     let influencerId: Int
@@ -32,9 +38,10 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet weak var popularCollectionView: UICollectionView!
     @IBOutlet weak var featuredCollectionView: UICollectionView!
     
-    private var popularObjects = [SpotlightObject]()
+    private var popularObjects = [CategoryObject]()
     private var featuredObjects = [SpotlightObject]()
     private var selectedObject: SpotlightObject?
+    private var selectedCategory: CategoryObject?
     @IBOutlet weak var animationView: CSAnimationView!
     
     override func viewDidLoad() {
@@ -110,7 +117,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SpotlightCollectionViewCell", for: indexPath) as! SpotlightCollectionViewCell
-            cell.featuredImage.image = featuredObjects[indexPath.row].image
+            cell.featuredImage.downloadImageFrom(link: featuredObjects[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
             cell.featuredLabel.text = featuredObjects[indexPath.row].label
             
             cell.contentView.layer.cornerRadius = 5.0
@@ -131,20 +138,20 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         if collectionView == self.popularCollectionView {
-            selectedObject = popularObjects[indexPath.row]
+            self.selectedCategory = popularObjects[indexPath.row]
         } else {
-            selectedObject = featuredObjects[indexPath.row]
+            self.selectedObject = featuredObjects[indexPath.row]
         }
         performSegue(withIdentifier: "showInfluencer", sender: self)
     }
     
     func addObjects() {
         // Backfill popular section
-        let popularObject = SpotlightObject(image: UIImage(named: "popular_music")!, label: "Music", influencerId: 1)
-        let popularObject2 = SpotlightObject(image: UIImage(named: "popular_tech")!, label: "Tech", influencerId: 1)
-        let popularObject3 = SpotlightObject(image: UIImage(named: "popular_sports")!, label: "Sports", influencerId: 1)
-        let popularObject4 = SpotlightObject(image: UIImage(named: "popular_fashion")!, label: "Fashion", influencerId: 1)
-        let popularObject5 = SpotlightObject(image: UIImage(named: "popular_politics")!, label: "Politics", influencerId: 1)
+        let popularObject = CategoryObject(image: UIImage(named: "popular_music")!, label: "Music", influencerId: 1)
+        let popularObject2 = CategoryObject(image: UIImage(named: "popular_tech")!, label: "Tech", influencerId: 1)
+        let popularObject3 = CategoryObject(image: UIImage(named: "popular_sports")!, label: "Sports", influencerId: 1)
+        let popularObject4 = CategoryObject(image: UIImage(named: "popular_fashion")!, label: "Fashion", influencerId: 1)
+        let popularObject5 = CategoryObject(image: UIImage(named: "popular_politics")!, label: "Politics", influencerId: 1)
 
         popularObjects.append(popularObject)
         popularObjects.append(popularObject2)
@@ -154,20 +161,25 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         
         let ref = Database.database().reference(withPath: "influencers")
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            // This is the snapshot of the data at the moment in the Firebase database
-            // To get value from the snapshot, we user snapshot.value
-            let influencerData = snapshot.value as! [[String : Any]]
-            
-            for influencer in influencerData {
-                let url = URL(string: influencer["imageUrl"] as! String)
-                let data = try? Data(contentsOf: url!)
-                let firstName = influencer["firstName"] as! String
-                let lastName = influencer["lastName"] as! String
-                let influencerName = firstName + " " + lastName
-                print(firstName + " " + lastName)
-                let featuredObject = SpotlightObject(image: UIImage(data: data!)!, label: influencerName, influencerId: influencer["influencerId"] as! Int)
-                self.featuredObjects.append(featuredObject)
+            for influencer in snapshot.children {
+                if let snapshot = influencer as? DataSnapshot {
+                    let dict = snapshot.value as? NSDictionary
+                    let firstName = dict!["firstName"] as? String
+                    let lastName = dict!["lastName"] as? String
+                    
+                    // simple name logic
+                    var influencerName: String?
+                    if lastName?.lowercased() == "n/a" {
+                        influencerName = firstName
+                    } else {
+                        influencerName = firstName! + " " + lastName!
+                    }
+                    
+                    let featuredObject = SpotlightObject(imageUrl: dict!["imageUrl"] as! String, label: influencerName!, influencerId: dict!["influencerId"] as! Int)
+                    self.featuredObjects.append(featuredObject)
+                }
             }
+                
             self.featuredCollectionView.reloadData()
             self.featuredCollectionView.isHidden = false
             self.animationView.isHidden = false
@@ -177,11 +189,24 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         })
         print(self.featuredObjects)
     }
+        
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? InfluencerMainViewController {
             destination.title = selectedObject?.label
             destination.selectedInfluencerId = selectedObject?.influencerId
         }
+    }
+}
+
+extension UIImageView {
+    func downloadImageFrom(link:String, contentMode: UIView.ContentMode) {
+        URLSession.shared.dataTask( with: NSURL(string:link)! as URL, completionHandler: {
+            (data, response, error) -> Void in
+            DispatchQueue.main.async {
+                self.contentMode =  contentMode
+                if let data = data { self.image = UIImage(data: data) }
+            }
+        }).resume()
     }
 }

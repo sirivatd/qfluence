@@ -34,7 +34,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "personCell", for: indexPath) as! SpotlightCollectionViewCell
             print(self.matchedInfluencers)
-            cell.featuredImage.image = self.matchedInfluencers[indexPath.row].image
+            cell.featuredImage.downloadImageFrom(link: self.matchedInfluencers[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill) 
             cell.featuredLabel.text = self.matchedInfluencers[indexPath.row].label
             cell.contentView.layer.cornerRadius = 5.0
             cell.contentView.layer.borderWidth = 0.5
@@ -108,12 +108,10 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             let influencerData = snapshot.value as! [[String : Any]]
 
             for influencer in influencerData {
-                let url = URL(string: influencer["imageUrl"] as! String)
-                let data = try? Data(contentsOf: url!)
                 let firstName = influencer["firstName"] as! String
                 let lastName = influencer["lastName"] as! String
                 let influencerName = firstName + " " + lastName
-                let featuredObject = SpotlightObject(image: UIImage(data: data!)!, label: influencerName, influencerId: influencer["influencerId"] as! Int)
+                let featuredObject = SpotlightObject(imageUrl: influencer["imageUrl"] as! String, label: influencerName, influencerId: influencer["influencerId"] as! Int)
                 
                 self.influencers.append(featuredObject)
             }
@@ -122,18 +120,19 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         // fetch videos
         let videoRef = Database.database().reference(withPath: "videos")
         videoRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            let videoData = snapshot.value as! [[String : Any]]
-            
-            for video in videoData {
-                let questionText = video["questionText"] as! String
-                let videoUrlString = video["videoUrl"] as! String
-                let imageUrlString = video["imageUrl"] as! String
+            for video in snapshot.children {
+                if let snapshot = video as? DataSnapshot {
+                    let dict = snapshot.value as? NSDictionary
+                    let influencerId = dict!["influencerId"] as! Int
+                    let questionText = dict!["questionText"] as! String
+                    let videoUrlString = dict!["videoUrl"] as! String
+                    let imageUrlString = dict!["imageUrl"] as! String
                     
-                let questionObject = QuestionObject(questionText: questionText, videoUrl: videoUrlString, imageUrl: imageUrlString)
-                    
-                self.videos.append(questionObject)
+                    let questionObject = QuestionObject(questionText: questionText, videoUrl: videoUrlString, imageUrl: imageUrlString)
+                        
+                    self.videos.append(questionObject)
+                }
             }
-
             self.updateMetricLabels(people: self.influencers.count, questions: self.videos.count)
         })
     }
