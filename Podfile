@@ -9,5 +9,6 @@ pod 'Firebase/Database'
 pod 'Firebase/Analytics'
 pod 'lottie-ios'
 pod 'LNParallaxTVCell'
+pod 'ScalingCarousel'
 
 end

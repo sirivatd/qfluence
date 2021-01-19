@@ -9,14 +9,21 @@
 import UIKit
 import Firebase
 import Canvas
+import ScalingCarousel
 
 class SearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.videoCollectionView {
             return self.matchesVideos.count
-        } else {
+        } else if collectionView == self.peopleCollectionView {
             return self.matchedInfluencers.count
+        } else {
+            return self.recentlyAdded.count
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.recentlyAddedView.didScroll()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -31,7 +38,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             }
 
             return cell
-        } else {
+        } else if collectionView == self.peopleCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "personCell", for: indexPath) as! SpotlightCollectionViewCell
             print(self.matchedInfluencers)
             cell.featuredImage.downloadImageFrom(link: self.matchedInfluencers[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill) 
@@ -48,12 +55,32 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
 
             return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recentlyAddedCell", for: indexPath) as! SpotlightCollectionViewCell
+            cell.featuredImage.downloadImageFrom(link: self.recentlyAdded[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+            cell.featuredLabel.text = self.recentlyAdded[indexPath.row].label
+            cell.contentView.layer.cornerRadius = 5.0
+            cell.contentView.layer.borderWidth = 0.5
+            cell.contentView.layer.borderColor = UIColor.clear.cgColor
+            cell.contentView.layer.masksToBounds = true
+            cell.layer.shadowColor = UIColor.darkGray.cgColor
+            cell.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
+            cell.layer.shadowRadius = 1.0
+            cell.layer.shadowOpacity = 0.7
+            cell.layer.masksToBounds = false
+            cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+            
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
+            
+            return cell
         }
     }
     
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var peopleCollectionView: UICollectionView!
     @IBOutlet weak var videoCollectionView: UICollectionView!
+    @IBOutlet weak var recentlyAddedView: ScalingCarouselView!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var peopleLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
@@ -78,17 +105,12 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     private var videos = [QuestionObject]()
     private var matchedInfluencers = [SpotlightObject]()
     private var matchesVideos = [QuestionObject]()
+    private var recentlyAdded = [SpotlightObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        searchField.leftViewMode = UITextField.ViewMode.always
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        let image = UIImage(named: "icons8-search-60")?.withTintColor(.lightGray)
-        imageView.image = image
-        searchField.leftView = imageView
         searchButton.layer.cornerRadius = 10
-        
         resultsView.isHidden = true
         
         fetchData()
@@ -120,6 +142,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                 let featuredObject = SpotlightObject(imageUrl: influencer["imageUrl"] as! String, label: influencerName!, influencerId: influencer["influencerId"] as! Int)
                 
                 self.influencers.append(featuredObject)
+                self.recentlyAdded.append(featuredObject)
             }
         })
         
@@ -139,6 +162,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                     self.videos.append(questionObject)
                 }
             }
+            self.recentlyAddedView.reloadData()
             self.updateMetricLabels(people: self.influencers.count, questions: self.videos.count)
         })
     }
@@ -198,5 +222,10 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: animated)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        self.recentlyAddedView.deviceRotated()
     }
 }

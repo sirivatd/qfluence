@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import ScalingCarousel
 
-class SpotlightCollectionViewCell: UICollectionViewCell {
+class SpotlightCollectionViewCell: ScalingCarouselCell {
     @IBOutlet weak var popularImage: UIImageView!
     @IBOutlet weak var popularLabel: UILabel!
     

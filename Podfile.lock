@@ -88,6 +88,7 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
+  - ScalingCarousel (3.2.0)
 
 DEPENDENCIES:
   - AFBlurSegue
@@ -98,6 +99,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - LNParallaxTVCell
   - lottie-ios
+  - ScalingCarousel
 
 SPEC REPOS:
   trunk:
@@ -120,6 +122,7 @@ SPEC REPOS:
     - lottie-ios
     - nanopb
     - PromisesObjC
+    - ScalingCarousel
 
 SPEC CHECKSUMS:
   AFBlurSegue: 27e55f015360f4e11117d2c3a959dbb5316eef78
@@ -141,7 +144,8 @@ SPEC CHECKSUMS:
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  ScalingCarousel: d40f0ce438af5cfb2225e2f723f7161597961128
 
-PODFILE CHECKSUM: 2ca6918c1b69bf7d88d2d4ff6bd66a1711189d4e
+PODFILE CHECKSUM: 40eea05c416652ad7923290260c7f79346b21415
 
 COCOAPODS: 1.10.1
