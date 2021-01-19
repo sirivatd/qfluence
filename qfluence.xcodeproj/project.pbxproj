@@ -27,13 +27,11 @@
 		F6533F4D25B6358A006628C4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6533F4C25B6358A006628C4 /* OnboardingViewController.swift */; };
 		F6533FC625B63F37006628C4 /* 45056-contact-us.json in Resources */ = {isa = PBXBuildFile; fileRef = F6533FC525B63F37006628C4 /* 45056-contact-us.json */; };
 		F66EA07C2585A0D400952008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA07B2585A0D400952008 /* AppDelegate.swift */; };
-		F66EA07E2585A0D500952008 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA07D2585A0D500952008 /* ViewController.swift */; };
 		F66EA0812585A0D500952008 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66EA07F2585A0D500952008 /* Main.storyboard */; };
 		F66EA0832585A0D600952008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F66EA0822585A0D600952008 /* Assets.xcassets */; };
 		F66EA0862585A0D600952008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66EA0842585A0D600952008 /* LaunchScreen.storyboard */; };
 		F66EA0912585A0D600952008 /* qfluenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA0902585A0D600952008 /* qfluenceTests.swift */; };
 		F66EA09C2585A0D600952008 /* qfluenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA09B2585A0D600952008 /* qfluenceUITests.swift */; };
-		F66EA0AA2585C89A00952008 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA0A92585C89A00952008 /* VideoCollectionViewCell.swift */; };
 		F6850E8225AD606B0048C2CC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6850E8125AD606B0048C2CC /* SearchViewController.swift */; };
 		F68BD02325B0E9C900F083CD /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68BD02225B0E9C900F083CD /* ExploreViewController.swift */; };
 		F68BD02825B0E9EC00F083CD /* ExploreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68BD02725B0E9EC00F083CD /* ExploreTableViewCell.swift */; };
@@ -87,7 +85,6 @@
 		F6533FC525B63F37006628C4 /* 45056-contact-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "45056-contact-us.json"; sourceTree = "<group>"; };
 		F66EA0782585A0D400952008 /* qfluence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qfluence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66EA07B2585A0D400952008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F66EA07D2585A0D500952008 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F66EA0802585A0D500952008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F66EA0822585A0D600952008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F66EA0852585A0D600952008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,7 +95,6 @@
 		F66EA0972585A0D600952008 /* qfluenceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = qfluenceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66EA09B2585A0D600952008 /* qfluenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qfluenceUITests.swift; sourceTree = "<group>"; };
 		F66EA09D2585A0D600952008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F66EA0A92585C89A00952008 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6850E8125AD606B0048C2CC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F68BD02225B0E9C900F083CD /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		F68BD02725B0E9EC00F083CD /* ExploreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewCell.swift; sourceTree = "<group>"; };
@@ -186,9 +182,7 @@
 				F6533FC525B63F37006628C4 /* 45056-contact-us.json */,
 				F66EA07B2585A0D400952008 /* AppDelegate.swift */,
 				F61818C125AC134E00A01613 /* StrokeColorAnimation.swift */,
-				F66EA07D2585A0D500952008 /* ViewController.swift */,
 				9C2B497525AEB18900AAC9F7 /* OHCircleSegue.swift */,
-				F66EA0A92585C89A00952008 /* VideoCollectionViewCell.swift */,
 				F61DD0C825AB0F1200424CB0 /* QuestionViewController.swift */,
 				F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */,
 				F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */,
@@ -419,7 +413,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F66EA0AA2585C89A00952008 /* VideoCollectionViewCell.swift in Sources */,
 				F61818B625AC098900A01613 /* QuestionTableViewCell.swift in Sources */,
 				F68FD69F25ACC859008257E0 /* LandingViewController.swift in Sources */,
 				F6AF3EDE25873D7900474738 /* SpotlightViewController.swift in Sources */,
@@ -434,7 +427,6 @@
 				F6F81F4025AD2E9C00B64B87 /* ProfileViewController.swift in Sources */,
 				F6850E8225AD606B0048C2CC /* SearchViewController.swift in Sources */,
 				F61818BA25AC0FDF00A01613 /* ProgressShapeLayer.swift in Sources */,
-				F66EA07E2585A0D500952008 /* ViewController.swift in Sources */,
 				9C2B497625AEB18900AAC9F7 /* OHCircleSegue.swift in Sources */,
 				F61818BE25AC127500A01613 /* RotationAnimation.swift in Sources */,
 				F68BD02825B0E9EC00F083CD /* ExploreTableViewCell.swift in Sources */,

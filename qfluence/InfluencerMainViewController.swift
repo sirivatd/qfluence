@@ -10,17 +10,17 @@ import UIKit
 import Firebase
 import AVKit
 
+
 extension InfluencerMainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "influencerHeader") as! InfluencerHeaderTableViewCell
             if self.selectedInfluencer != nil {
-                cell.bioText.text = self.selectedInfluencer!.bioText
-                
-                let url = URL(string: selectedInfluencer!.imageUrl)
-                let data = try? Data(contentsOf: url!)
-                
-                cell.profilePicture.image = UIImage(data: data!)
+                cell.profilePicture.downloadImageFrom(link: selectedInfluencer!.imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+                cell.bioText.text = selectedInfluencer!.bioText
+                cell.animationOne.startCanvasAnimation()
+                cell.animationTwo.startCanvasAnimation()
+                cell.animationThree.startCanvasAnimation()
             }
         
             return cell
@@ -48,14 +48,6 @@ extension InfluencerMainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return self.view.frame.height - 200
-//            if self.selectedInfluencer != nil {
-//                let url = URL(string: selectedInfluencer!.imageUrl)
-//                let data = try? Data(contentsOf: url!)
-//
-//                return UIImage(data: data!)!.size.height
-//            } else {
-//                return 450
-//            }
         } else {
             return 145
         }
@@ -81,6 +73,7 @@ extension InfluencerMainViewController: UITableViewDelegate {
 
 class InfluencerMainViewController: UIViewController {
     @IBOutlet weak var mainTableView: UITableView!
+    
     var selectedInfluencerId: Int?
     private var questionObjects = [QuestionObject]()
     private var selectedInfluencer: InfluencerObject?
