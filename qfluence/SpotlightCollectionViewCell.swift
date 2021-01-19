@@ -14,4 +14,8 @@ class SpotlightCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var featuredImage: UIImageView!
     @IBOutlet weak var featuredLabel: UILabel!
+    
+    override func prepareForReuse() {
+        self.featuredImage.image = nil
+    }
 }

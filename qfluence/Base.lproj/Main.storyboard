@@ -920,7 +920,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RQB-qY-Oh0">
                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="439"/>
                                                 </imageView>
-                                                <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tov-Pa-f9r">
+                                                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tov-Pa-f9r">
                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="439"/>
                                                     <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 </view>
@@ -957,7 +957,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZe-Oe-ktA">
-                                                    <rect key="frame" x="11" y="472" width="368" height="24.666666666666629"/>
+                                                    <rect key="frame" x="11" y="472" width="368" height="24.666666666666686"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1786,7 +1786,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="q_auth_background" translatesAutoresizingMaskIntoConstraints="NO" id="4v2-QU-BLK">
-                                <rect key="frame" x="0.0" y="44" width="375" height="766"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Enter your email address and password to get access to your account." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajv-Ia-wYC">
                                 <rect key="frame" x="21" y="246" width="338" height="82"/>
@@ -1799,7 +1799,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qRd-BS-yEW" customClass="TextField" customModule="qfluence" customModuleProvider="target">
-                                <rect key="frame" x="16" y="358" width="343" height="60"/>
+                                <rect key="frame" x="23.666666666666657" y="358" width="343" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="Fzi-wQ-gU6"/>
@@ -1810,7 +1810,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ac-VJ-L8w" customClass="TextField" customModule="qfluence" customModuleProvider="target">
-                                <rect key="frame" x="16" y="418" width="343" height="60"/>
+                                <rect key="frame" x="23.666666666666657" y="418" width="343" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="K2E-QI-6KW"/>
@@ -1885,7 +1885,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2n-Fd-oLS" customClass="CSAnimationView">
-                                <rect key="frame" x="174" y="514" width="178" height="58"/>
+                                <rect key="frame" x="189" y="514" width="178" height="58"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZn-lH-G49">
                                         <rect key="frame" x="0.0" y="0.0" width="178" height="58"/>
@@ -1921,7 +1921,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cS-G1-Vsx" customClass="CSAnimationView">
-                                <rect key="frame" x="0.0" y="712" width="375" height="105"/>
+                                <rect key="frame" x="0.0" y="712" width="390" height="105"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning" translatesAutoresizingMaskIntoConstraints="NO" id="jZg-zN-nK5">
                                         <rect key="frame" x="26" y="28" width="48" height="48"/>
