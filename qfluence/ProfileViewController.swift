@@ -37,12 +37,12 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backdropView.layer.cornerRadius = 15.0
+        backdropView.layer.cornerRadius = 10.0
         backdropView.layer.borderWidth = 0.5
         backdropView.layer.borderColor = UIColor.clear.cgColor
         backdropView.layer.masksToBounds = true
         
-        logoutButton.layer.cornerRadius = 15.0
+        logoutButton.layer.cornerRadius = 5.0
         logoutButton.layer.borderWidth = 0.5
         logoutButton.layer.borderColor = UIColor.clear.cgColor
         logoutButton.layer.masksToBounds = true

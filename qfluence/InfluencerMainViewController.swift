@@ -162,13 +162,4 @@ class InfluencerMainViewController: UIViewController {
             self.mainTableView.isHidden = false
         })
     }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toQuestionModal" {
-            if let destination = segue.destination as? QuestionViewController {
-                destination.selectedInfluencerId = self.selectedInfluencerId!
-                destination.questionObjects = self.questionObjects
-            }
-        }
-    }
 }

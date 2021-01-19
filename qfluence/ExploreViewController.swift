@@ -10,6 +10,12 @@ import UIKit
 import AVFoundation
 import Firebase
 
+struct QuestionObject {
+    let questionText: String
+    let videoUrl: String
+    let imageUrl: String
+}
+
 class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.videoURLs.count
@@ -80,7 +86,6 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
                    if currentHeight > (cellHeight * 0.95){
                        if visibleIP != indexPaths?[i]{
                            visibleIP = indexPaths?[i]
-                           print ("visible = \(indexPaths?[i])")
                            if let videoCell = cells[i] as? ExploreTableViewCell{
                                self.playVideoOnTheCell(cell: videoCell, indexPath: (indexPaths?[i])!)
                            }
@@ -98,15 +103,6 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
                }
            }
        }
-    
-//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-//        if scrollView == self.exploreTableView {
-//            let cellHeight = CGFloat(self.view.frame.height)
-//                let y          = targetContentOffset.pointee.y + scrollView.contentInset.top + (cellHeight / 2)
-//                let cellIndex  = floor(y / cellHeight)
-//                targetContentOffset.pointee.y = cellIndex * cellHeight - scrollView.contentInset.top
-//            }
-//        }
     
     var visibleIP : IndexPath?
     var aboutToBecomeInvisibleCell = -1
@@ -169,14 +165,4 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
