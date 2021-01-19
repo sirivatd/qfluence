@@ -10,6 +10,21 @@ import UIKit
 import Firebase
 
 class ProfileViewController: UIViewController {
+    @IBOutlet weak var greetingText: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var joinedAtLabel: UILabel!
+    @IBOutlet weak var backdropView: UIView!
+    @IBOutlet weak var logoutButton: UIButton!
+    
+    @IBAction func contactPressed(_ sender: Any) {
+    }
+    
+    @IBAction func termsPressed(_ sender: Any) {
+    }
+    @IBAction func darkModePressed(_ sender: Any) {
+    }
+    @IBAction func influencerPressed(_ sender: Any) {
+    }
     @IBAction func logoutPressed(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {
@@ -22,7 +37,15 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        backdropView.layer.cornerRadius = 15.0
+        backdropView.layer.borderWidth = 0.5
+        backdropView.layer.borderColor = UIColor.clear.cgColor
+        backdropView.layer.masksToBounds = true
+        
+        logoutButton.layer.cornerRadius = 15.0
+        logoutButton.layer.borderWidth = 0.5
+        logoutButton.layer.borderColor = UIColor.clear.cgColor
+        logoutButton.layer.masksToBounds = true
         // Do any additional setup after loading the view.
     }
     

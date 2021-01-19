@@ -11,6 +11,10 @@ import Lottie
 
 class OnboardingViewController: UIViewController {
     @IBOutlet weak var animationView: AnimationView!
+    @IBOutlet weak var continueButton: UIButton!
+    
+    @IBAction func continuePressed(_ sender: Any) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +23,10 @@ class OnboardingViewController: UIViewController {
         animationView.loopMode = .loop
         animationView.animationSpeed = 0.75
         animationView.play()
+        
+        continueButton.layer.cornerRadius = 15.0
+        continueButton.layer.borderWidth = 0.5
+        continueButton.layer.borderColor = UIColor.clear.cgColor
 
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
