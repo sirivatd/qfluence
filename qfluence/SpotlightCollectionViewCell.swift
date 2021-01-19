@@ -15,10 +15,14 @@ class SpotlightCollectionViewCell: ScalingCarouselCell {
     
     @IBOutlet weak var featuredImage: UIImageView!
     @IBOutlet weak var featuredLabel: UILabel!
+    @IBOutlet weak var tintView: UIView!
     
     override func prepareForReuse() {
         if self.featuredImage != nil {
             self.featuredImage.image = nil
+        }
+        if self.tintView != nil {
+            self.tintView.layer.cornerRadius = 10.0
         }
     }
 }

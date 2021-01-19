@@ -59,16 +59,15 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recentlyAddedCell", for: indexPath) as! SpotlightCollectionViewCell
             cell.featuredImage.downloadImageFrom(link: self.recentlyAdded[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
             cell.featuredLabel.text = self.recentlyAdded[indexPath.row].label
-            cell.contentView.layer.cornerRadius = 5.0
-            cell.contentView.layer.borderWidth = 0.5
+            cell.contentView.layer.cornerRadius = 10.0
+            cell.contentView.layer.borderWidth = 3.0
             cell.contentView.layer.borderColor = UIColor.clear.cgColor
             cell.contentView.layer.masksToBounds = true
-            cell.layer.shadowColor = UIColor.darkGray.cgColor
-            cell.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
-            cell.layer.shadowRadius = 1.0
-            cell.layer.shadowOpacity = 0.7
-            cell.layer.masksToBounds = false
-            cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+            
+            cell.featuredImage.layer.cornerRadius = 10.0
+            cell.featuredImage.layer.masksToBounds = true
+            cell.tintView.layer.cornerRadius = 10.0
+            cell.tintView.layer.masksToBounds = true
             
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
