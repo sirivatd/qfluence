@@ -17,10 +17,16 @@ extension InfluencerMainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "influencerHeader") as! InfluencerHeaderTableViewCell
             if self.selectedInfluencer != nil {
                 cell.profilePicture.downloadImageFrom(link: selectedInfluencer!.imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+                
                 cell.bioText.text = selectedInfluencer!.bioText
-                cell.animationOne.startCanvasAnimation()
-                cell.animationTwo.startCanvasAnimation()
-                cell.animationThree.startCanvasAnimation()
+                
+                if self.firstLoad {
+                    self.firstLoad = false
+                    
+                    cell.animationOne.startCanvasAnimation()
+                    cell.animationTwo.startCanvasAnimation()
+                    cell.animationThree.startCanvasAnimation()
+                }
             }
         
             return cell
@@ -69,6 +75,25 @@ extension InfluencerMainViewController: UITableViewDelegate {
             }
         }
     }
+    
+    // parallax effect
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if self.originalCellHeight == nil {
+            let indexPath = IndexPath(row: 0, section: 0)
+            let cell = self.mainTableView.cellForRow(at: indexPath) as? InfluencerHeaderTableViewCell
+            
+            self.originalCellHeight = Float(cell!.frame.height)
+        }
+        
+        let indexPath = IndexPath(row: 0, section: 0)
+        let cell = self.mainTableView.cellForRow(at: indexPath) as? InfluencerHeaderTableViewCell
+        
+        if cell != nil {
+            let y = scrollView.contentOffset.y.magnitude
+            let height = max(self.originalCellHeight! - Float(y/3), 0)
+            cell!.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: CGFloat(Float(height)))
+        }
+    }
 }
 
 class InfluencerMainViewController: UIViewController {
@@ -79,6 +104,8 @@ class InfluencerMainViewController: UIViewController {
     private var selectedInfluencer: InfluencerObject?
     var playerViewController = AVPlayerViewController()
     var playerView = AVPlayer()
+    var firstLoad: Bool = true
+    var originalCellHeight: Float?
     
     @IBAction func instagramButtonPressed(_ sender: Any) {
         guard let url = URL(string: self.selectedInfluencer!.instagramLink) else { return }

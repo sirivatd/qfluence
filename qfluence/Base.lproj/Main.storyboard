@@ -165,7 +165,7 @@
                             </label>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3b-n7-db4">
                                 <rect key="frame" x="33" y="680" width="324" height="59"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.19148189927906611" green="0.18466222553234726" blue="0.19170984455958551" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="65M-sp-HNs"/>
                                 </constraints>
@@ -802,7 +802,7 @@
                                             <constraint firstAttribute="height" constant="86" id="tRp-lS-MGx"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="To learn more, navigate to your profile page to view the full terms and conditions." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t8X-fb-Kty">
@@ -918,7 +918,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="439"/>
                                                 </imageView>
                                                 <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tov-Pa-f9r">
-                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="439"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="464"/>
                                                     <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3G-pi-xM2" customClass="CSAnimationView">
@@ -954,7 +954,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZe-Oe-ktA">
-                                                    <rect key="frame" x="11" y="472" width="368" height="23.333333333333314"/>
+                                                    <rect key="frame" x="11" y="484" width="368" height="23.333333333333314"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1034,16 +1034,16 @@
                                                 <constraint firstItem="kWr-rg-5gk" firstAttribute="centerY" secondItem="dti-je-hR3" secondAttribute="centerY" id="AfX-hf-xcL"/>
                                                 <constraint firstItem="tov-Pa-f9r" firstAttribute="leading" secondItem="QRs-mf-LBm" secondAttribute="leading" id="Ch2-CY-kft"/>
                                                 <constraint firstAttribute="bottom" secondItem="RQB-qY-Oh0" secondAttribute="bottom" constant="91" id="DhT-Zs-slB"/>
-                                                <constraint firstItem="jZe-Oe-ktA" firstAttribute="top" secondItem="RQB-qY-Oh0" secondAttribute="bottom" constant="33" id="HQB-4M-g7z"/>
+                                                <constraint firstItem="jZe-Oe-ktA" firstAttribute="top" secondItem="RQB-qY-Oh0" secondAttribute="bottom" constant="45" id="HQB-4M-g7z"/>
                                                 <constraint firstItem="z3G-pi-xM2" firstAttribute="centerY" secondItem="dti-je-hR3" secondAttribute="centerY" id="IgE-NE-14f"/>
                                                 <constraint firstItem="dti-je-hR3" firstAttribute="centerX" secondItem="tov-Pa-f9r" secondAttribute="centerX" id="PUe-Q2-Xfa"/>
                                                 <constraint firstItem="dti-je-hR3" firstAttribute="leading" secondItem="z3G-pi-xM2" secondAttribute="trailing" constant="38" id="S0m-lQ-MO3"/>
                                                 <constraint firstItem="jZe-Oe-ktA" firstAttribute="centerX" secondItem="RQB-qY-Oh0" secondAttribute="centerX" id="VFX-g7-hpL"/>
                                                 <constraint firstAttribute="trailing" secondItem="RQB-qY-Oh0" secondAttribute="trailing" id="cZ9-WG-e29"/>
                                                 <constraint firstItem="RQB-qY-Oh0" firstAttribute="top" secondItem="QRs-mf-LBm" secondAttribute="top" id="hXd-AB-3AF"/>
-                                                <constraint firstAttribute="bottom" secondItem="tov-Pa-f9r" secondAttribute="bottom" constant="91" id="igh-HX-ZuG"/>
+                                                <constraint firstAttribute="bottom" secondItem="tov-Pa-f9r" secondAttribute="bottom" constant="66" id="igh-HX-ZuG"/>
                                                 <constraint firstItem="tov-Pa-f9r" firstAttribute="top" secondItem="QRs-mf-LBm" secondAttribute="top" id="j4w-To-skJ"/>
-                                                <constraint firstItem="kWr-rg-5gk" firstAttribute="top" secondItem="tov-Pa-f9r" secondAttribute="bottom" constant="-79" id="vvt-Iz-KGg"/>
+                                                <constraint firstItem="kWr-rg-5gk" firstAttribute="top" secondItem="tov-Pa-f9r" secondAttribute="bottom" constant="-104" id="vvt-Iz-KGg"/>
                                                 <constraint firstItem="RQB-qY-Oh0" firstAttribute="leading" secondItem="QRs-mf-LBm" secondAttribute="leading" id="ydP-HD-hxa"/>
                                                 <constraint firstAttribute="trailing" secondItem="tov-Pa-f9r" secondAttribute="trailing" id="zvj-jo-LIf"/>
                                             </constraints>
@@ -1054,7 +1054,7 @@
                                             <outlet property="animationTwo" destination="kWr-rg-5gk" id="eKg-v6-iLz"/>
                                             <outlet property="bioText" destination="jZe-Oe-ktA" id="kFd-gN-h5v"/>
                                             <outlet property="instagramButton" destination="FyD-Bf-rYa" id="KI4-Rg-eda"/>
-                                            <outlet property="profilePicture" destination="RQB-qY-Oh0" id="of8-qF-s8N"/>
+                                            <outlet property="profilePicture" destination="RQB-qY-Oh0" id="f1f-oF-HUp"/>
                                             <outlet property="tintView" destination="tov-Pa-f9r" id="ICs-Wz-2Mg"/>
                                         </connections>
                                     </tableViewCell>
