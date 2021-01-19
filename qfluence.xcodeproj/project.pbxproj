@@ -25,6 +25,8 @@
 		F61DD0CD25ABD0A200424CB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F61DD0CA25ABD0A100424CB0 /* GoogleService-Info.plist */; };
 		F6533F4D25B6358A006628C4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6533F4C25B6358A006628C4 /* OnboardingViewController.swift */; };
 		F6533FC625B63F37006628C4 /* 45056-contact-us.json in Resources */ = {isa = PBXBuildFile; fileRef = F6533FC525B63F37006628C4 /* 45056-contact-us.json */; };
+		F6533FDA25B6B8BF006628C4 /* support-system.json in Resources */ = {isa = PBXBuildFile; fileRef = F6533FD925B6B8BE006628C4 /* support-system.json */; };
+		F6533FDF25B6C6D0006628C4 /* online-school.json in Resources */ = {isa = PBXBuildFile; fileRef = F6533FDE25B6C6CF006628C4 /* online-school.json */; };
 		F66EA07C2585A0D400952008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA07B2585A0D400952008 /* AppDelegate.swift */; };
 		F66EA0812585A0D500952008 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66EA07F2585A0D500952008 /* Main.storyboard */; };
 		F66EA0832585A0D600952008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F66EA0822585A0D600952008 /* Assets.xcassets */; };
@@ -81,6 +83,8 @@
 		F61DD0CA25ABD0A100424CB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6533F4C25B6358A006628C4 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		F6533FC525B63F37006628C4 /* 45056-contact-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "45056-contact-us.json"; sourceTree = "<group>"; };
+		F6533FD925B6B8BE006628C4 /* support-system.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "support-system.json"; sourceTree = "<group>"; };
+		F6533FDE25B6C6CF006628C4 /* online-school.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "online-school.json"; sourceTree = "<group>"; };
 		F66EA0782585A0D400952008 /* qfluence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qfluence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66EA07B2585A0D400952008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F66EA0802585A0D500952008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 				F6533FC525B63F37006628C4 /* 45056-contact-us.json */,
 				F66EA07B2585A0D400952008 /* AppDelegate.swift */,
 				F61818C125AC134E00A01613 /* StrokeColorAnimation.swift */,
+				F6533FD925B6B8BE006628C4 /* support-system.json */,
+				F6533FDE25B6C6CF006628C4 /* online-school.json */,
 				9C2B497525AEB18900AAC9F7 /* OHCircleSegue.swift */,
 				F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */,
 				F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */,
@@ -337,8 +343,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F61DD0C525AB0D8700424CB0 /* Podfile in Resources */,
+				F6533FDA25B6B8BF006628C4 /* support-system.json in Resources */,
 				F66EA0862585A0D600952008 /* LaunchScreen.storyboard in Resources */,
 				F66EA0832585A0D600952008 /* Assets.xcassets in Resources */,
+				F6533FDF25B6C6D0006628C4 /* online-school.json in Resources */,
 				F6533FC625B63F37006628C4 /* 45056-contact-us.json in Resources */,
 				F66EA0812585A0D500952008 /* Main.storyboard in Resources */,
 				F61DD0CB25ABD0A100424CB0 /* GoogleService-Info.plist in Resources */,
