@@ -17,6 +17,7 @@ class InfluencerHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var animationOne: CSAnimationView!
     @IBOutlet weak var animationTwo: CSAnimationView!
     @IBOutlet weak var animationThree: CSAnimationView!
+    @IBOutlet weak var panelView: UIView!
     
     
     override func awakeFromNib() {

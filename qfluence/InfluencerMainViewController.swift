@@ -20,6 +20,11 @@ extension InfluencerMainViewController: UITableViewDataSource {
                 
                 cell.bioText.text = selectedInfluencer!.bioText
                 
+                cell.panelView.layer.borderWidth = 1
+                cell.panelView.layer.masksToBounds = false
+                cell.panelView.layer.borderColor = UIColor.clear.cgColor
+                cell.panelView.layer.cornerRadius = 15
+                
                 if self.firstLoad {
                     self.firstLoad = false
                     
@@ -134,11 +139,13 @@ class InfluencerMainViewController: UIViewController {
     @IBAction func googleSearchPressed(_ sender: Any) {
         var nameQuery: String?
         if self.selectedInfluencer?.lastName.lowercased() == "n/a" {
-            nameQuery = self.selectedInfluencer?.firstName
+            nameQuery = self.selectedInfluencer?.firstName.trimmingCharacters(in: .whitespacesAndNewlines)
         } else {
-            nameQuery = self.selectedInfluencer!.firstName + "+" + self.selectedInfluencer!.lastName
+            nameQuery = self.selectedInfluencer!.firstName.trimmingCharacters(in: .whitespacesAndNewlines) + "+" + self.selectedInfluencer!.lastName.trimmingCharacters(in: .whitespacesAndNewlines)
         }
-        guard let url = URL(string: "https://www.google.com/search?q=\(nameQuery)") else {
+        nameQuery = nameQuery!.filter { !"[ !\"#$%&'()*+,-./:;<=>?@\\[\\\\\\]^_`{|}~]+".contains($0) }
+        print(nameQuery)
+        guard let url = URL(string: "https://www.google.com/search?q=\(nameQuery!)") else {
             return
         }
         UIApplication.shared.open(url)
