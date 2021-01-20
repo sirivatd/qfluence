@@ -55,7 +55,18 @@ class LandingViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
-                self.performSegue(withIdentifier: "toMainApp", sender: self)
+                let ref = Database.database().reference(withPath: "users")
+                ref.child(user!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                    let user = snapshot.value as? NSDictionary
+                    
+                    let firstName = user!["firstName"] as? String ?? ""
+                    let lastName = user!["lastName"] as? String ?? ""
+                    let emailAddress = user!["emailAddress"] as? String ?? ""
+                    let joinedAt = user!["timeCreated"] as? String ?? ""
+                    
+                    currentUser = UserObject(firstName: firstName, lastName: lastName, emailAddress: emailAddress, joinedAt: joinedAt)
+                    self.performSegue(withIdentifier: "toMainApp", sender: self)
+                })
             }
         }
     }
