@@ -13,6 +13,7 @@ class ExploreTableViewCell: UITableViewCell {
     @IBOutlet weak var videoPlayerSuperView: UIView!
     @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var subtitleText: UILabel!
+    @IBOutlet weak var profilePicture: UIImageView!
     
     var avPlayer: AVPlayer?
     var avPlayerLayer: AVPlayerLayer?

@@ -235,7 +235,10 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func processSearch(queryString: String) {
         self.matchedInfluencers = self.influencers.filter{ (influencer: SpotlightObject) -> Bool in
-            return influencer.label.lowercased().contains(queryString.lowercased())
+            let influencerText = influencer.label.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+            let query = queryString.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            return influencerText.contains(query)
         }
         self.matchesVideos = self.videos.filter { (video: SearchVideoResult) -> Bool in
             return video.questionText.lowercased().contains(queryString.lowercased())

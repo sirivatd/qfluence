@@ -19,12 +19,15 @@ class VideoUploadViewController: UIViewController, UIImagePickerControllerDelega
     var videoUrl: String?
     
     @IBAction func saveToDatabasePressed(_ sender: Any) {
+        if idField.text == "" || questionField.text == "" || self.checkmark.isHidden == true {
+            return
+        }
         let influencerId = idField.text!
         let questionText = questionField.text!
         
         var ref = Database.database().reference()
         ref = ref.child("videos")
-        ref.child(randomString(length: 10)).setValue(["influencerId": influencerId, "questionText": questionText, "imageUrl": "na", "videoUrl": self.videoUrl!])
+        ref.child(randomString(length: 10)).setValue(["influencerId": Int(influencerId), "questionText": questionText, "imageUrl": "na", "videoUrl": self.videoUrl!])
         
         idField.text = ""
         questionField.text = ""
@@ -38,7 +41,7 @@ class VideoUploadViewController: UIViewController, UIImagePickerControllerDelega
         picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary) ?? []
         picker.mediaTypes = ["public.movie"]
         picker.videoQuality = .typeHigh
-        picker.videoExportPreset = AVAssetExportPresetHEVCHighestQuality
+        picker.videoExportPreset = AVAssetExportPresetMediumQuality
         picker.allowsEditing = true
         
         present(picker, animated: true, completion: nil)

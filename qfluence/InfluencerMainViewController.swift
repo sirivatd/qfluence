@@ -131,6 +131,19 @@ class InfluencerMainViewController: UIViewController {
         UIApplication.shared.open(url)
     }
     
+    @IBAction func googleSearchPressed(_ sender: Any) {
+        var nameQuery: String?
+        if self.selectedInfluencer?.lastName.lowercased() == "n/a" {
+            nameQuery = self.selectedInfluencer?.firstName
+        } else {
+            nameQuery = self.selectedInfluencer!.firstName + "+" + self.selectedInfluencer!.lastName
+        }
+        guard let url = URL(string: "https://www.google.com/search?q=\(nameQuery)") else {
+            return
+        }
+        UIApplication.shared.open(url)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = UIColor.black

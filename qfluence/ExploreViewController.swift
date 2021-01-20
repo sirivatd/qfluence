@@ -25,6 +25,14 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = self.exploreTableView.dequeueReusableCell(withIdentifier: "exploreCell") as! ExploreTableViewCell
         cell.videoPlayerItem = AVPlayerItem.init(url: videoURLs[indexPath.row])
         cell.questionText.text = self.exploreObjects[indexPath.row].questionText
+        cell.subtitleText.text = self.exploreObjects[indexPath.row].name
+        cell.profilePicture.downloadImageFrom(link: self.exploreObjects[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+        
+        cell.profilePicture.layer.borderWidth = 1
+        cell.profilePicture.layer.masksToBounds = false
+        cell.profilePicture.layer.borderColor = UIColor.clear.cgColor
+        cell.profilePicture.layer.cornerRadius = cell.profilePicture.frame.height/2
+        cell.profilePicture.clipsToBounds = true
         
         return cell
     }
@@ -108,7 +116,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     var aboutToBecomeInvisibleCell = -1
     var avPlayerLayer: AVPlayerLayer!
     var videoURLs = Array<URL>()
-    var exploreObjects = Array<QuestionObject>()
+    var exploreObjects = Array<SearchVideoResult>()
     
     @IBOutlet weak var exploreTableView: UITableView!
 
@@ -127,15 +135,35 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
                     let dict = snapshot.value as? NSDictionary
                     let questionText = dict!["questionText"] as! String
                     let videoUrlString = dict!["videoUrl"] as! String
-//                    let imageUrlString = dict!["imageUrl"] as! String
+                    let influencerId = dict!["influencerId"] as! Int
                         
-                    let questionObject = QuestionObject(questionText: questionText, videoUrl: videoUrlString, imageUrl: "")
-                        
-                    self.exploreObjects.append(questionObject)
-                    self.videoURLs.append(URL(string: videoUrlString)!)
+                    self.findInfluencer(influencerId: influencerId, questionText: questionText, videoUrl: videoUrlString)
                 }
             }
+        })
+    }
+    
+    func findInfluencer(influencerId: Int, questionText: String, videoUrl: String) {
+        let ref = Database.database().reference(withPath: "influencers").child("\(influencerId)")
+        ref.observeSingleEvent(of: .value, with: {(snapshot) in
+            let influencer = snapshot.value as? NSDictionary
             
+            let imageUrl = influencer!["imageUrl"] as? String
+            let firstName = influencer!["firstName"] as? String
+            let lastName = influencer!["lastName"] as? String
+            
+            var name: String?
+            
+            if lastName?.lowercased() == "n/a" {
+                name = firstName
+            } else {
+                name = firstName! + " " + lastName!
+            }
+            
+            let exploreObject = SearchVideoResult(imageUrl: imageUrl!, name: name!, videoUrl: videoUrl, questionText: questionText)
+            
+            self.exploreObjects.append(exploreObject)
+            self.videoURLs.append(URL(string: videoUrl)!)
             self.exploreTableView.reloadData()
         })
     }
