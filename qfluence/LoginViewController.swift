@@ -44,7 +44,19 @@ class LoginViewController: UIViewController {
                 strongSelf.buttonView.startCanvasAnimation()
                 strongSelf.timer = Timer.scheduledTimer(timeInterval: 3, target: strongSelf, selector: #selector(strongSelf.dismissErrorMessage), userInfo: nil, repeats: false)
                 } else {
-                    strongSelf.performSegue(withIdentifier: "toMainApp", sender: self)
+                    let uid = authResult?.user.uid
+                    let ref = Database.database().reference(withPath: "users")
+                    ref.child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+                        let user = snapshot.value as? NSDictionary
+                        
+                        let firstName = user!["firstName"] as? String ?? ""
+                        let lastName = user!["lastName"] as? String ?? ""
+                        let emailAddress = user!["emailAddress"] as? String ?? ""
+                        let joinedAt = user!["timeCreated"] as? String ?? ""
+                        
+                        currentUser = UserObject(firstName: firstName, lastName: lastName, emailAddress: emailAddress, joinedAt: joinedAt)
+                        strongSelf.performSegue(withIdentifier: "toMainApp", sender: self)
+                    })
             }
         }
     }

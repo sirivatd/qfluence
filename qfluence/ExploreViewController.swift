@@ -127,9 +127,9 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
                     let dict = snapshot.value as? NSDictionary
                     let questionText = dict!["questionText"] as! String
                     let videoUrlString = dict!["videoUrl"] as! String
-                    let imageUrlString = dict!["imageUrl"] as! String
+//                    let imageUrlString = dict!["imageUrl"] as! String
                         
-                    let questionObject = QuestionObject(questionText: questionText, videoUrl: videoUrlString, imageUrl: imageUrlString)
+                    let questionObject = QuestionObject(questionText: questionText, videoUrl: videoUrlString, imageUrl: "")
                         
                     self.exploreObjects.append(questionObject)
                     self.videoURLs.append(URL(string: videoUrlString)!)
