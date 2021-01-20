@@ -11,4 +11,6 @@ import UIKit
 class QuestionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var cellBackground: UIImageView!
+    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var name: UILabel!
 }

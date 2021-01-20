@@ -10,6 +10,14 @@ import UIKit
 import Firebase
 import Canvas
 import ScalingCarousel
+import AVKit
+
+struct SearchVideoResult {
+    let imageUrl: String
+    let name: String
+    let videoUrl: String
+    let questionText: String
+}
 
 class SearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -26,33 +34,58 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.recentlyAddedView.didScroll()
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        if collectionView == self.videoCollectionView {
+            // play video
+            let videoUrlString = self.matchesVideos[indexPath.row].videoUrl
+            
+            let url = URL(string: videoUrlString)
+            playerView = AVPlayer(url: url as! URL)
+            playerViewController.player = playerView
+            
+            // present player view controller
+            self.present(playerViewController, animated: true) {
+                self.playerViewController.player?.play()
+            }
+        } else if collectionView == self.peopleCollectionView {
+            // send to influencer page
+            self.selectedInfluencer = self.matchedInfluencers[indexPath.row]
+            self.performSegue(withIdentifier: "toInfluencer", sender: nil)
+        } else {
+            // send to influencer page
+            self.selectedInfluencer = self.recentlyAdded[indexPath.row]
+            self.performSegue(withIdentifier: "toInfluencer", sender: nil)
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.videoCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath) as! QuestionCollectionViewCell
             cell.questionText.text = self.matchesVideos[indexPath.row].questionText
+            cell.profilePicture.downloadImageFrom(link: self.matchesVideos[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+            cell.profilePicture.layer.borderWidth = 1
+            cell.profilePicture.layer.masksToBounds = false
+            cell.profilePicture.layer.borderColor = UIColor.clear.cgColor
+            cell.profilePicture.layer.cornerRadius = cell.profilePicture.frame.height/2
+            cell.profilePicture.clipsToBounds = true
+            cell.name.text = self.matchesVideos[indexPath.row].name
             
             if indexPath.row % 2 == 0 {
-                cell.cellBackground.image = UIImage(named: "qfluence_cell_background_0")
-            } else {
-                cell.cellBackground.image = UIImage(named: "qfluence_cell_background_1")
-            }
+                cell.cellBackground.image = UIImage(named: "q_red_cell_0")
+                } else {
+                cell.cellBackground.image = UIImage(named: "q_black_cell_0")
+                }
 
             return cell
         } else if collectionView == self.peopleCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "personCell", for: indexPath) as! SpotlightCollectionViewCell
-            print(self.matchedInfluencers)
-            cell.featuredImage.downloadImageFrom(link: self.matchedInfluencers[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill) 
+            cell.featuredImage.downloadImageFrom(link: self.matchedInfluencers[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
             cell.featuredLabel.text = self.matchedInfluencers[indexPath.row].label
             cell.contentView.layer.cornerRadius = 5.0
             cell.contentView.layer.borderWidth = 0.5
             cell.contentView.layer.borderColor = UIColor.clear.cgColor
             cell.contentView.layer.masksToBounds = true
-            cell.layer.shadowColor = UIColor.darkGray.cgColor
-            cell.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
-            cell.layer.shadowRadius = 1.0
-            cell.layer.shadowOpacity = 0.7
-            cell.layer.masksToBounds = false
-            cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
 
             return cell
         } else {
@@ -100,15 +133,19 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     private var influencers = [SpotlightObject]()
-    private var videos = [QuestionObject]()
+    private var videos = [SearchVideoResult]()
     private var matchedInfluencers = [SpotlightObject]()
-    private var matchesVideos = [QuestionObject]()
+    private var matchesVideos = [SearchVideoResult]()
     private var recentlyAdded = [SpotlightObject]()
+    var playerViewController = AVPlayerViewController()
+    var playerView = AVPlayer()
+    var selectedInfluencer: SpotlightObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         searchButton.layer.cornerRadius = 10
+        searchField.layer.cornerRadius = 10
         resultsView.isHidden = true
         
         fetchData()
@@ -153,16 +190,27 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                     let influencerId = dict!["influencerId"] as! Int
                     let questionText = dict!["questionText"] as! String
                     let videoUrlString = dict!["videoUrl"] as! String
-                    let imageUrlString = dict!["imageUrl"] as! String
                     
-                    let questionObject = QuestionObject(questionText: questionText, videoUrl: videoUrlString, imageUrl: imageUrlString)
-                        
-                    self.videos.append(questionObject)
+                    let influencer = self.findInfluencer(influencerId: influencerId)
+                    let imageUrlString = influencer.imageUrl
+                    let name = influencer.label
+                    
+                    let videoObject = SearchVideoResult(imageUrl: imageUrlString, name: name, videoUrl: videoUrlString, questionText: questionText)
+                    self.videos.append(videoObject)
                 }
             }
             self.recentlyAddedView.reloadData()
             self.updateMetricLabels(people: self.influencers.count, questions: self.videos.count)
         })
+    }
+    
+    func findInfluencer(influencerId: Int) -> SpotlightObject {
+        let ref = Database.database().reference(withPath: "influencers").child("\(influencerId)")
+        let filtered = self.influencers.filter { (influencer) -> Bool in
+            influencer.influencerId == influencerId
+        }
+        
+        return filtered.first!
     }
     
     func updateMetricLabels(people: Int, questions: Int) {
@@ -189,7 +237,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.matchedInfluencers = self.influencers.filter{ (influencer: SpotlightObject) -> Bool in
             return influencer.label.lowercased().contains(queryString.lowercased())
         }
-        self.matchesVideos = self.videos.filter { (video: QuestionObject) -> Bool in
+        self.matchesVideos = self.videos.filter { (video: SearchVideoResult) -> Bool in
             return video.questionText.lowercased().contains(queryString.lowercased())
         }
         
@@ -198,8 +246,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func updateResults() {
-        self.peopleLabel.text = "People (\(self.matchedInfluencers.count) matches)"
-        self.questionLabel.text = "Questions (\(self.matchesVideos.count) matches)"
+        self.peopleLabel.text = "PEOPLE (\(self.matchedInfluencers.count))"
+        self.questionLabel.text = "QUESTIONS (\(self.matchesVideos.count))"
         
         self.loadingIndicator.isHidden = true
         self.peopleCollectionView.reloadData()
@@ -210,8 +258,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func initializeHideKeyboard() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissMyKeyboard))
-        self.view.addGestureRecognizer(tap)
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissMyKeyboard))
+//        self.view.addGestureRecognizer(tap)
     }
     
     @objc func dismissMyKeyboard() {
@@ -226,5 +274,14 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         self.recentlyAddedView.deviceRotated()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toInfluencer" {
+            if let destination = segue.destination as? InfluencerMainViewController {
+                destination.title = selectedInfluencer!.label
+                destination.selectedInfluencerId = selectedInfluencer!.influencerId
+            }
+        }
     }
 }
