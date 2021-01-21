@@ -235,8 +235,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func processSearch(queryString: String) {
         self.matchedInfluencers = self.influencers.filter{ (influencer: SpotlightObject) -> Bool in
-            let influencerText = influencer.label.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
-            let query = queryString.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+            let influencerText = influencer.label.lowercased().removeWhitespace()
+            let query = queryString.lowercased().removeWhitespace()
             
             return influencerText.contains(query)
         }
@@ -288,3 +288,13 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
     }
 }
+
+extension String {
+   func replace(string:String, replacement:String) -> String {
+       return self.replacingOccurrences(of: string, with: replacement, options: NSString.CompareOptions.literal, range: nil)
+   }
+
+   func removeWhitespace() -> String {
+       return self.replace(string: " ", replacement: "")
+   }
+ }

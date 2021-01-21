@@ -28,6 +28,9 @@
 		F6533FDA25B6B8BF006628C4 /* support-system.json in Resources */ = {isa = PBXBuildFile; fileRef = F6533FD925B6B8BE006628C4 /* support-system.json */; };
 		F6533FDF25B6C6D0006628C4 /* online-school.json in Resources */ = {isa = PBXBuildFile; fileRef = F6533FDE25B6C6CF006628C4 /* online-school.json */; };
 		F6533FFB25B7443E006628C4 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6533FFA25B7443D006628C4 /* CategoryViewController.swift */; };
+		F653403425B93A7C006628C4 /* ASVideoLayerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F653403125B93A7C006628C4 /* ASVideoLayerObject.swift */; };
+		F653403525B93A7C006628C4 /* ASVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F653403225B93A7C006628C4 /* ASVideoPlayerController.swift */; };
+		F653403625B93A7C006628C4 /* ASVideoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F653403325B93A7C006628C4 /* ASVideoContainer.swift */; };
 		F66EA07C2585A0D400952008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA07B2585A0D400952008 /* AppDelegate.swift */; };
 		F66EA0812585A0D500952008 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66EA07F2585A0D500952008 /* Main.storyboard */; };
 		F66EA0832585A0D600952008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F66EA0822585A0D600952008 /* Assets.xcassets */; };
@@ -87,6 +90,9 @@
 		F6533FD925B6B8BE006628C4 /* support-system.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "support-system.json"; sourceTree = "<group>"; };
 		F6533FDE25B6C6CF006628C4 /* online-school.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "online-school.json"; sourceTree = "<group>"; };
 		F6533FFA25B7443D006628C4 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		F653403125B93A7C006628C4 /* ASVideoLayerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASVideoLayerObject.swift; sourceTree = "<group>"; };
+		F653403225B93A7C006628C4 /* ASVideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASVideoPlayerController.swift; sourceTree = "<group>"; };
+		F653403325B93A7C006628C4 /* ASVideoContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASVideoContainer.swift; sourceTree = "<group>"; };
 		F66EA0782585A0D400952008 /* qfluence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qfluence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66EA07B2585A0D400952008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F66EA0802585A0D500952008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,6 +163,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F653403025B93A7C006628C4 /* VideoPlayLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				F653403125B93A7C006628C4 /* ASVideoLayerObject.swift */,
+				F653403225B93A7C006628C4 /* ASVideoPlayerController.swift */,
+				F653403325B93A7C006628C4 /* ASVideoContainer.swift */,
+			);
+			path = VideoPlayLibrary;
+			sourceTree = "<group>";
+		};
 		F66EA06F2585A0D400952008 = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +199,7 @@
 		F66EA07A2585A0D400952008 /* qfluence */ = {
 			isa = PBXGroup;
 			children = (
+				F653403025B93A7C006628C4 /* VideoPlayLibrary */,
 				F6533FC525B63F37006628C4 /* 45056-contact-us.json */,
 				F66EA07B2585A0D400952008 /* AppDelegate.swift */,
 				F61818C125AC134E00A01613 /* StrokeColorAnimation.swift */,
@@ -425,6 +442,7 @@
 				F68FD69F25ACC859008257E0 /* LandingViewController.swift in Sources */,
 				F6AF3EDE25873D7900474738 /* SpotlightViewController.swift in Sources */,
 				F61DD0C225AAF99300424CB0 /* InfluencerVideoTableViewCell.swift in Sources */,
+				F653403525B93A7C006628C4 /* ASVideoPlayerController.swift in Sources */,
 				F61DD0C025AAF98300424CB0 /* InfluencerHeaderTableViewCell.swift in Sources */,
 				F68BD03225B1207600F083CD /* VideoUploadViewController.swift in Sources */,
 				F68FD6A325ACC870008257E0 /* SignUpViewController.swift in Sources */,
@@ -440,8 +458,10 @@
 				F61818BE25AC127500A01613 /* RotationAnimation.swift in Sources */,
 				F68BD02825B0E9EC00F083CD /* ExploreTableViewCell.swift in Sources */,
 				F696985725B0011900566999 /* CountingLabel.swift in Sources */,
+				F653403425B93A7C006628C4 /* ASVideoLayerObject.swift in Sources */,
 				F68BD02D25B11FB000F083CD /* FirebaseStorageManager.swift in Sources */,
 				F66EA07C2585A0D400952008 /* AppDelegate.swift in Sources */,
+				F653403625B93A7C006628C4 /* ASVideoContainer.swift in Sources */,
 				F6AF3EE2258740A600474738 /* SpotlightCollectionViewCell.swift in Sources */,
 				F68FD6A125ACC862008257E0 /* LoginViewController.swift in Sources */,
 				F68BD02325B0E9C900F083CD /* ExploreViewController.swift in Sources */,

@@ -18,6 +18,9 @@ class SpotlightCollectionViewCell: ScalingCarouselCell {
     @IBOutlet weak var tintView: UIView!
     
     override func prepareForReuse() {
+        if self.featuredLabel != nil {
+            self.featuredLabel.text = ""
+        }
         if self.featuredImage != nil {
             self.featuredImage.image = nil
         }

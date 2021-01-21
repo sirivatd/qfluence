@@ -22,17 +22,19 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.exploreTableView.dequeueReusableCell(withIdentifier: "exploreCell") as! ExploreTableViewCell
-        cell.videoPlayerItem = AVPlayerItem.init(url: videoURLs[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "exploreCell") as! ExploreTableViewCell
+//        cell.videoPlayerItem = AVPlayerItem.init(url: videoURLs[indexPath.row])
         cell.questionText.text = self.exploreObjects[indexPath.row].questionText
         cell.subtitleText.text = self.exploreObjects[indexPath.row].name
         cell.profilePicture.downloadImageFrom(link: self.exploreObjects[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
-        
+//
         cell.profilePicture.layer.borderWidth = 1
         cell.profilePicture.layer.masksToBounds = false
         cell.profilePicture.layer.borderColor = UIColor.clear.cgColor
         cell.profilePicture.layer.cornerRadius = cell.profilePicture.frame.height/2
         cell.profilePicture.clipsToBounds = true
+        
+        cell.configureCell(videoUrl: videoURLs[indexPath.row])
         
         return cell
     }
@@ -41,81 +43,82 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         return self.view.frame.height
        }
 
-       func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
            return 0
-       }
-    
-    func playVideoOnTheCell(cell : ExploreTableViewCell, indexPath : IndexPath){
-        cell.startPlayback()
-    }
-
-    func stopPlayBack(cell : ExploreTableViewCell, indexPath : IndexPath){
-        cell.stopPlayback()
-    }
-
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        print("end = \(indexPath)")
-        if let videoCell = cell as? ExploreTableViewCell {
-            videoCell.stopPlayback()
-        }
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-           let indexPaths = self.exploreTableView.indexPathsForVisibleRows
-           var cells = [Any]()
-           for ip in indexPaths!{
-               if let videoCell = self.exploreTableView.cellForRow(at: ip) as? ExploreTableViewCell{
-                   cells.append(videoCell)
-               }
-           }
-           let cellCount = cells.count
-           if cellCount == 0 {return}
-           if cellCount == 1{
-               if visibleIP != indexPaths?[0]{
-                   visibleIP = indexPaths?[0]
-               }
-               if let videoCell = cells.last! as? ExploreTableViewCell{
-                   self.playVideoOnTheCell(cell: videoCell, indexPath: (indexPaths?.last)!)
-               }
-           }
-           if cellCount >= 2 {
-               for i in 0..<cellCount{
-                   let cellRect = self.exploreTableView.rectForRow(at: (indexPaths?[i])!)
-                   let intersect = cellRect.intersection(self.exploreTableView.bounds)
-   //                curerntHeight is the height of the cell that
-   //                is visible
-                   let currentHeight = intersect.height
-                   print("\n \(currentHeight)")
-                   let cellHeight = (cells[i] as AnyObject).frame.size.height
-   //                0.95 here denotes how much you want the cell to display
-   //                for it to mark itself as visible,
-   //                .95 denotes 95 percent,
-   //                you can change the values accordingly
-                   if currentHeight > (cellHeight * 0.95){
-                       if visibleIP != indexPaths?[i]{
-                           visibleIP = indexPaths?[i]
-                           if let videoCell = cells[i] as? ExploreTableViewCell{
-                               self.playVideoOnTheCell(cell: videoCell, indexPath: (indexPaths?[i])!)
-                           }
-                       }
-                   }
-                   else{
-                       if aboutToBecomeInvisibleCell != indexPaths?[i].row{
-                           aboutToBecomeInvisibleCell = (indexPaths?[i].row)!
-                           if let videoCell = cells[i] as? ExploreTableViewCell{
-                               self.stopPlayBack(cell: videoCell, indexPath: (indexPaths?[i])!)
-                           }
+    
+//    func playVideoOnTheCell(cell : ExploreTableViewCell, indexPath : IndexPath){
+//        cell.startPlayback()
+//    }
+//
+//    func stopPlayBack(cell : ExploreTableViewCell, indexPath : IndexPath){
+//        cell.stopPlayback()
+//    }
 
-                       }
-                   }
-               }
-           }
-       }
+//    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        print("end = \(indexPath)")
+//        if let videoCell = cell as? ExploreTableViewCell {
+//            videoCell.stopPlayback()
+//        }
+//    }
+//    
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//           let indexPaths = self.exploreTableView.indexPathsForVisibleRows
+//           var cells = [Any]()
+//           for ip in indexPaths!{
+//               if let videoCell = self.exploreTableView.cellForRow(at: ip) as? ExploreTableViewCell{
+//                   cells.append(videoCell)
+//               }
+//           }
+//           let cellCount = cells.count
+//           if cellCount == 0 {return}
+//           if cellCount == 1{
+//               if visibleIP != indexPaths?[0]{
+//                   visibleIP = indexPaths?[0]
+//               }
+//               if let videoCell = cells.last! as? ExploreTableViewCell{
+//                   self.playVideoOnTheCell(cell: videoCell, indexPath: (indexPaths?.last)!)
+//               }
+//           }
+//           if cellCount >= 2 {
+//               for i in 0..<cellCount{
+//                   let cellRect = self.exploreTableView.rectForRow(at: (indexPaths?[i])!)
+//                   let intersect = cellRect.intersection(self.exploreTableView.bounds)
+//   //                curerntHeight is the height of the cell that
+//   //                is visible
+//                   let currentHeight = intersect.height
+//                   print("\n \(currentHeight)")
+//                   let cellHeight = (cells[i] as AnyObject).frame.size.height
+//   //                0.95 here denotes how much you want the cell to display
+//   //                for it to mark itself as visible,
+//   //                .95 denotes 95 percent,
+//   //                you can change the values accordingly
+//                   if currentHeight > (cellHeight * 0.95){
+//                       if visibleIP != indexPaths?[i]{
+//                           visibleIP = indexPaths?[i]
+//                           if let videoCell = cells[i] as? ExploreTableViewCell{
+//                               self.playVideoOnTheCell(cell: videoCell, indexPath: (indexPaths?[i])!)
+//                           }
+//                       }
+//                   }
+//                   else{
+//                       if aboutToBecomeInvisibleCell != indexPaths?[i].row{
+//                           aboutToBecomeInvisibleCell = (indexPaths?[i].row)!
+//                           if let videoCell = cells[i] as? ExploreTableViewCell{
+//                               self.stopPlayBack(cell: videoCell, indexPath: (indexPaths?[i])!)
+//                           }
+//
+//                       }
+//                   }
+//               }
+//           }
+//       }
     
     var visibleIP : IndexPath?
     var aboutToBecomeInvisibleCell = -1
     var avPlayerLayer: AVPlayerLayer!
-    var videoURLs = Array<URL>()
+    var videoURLs = Array<String>()
     var exploreObjects = Array<SearchVideoResult>()
     
     @IBOutlet weak var exploreTableView: UITableView!
@@ -123,8 +126,11 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchVideos()
-        visibleIP = IndexPath.init(row: 0, section: 0)
+//        visibleIP = IndexPath.init(row: 0, section: 0)
         self.exploreTableView.isPagingEnabled = true
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.appEnteredFromBackground),
+                                               name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     func fetchVideos() {
@@ -163,34 +169,66 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
             let exploreObject = SearchVideoResult(imageUrl: imageUrl!, name: name!, videoUrl: videoUrl, questionText: questionText)
             
             self.exploreObjects.append(exploreObject)
-            self.videoURLs.append(URL(string: videoUrl)!)
+            self.videoURLs.append(videoUrl)
             self.exploreTableView.reloadData()
         })
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        let indexPaths = self.exploreTableView.indexPathsForVisibleRows
-
-        for i in indexPaths! {
-            let cell = self.exploreTableView.cellForRow(at: i) as? ExploreTableViewCell
-            cell?.stopPlayback()
+    override func viewDidAppear(_ animated: Bool) {
+        pausePlayeVideos()
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let videoCell = cell as? ASAutoPlayVideoLayerContainer, let _ = videoCell.videoURL {
+            ASVideoPlayerController.sharedVideoPlayer.removeLayerFor(cell: videoCell)
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        let indexPaths = self.exploreTableView.indexPathsForVisibleRows
-        var cells = [Any]()
-        
-        if indexPaths != nil {
-            for ip in indexPaths!{
-                if let videoCell = self.exploreTableView.cellForRow(at: ip) as? ExploreTableViewCell{
-                    cells.append(videoCell)
-                }
-            }
-            
-            if let videoCell = cells.first as? ExploreTableViewCell{
-                self.playVideoOnTheCell(cell: videoCell, indexPath: (indexPaths?[0])!)
-            }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pausePlayeVideos()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            pausePlayeVideos()
         }
     }
+    
+    func pausePlayeVideos(){
+        ASVideoPlayerController.sharedVideoPlayer.pausePlayeVideosFor(tableView: self.exploreTableView)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        ASVideoPlayerController.sharedVideoPlayer.pauseAllVideos(tableView: self.exploreTableView)
+    }
+    
+    @objc func appEnteredFromBackground() {
+        ASVideoPlayerController.sharedVideoPlayer.pausePlayeVideosFor(tableView: self.exploreTableView, appEnteredFromBackground: true)
+    }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        let indexPaths = self.exploreTableView.indexPathsForVisibleRows
+//
+//        for i in indexPaths! {
+//            let cell = self.exploreTableView.cellForRow(at: i) as? ExploreTableViewCell
+//            cell?.stopPlayback()
+//        }
+//    }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        let indexPaths = self.exploreTableView.indexPathsForVisibleRows
+//        var cells = [Any]()
+//
+//        if indexPaths != nil {
+//            for ip in indexPaths!{
+//                if let videoCell = self.exploreTableView.cellForRow(at: ip) as? ExploreTableViewCell{
+//                    cells.append(videoCell)
+//                }
+//            }
+//
+//            if let videoCell = cells.first as? ExploreTableViewCell{
+//                self.playVideoOnTheCell(cell: videoCell, indexPath: (indexPaths?[0])!)
+//            }
+//        }
+//    }
 }
