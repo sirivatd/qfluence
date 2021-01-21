@@ -23,9 +23,16 @@ struct ExploreObject {
     let videoUrl: String
     let questionText: String
     let videoKey: String
+    let influencerId: Int
 }
 
-class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ExploreTableViewCellDelegate {
+    func didPressButton(_ tag: Int) {
+        let object = self.exploreObjects[tag]
+        self.selectedObject = object
+        self.performSegue(withIdentifier: "showInfluencer", sender: self)
+    }
+    
     @IBOutlet weak var tutorialView: UIView!
     @IBOutlet weak var animationView: AnimationView!
     
@@ -35,6 +42,8 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exploreCell") as! ExploreTableViewCell
+        cell.cellDelegate = self
+        cell.profileButton.tag = indexPath.row
         cell.questionText.text = self.exploreObjects[indexPath.row].questionText
         cell.subtitleText.text = self.exploreObjects[indexPath.row].name
         cell.profilePicture.downloadImageFrom(link: self.exploreObjects[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
@@ -44,7 +53,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.profilePicture.layer.borderColor = UIColor.clear.cgColor
         cell.profilePicture.layer.cornerRadius = cell.profilePicture.frame.height/2
         cell.profilePicture.clipsToBounds = true
-        
+    
         cell.configureCell(videoUrl: self.exploreObjects[indexPath.row].videoUrl)
         
         return cell
@@ -59,22 +68,12 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if self.exploreObjects.count - indexPath.row < 3 {
+        // lazy load current set
+        if self.totalCount - indexPath.row < 5 {
             // fetch more
-            let currentCount = self.exploreObjects.count
-            var newObjects: [ExploreObject]?
-            
-            self.exploreObjects = self.exploreObjects + self.allExploreObjects.dropFirst(10)
+            self.exploreObjects = self.exploreObjects + self.allExploreObjects.dropLast(25)
             self.exploreTableView.reloadData()
         }
-    }
-    
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        if self.tutorialView.isHidden {
-            return
-        }
-        
-        self.tutorialView.isHidden = true
     }
     
     var visibleIP : IndexPath?
@@ -83,24 +82,23 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     var videoURLs = Array<String>()
     var exploreObjects = Array<ExploreObject>()
     var allExploreObjects = Array<ExploreObject>()
+    var firstLoad: Bool = true
+    var lastKey: String?
+    var totalCount: Int = 0
+    var selectedObject: ExploreObject?
     
     @IBOutlet weak var exploreTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchVideos()
-        self.exploreTableView.isPagingEnabled = true
-        animationView.contentMode = .scaleAspectFill
-        animationView.loopMode = .loop
-        animationView.play()
-        
-        var frame = CGRect.zero
-        frame.size.height = .leastNormalMagnitude
-        self.exploreTableView.tableHeaderView = UIView(frame: frame)
+                
+        self.tutorialView.layer.cornerRadius = 15.0
+        self.exploreTableView.contentInsetAdjustmentBehavior = .never
     }
     
     func fetchVideos() {
-        let videoRef = Database.database().reference(withPath: "videos").queryLimited(toLast: 200)
+        let videoRef = Database.database().reference(withPath: "videos").queryLimited(toLast: 500)
         videoRef.observeSingleEvent(of: .value, with: { (snapshot) in
             let firebaseDispatch = DispatchGroup()
             for video in snapshot.children {
@@ -116,22 +114,14 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }
             firebaseDispatch.notify(queue: .main) {
-                print("All done!")
-                print(self.allExploreObjects.count)
+                self.lastKey = self.allExploreObjects.last?.videoKey
+                self.totalCount = self.allExploreObjects.count
                 self.allExploreObjects = self.allExploreObjects.shuffled()
-                self.exploreObjects = Array(self.allExploreObjects.prefix(10))
-                print(self.exploreObjects)
+                self.exploreObjects = Array(self.allExploreObjects.dropLast(25))
+
                 self.exploreTableView.reloadData()
             }
         })
-    }
-    
-    func updateLocalData() {
-        self.allExploreObjects = self.allExploreObjects.shuffled()
-        self.exploreObjects = Array(self.allExploreObjects.dropFirst(20))
-        print(self.exploreObjects)
-        print(self.allExploreObjects)
-        self.exploreTableView.reloadData()
     }
     
     func findInfluencer(influencerId: Int, questionText: String, videoUrl: String, videoKey: String, dispatch: DispatchGroup) {
@@ -150,18 +140,23 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
             } else {
                 name = firstName! + " " + lastName!
             }
-            
-            let exploreObject = ExploreObject(imageUrl: imageUrl!, name: name!, videoUrl: videoUrl, questionText: questionText, videoKey: videoKey)
+                        
+            let exploreObject = ExploreObject(imageUrl: imageUrl!, name: name!, videoUrl: videoUrl, questionText: questionText, videoKey: videoKey, influencerId: influencerId)
             self.allExploreObjects.append(exploreObject)
             dispatch.leave()
-//            self.videoURLs.append(videoUrl)
-//            self.exploreTableView.reloadData()
         })
     }
     
     override func viewDidAppear(_ animated: Bool) {
         pausePlayeVideos()
+        ASVideoPlayerController.sharedVideoPlayer.mute = false
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        if firstLoad {
+            animationView.contentMode = .scaleAspectFill
+            animationView.loopMode = .loop
+            animationView.play()
+        }
     }
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -178,6 +173,16 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         if !decelerate {
             pausePlayeVideos()
         }
+        
+        if self.tutorialView.isHidden {
+            return
+        }
+        
+        self.tutorialView.isHidden = true
+        self.firstLoad = false
+        ASVideoPlayerController.sharedVideoPlayer.mute = true
+
+        self.performSegue(withIdentifier: "toOptimize", sender: nil)
     }
     
     func pausePlayeVideos(){
@@ -188,33 +193,12 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         ASVideoPlayerController.sharedVideoPlayer.pauseAllVideos(tableView: self.exploreTableView)
     }
     
-//    @objc func appEnteredFromBackground() {
-//        ASVideoPlayerController.sharedVideoPlayer.pausePlayeVideosFor(tableView: self.exploreTableView, appEnteredFromBackground: true)
-//    }
-    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        let indexPaths = self.exploreTableView.indexPathsForVisibleRows
-//
-//        for i in indexPaths! {
-//            let cell = self.exploreTableView.cellForRow(at: i) as? ExploreTableViewCell
-//            cell?.stopPlayback()
-//        }
-//    }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        let indexPaths = self.exploreTableView.indexPathsForVisibleRows
-//        var cells = [Any]()
-//
-//        if indexPaths != nil {
-//            for ip in indexPaths!{
-//                if let videoCell = self.exploreTableView.cellForRow(at: ip) as? ExploreTableViewCell{
-//                    cells.append(videoCell)
-//                }
-//            }
-//
-//            if let videoCell = cells.first as? ExploreTableViewCell{
-//                self.playVideoOnTheCell(cell: videoCell, indexPath: (indexPaths?[0])!)
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showInfluencer" {
+            if let destination = segue.destination as? InfluencerMainViewController {
+                destination.title = self.selectedObject!.name
+                destination.selectedInfluencerId = self.selectedObject!.influencerId
+            }
+        }
+    }
 }

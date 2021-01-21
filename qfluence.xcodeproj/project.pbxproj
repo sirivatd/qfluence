@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4EDDAD66C7BCCC70B1C9C787 /* Pods_qfluence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FA08AAC984A4C5ED0C4425 /* Pods_qfluence.framework */; };
 		9C2B497625AEB18900AAC9F7 /* OHCircleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2B497525AEB18900AAC9F7 /* OHCircleSegue.swift */; };
+		F606E3AA25B984D80020D034 /* OptimizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F606E3A925B984D80020D034 /* OptimizeViewController.swift */; };
+		F606E3AF25B98D630020D034 /* checkmark.json in Resources */ = {isa = PBXBuildFile; fileRef = F606E3AE25B98D630020D034 /* checkmark.json */; };
+		F606E3B425B990470020D034 /* optimize.json in Resources */ = {isa = PBXBuildFile; fileRef = F606E3B325B990470020D034 /* optimize.json */; };
 		F61818B625AC098900A01613 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61818B525AC098900A01613 /* QuestionTableViewCell.swift */; };
 		F61818B825AC0FBB00A01613 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61818B725AC0FBB00A01613 /* ProgressView.swift */; };
 		F61818BA25AC0FDF00A01613 /* ProgressShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61818B925AC0FDF00A01613 /* ProgressShapeLayer.swift */; };
@@ -75,6 +78,9 @@
 		83FA08AAC984A4C5ED0C4425 /* Pods_qfluence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_qfluence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C2B497525AEB18900AAC9F7 /* OHCircleSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OHCircleSegue.swift; sourceTree = "<group>"; };
 		E50E4099EF16CCFD024EFA22 /* Pods-qfluence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qfluence.release.xcconfig"; path = "Target Support Files/Pods-qfluence/Pods-qfluence.release.xcconfig"; sourceTree = "<group>"; };
+		F606E3A925B984D80020D034 /* OptimizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimizeViewController.swift; sourceTree = "<group>"; };
+		F606E3AE25B98D630020D034 /* checkmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = checkmark.json; sourceTree = "<group>"; };
+		F606E3B325B990470020D034 /* optimize.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = optimize.json; sourceTree = "<group>"; };
 		F61818B525AC098900A01613 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		F61818B725AC0FBB00A01613 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		F61818B925AC0FDF00A01613 /* ProgressShapeLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressShapeLayer.swift; sourceTree = "<group>"; };
@@ -203,6 +209,7 @@
 			children = (
 				F653403025B93A7C006628C4 /* VideoPlayLibrary */,
 				F6533FC525B63F37006628C4 /* 45056-contact-us.json */,
+				F606E3AE25B98D630020D034 /* checkmark.json */,
 				F653403A25B94923006628C4 /* swipe-up.json */,
 				F66EA07B2585A0D400952008 /* AppDelegate.swift */,
 				F61818C125AC134E00A01613 /* StrokeColorAnimation.swift */,
@@ -210,6 +217,7 @@
 				F6533FDE25B6C6CF006628C4 /* online-school.json */,
 				9C2B497525AEB18900AAC9F7 /* OHCircleSegue.swift */,
 				F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */,
+				F606E3B325B990470020D034 /* optimize.json */,
 				F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */,
 				F61DD0BD25AAEABD00424CB0 /* InfluencerMainViewController.swift */,
 				F66EA07F2585A0D500952008 /* Main.storyboard */,
@@ -237,6 +245,7 @@
 				F68BD03125B1207600F083CD /* VideoUploadViewController.swift */,
 				F6533F4C25B6358A006628C4 /* OnboardingViewController.swift */,
 				F6533FFA25B7443D006628C4 /* CategoryViewController.swift */,
+				F606E3A925B984D80020D034 /* OptimizeViewController.swift */,
 			);
 			path = qfluence;
 			sourceTree = "<group>";
@@ -366,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F61DD0C525AB0D8700424CB0 /* Podfile in Resources */,
+				F606E3AF25B98D630020D034 /* checkmark.json in Resources */,
 				F6533FDA25B6B8BF006628C4 /* support-system.json in Resources */,
 				F66EA0862585A0D600952008 /* LaunchScreen.storyboard in Resources */,
 				F66EA0832585A0D600952008 /* Assets.xcassets in Resources */,
@@ -374,6 +384,7 @@
 				F66EA0812585A0D500952008 /* Main.storyboard in Resources */,
 				F653403B25B94923006628C4 /* swipe-up.json in Resources */,
 				F61DD0CB25ABD0A100424CB0 /* GoogleService-Info.plist in Resources */,
+				F606E3B425B990470020D034 /* optimize.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +456,7 @@
 				F61818B625AC098900A01613 /* QuestionTableViewCell.swift in Sources */,
 				F68FD69F25ACC859008257E0 /* LandingViewController.swift in Sources */,
 				F6AF3EDE25873D7900474738 /* SpotlightViewController.swift in Sources */,
+				F606E3AA25B984D80020D034 /* OptimizeViewController.swift in Sources */,
 				F61DD0C225AAF99300424CB0 /* InfluencerVideoTableViewCell.swift in Sources */,
 				F653403525B93A7C006628C4 /* ASVideoPlayerController.swift in Sources */,
 				F61DD0C025AAF98300424CB0 /* InfluencerHeaderTableViewCell.swift in Sources */,

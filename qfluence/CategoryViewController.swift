@@ -16,10 +16,10 @@ class CategoryViewController: UIViewController {
 
         navigationController?.navigationBar.barTintColor = UIColor.black
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        if selectedCategory != nil {
-            navigationController?.title = selectedCategory!
-        }
+//        
+//        if selectedCategory != nil {
+//            navigationController?.title = selectedCategory!
+//        }
     }
     
 

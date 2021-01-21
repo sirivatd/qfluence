@@ -200,6 +200,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
 
 extension UIImageView {
     func downloadImageFrom(link:String, contentMode: UIView.ContentMode) {
+        self.image = nil
         URLSession.shared.dataTask( with: NSURL(string:link)! as URL, completionHandler: {
             (data, response, error) -> Void in
             DispatchQueue.main.async {

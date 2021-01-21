@@ -16,20 +16,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qfluence_full_logo" translatesAutoresizingMaskIntoConstraints="NO" id="TVP-lc-qAI">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <rect key="frame" x="88" y="281" width="198" height="105"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="RK7-sx-sSX"/>
-                                    <constraint firstAttribute="height" constant="128" id="gG4-rG-fX0"/>
+                                    <constraint firstAttribute="width" constant="198" id="RK7-sx-sSX"/>
+                                    <constraint firstAttribute="height" constant="105" id="gG4-rG-fX0"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TVP-lc-qAI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="269" id="0uU-vS-go0"/>
-                            <constraint firstItem="TVP-lc-qAI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="6Sk-Dm-VIL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TVP-lc-qAI" secondAttribute="trailing" constant="68" id="cR2-0R-CLY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TVP-lc-qAI" secondAttribute="bottom" constant="270" id="tqJ-dD-rrS"/>
+                            <constraint firstItem="TVP-lc-qAI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="281" id="0uU-vS-go0"/>
+                            <constraint firstItem="TVP-lc-qAI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="6Sk-Dm-VIL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TVP-lc-qAI" secondAttribute="trailing" constant="89" id="cR2-0R-CLY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TVP-lc-qAI" secondAttribute="bottom" constant="281" id="tqJ-dD-rrS"/>
                         </constraints>
                     </view>
                 </viewController>
