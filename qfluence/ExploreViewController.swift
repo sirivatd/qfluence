@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import Firebase
+import Lottie
 
 struct QuestionObject {
     let questionText: String
@@ -17,6 +18,8 @@ struct QuestionObject {
 }
 
 class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tutorialView: UIView!
+    @IBOutlet weak var animationView: AnimationView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.videoURLs.count
     }
@@ -115,6 +118,14 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
 //           }
 //       }
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if self.tutorialView.isHidden {
+            return
+        }
+        
+        self.tutorialView.isHidden = true
+    }
+    
     var visibleIP : IndexPath?
     var aboutToBecomeInvisibleCell = -1
     var avPlayerLayer: AVPlayerLayer!
@@ -128,9 +139,13 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         fetchVideos()
 //        visibleIP = IndexPath.init(row: 0, section: 0)
         self.exploreTableView.isPagingEnabled = true
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.appEnteredFromBackground),
-                                               name: UIApplication.willEnterForegroundNotification, object: nil)
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        animationView.play()
+        
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(self.appEnteredFromBackground),
+//                                               name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     func fetchVideos() {
@@ -176,6 +191,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidAppear(_ animated: Bool) {
         pausePlayeVideos()
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -202,9 +218,9 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         ASVideoPlayerController.sharedVideoPlayer.pauseAllVideos(tableView: self.exploreTableView)
     }
     
-    @objc func appEnteredFromBackground() {
-        ASVideoPlayerController.sharedVideoPlayer.pausePlayeVideosFor(tableView: self.exploreTableView, appEnteredFromBackground: true)
-    }
+//    @objc func appEnteredFromBackground() {
+//        ASVideoPlayerController.sharedVideoPlayer.pausePlayeVideosFor(tableView: self.exploreTableView, appEnteredFromBackground: true)
+//    }
     
 //    override func viewWillDisappear(_ animated: Bool) {
 //        let indexPaths = self.exploreTableView.indexPathsForVisibleRows

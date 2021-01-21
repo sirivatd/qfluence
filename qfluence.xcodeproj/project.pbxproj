@@ -31,6 +31,7 @@
 		F653403425B93A7C006628C4 /* ASVideoLayerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F653403125B93A7C006628C4 /* ASVideoLayerObject.swift */; };
 		F653403525B93A7C006628C4 /* ASVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F653403225B93A7C006628C4 /* ASVideoPlayerController.swift */; };
 		F653403625B93A7C006628C4 /* ASVideoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F653403325B93A7C006628C4 /* ASVideoContainer.swift */; };
+		F653403B25B94923006628C4 /* swipe-up.json in Resources */ = {isa = PBXBuildFile; fileRef = F653403A25B94923006628C4 /* swipe-up.json */; };
 		F66EA07C2585A0D400952008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA07B2585A0D400952008 /* AppDelegate.swift */; };
 		F66EA0812585A0D500952008 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66EA07F2585A0D500952008 /* Main.storyboard */; };
 		F66EA0832585A0D600952008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F66EA0822585A0D600952008 /* Assets.xcassets */; };
@@ -93,6 +94,7 @@
 		F653403125B93A7C006628C4 /* ASVideoLayerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASVideoLayerObject.swift; sourceTree = "<group>"; };
 		F653403225B93A7C006628C4 /* ASVideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASVideoPlayerController.swift; sourceTree = "<group>"; };
 		F653403325B93A7C006628C4 /* ASVideoContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASVideoContainer.swift; sourceTree = "<group>"; };
+		F653403A25B94923006628C4 /* swipe-up.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "swipe-up.json"; sourceTree = "<group>"; };
 		F66EA0782585A0D400952008 /* qfluence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qfluence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66EA07B2585A0D400952008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F66EA0802585A0D500952008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				F653403025B93A7C006628C4 /* VideoPlayLibrary */,
 				F6533FC525B63F37006628C4 /* 45056-contact-us.json */,
+				F653403A25B94923006628C4 /* swipe-up.json */,
 				F66EA07B2585A0D400952008 /* AppDelegate.swift */,
 				F61818C125AC134E00A01613 /* StrokeColorAnimation.swift */,
 				F6533FD925B6B8BE006628C4 /* support-system.json */,
@@ -369,6 +372,7 @@
 				F6533FDF25B6C6D0006628C4 /* online-school.json in Resources */,
 				F6533FC625B63F37006628C4 /* 45056-contact-us.json in Resources */,
 				F66EA0812585A0D500952008 /* Main.storyboard in Resources */,
+				F653403B25B94923006628C4 /* swipe-up.json in Resources */,
 				F61DD0CB25ABD0A100424CB0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

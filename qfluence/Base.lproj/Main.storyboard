@@ -105,19 +105,56 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ntv-u5-02L"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyW-gt-Eww">
+                                <rect key="frame" x="91" y="103" width="209" height="169"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CoH-ep-Yxs" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="58" y="8" width="93" height="107"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="107" id="HCf-Af-8cc"/>
+                                            <constraint firstAttribute="width" constant="93" id="duE-Sc-54t"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="swipe-up"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to explore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpE-KB-jOu">
+                                        <rect key="frame" x="0.0" y="115" width="209" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="0tK-NQ-nAb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="CoH-ep-Yxs" firstAttribute="top" secondItem="zyW-gt-Eww" secondAttribute="top" constant="8" id="2KO-a7-Uqv"/>
+                                    <constraint firstItem="CoH-ep-Yxs" firstAttribute="centerX" secondItem="zyW-gt-Eww" secondAttribute="centerX" id="Bhz-mh-Nnd"/>
+                                    <constraint firstItem="NpE-KB-jOu" firstAttribute="leading" secondItem="zyW-gt-Eww" secondAttribute="leading" id="YUm-8g-XiL"/>
+                                    <constraint firstAttribute="height" constant="169" id="a8W-vg-6Uo"/>
+                                    <constraint firstItem="NpE-KB-jOu" firstAttribute="top" secondItem="CoH-ep-Yxs" secondAttribute="bottom" id="cUP-LP-Moc"/>
+                                    <constraint firstAttribute="trailing" secondItem="NpE-KB-jOu" secondAttribute="trailing" id="fDC-y6-MZI"/>
+                                    <constraint firstAttribute="width" constant="209" id="ipo-de-4kT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="yO7-FB-5gZ" secondAttribute="bottom" id="28W-Fh-jqa"/>
                             <constraint firstItem="yO7-FB-5gZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2pK-CR-h1G"/>
+                            <constraint firstItem="zyW-gt-Eww" firstAttribute="leading" secondItem="yO7-FB-5gZ" secondAttribute="trailing" constant="-299" id="6N3-Gq-Ajb"/>
+                            <constraint firstItem="zyW-gt-Eww" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="Lso-lr-y7E"/>
                             <constraint firstItem="yO7-FB-5gZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="TT5-nZ-KR7"/>
                             <constraint firstItem="yO7-FB-5gZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="y6s-Sq-25X"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Explore" id="8As-0q-kNq"/>
                     <connections>
+                        <outlet property="animationView" destination="CoH-ep-Yxs" id="sgv-Lh-5rP"/>
                         <outlet property="exploreTableView" destination="yO7-FB-5gZ" id="XYH-we-l5K"/>
+                        <outlet property="tutorialView" destination="zyW-gt-Eww" id="KgG-nB-VEV"/>
                         <segue destination="9YI-gQ-MFO" kind="show" identifier="showInfluencer" id="b5C-Js-Qbw"/>
                     </connections>
                 </viewController>
@@ -2418,6 +2455,7 @@
     </scenes>
     <designables>
         <designable name="1bt-lb-dDY"/>
+        <designable name="CoH-ep-Yxs"/>
         <designable name="JAP-LD-ndo"/>
         <designable name="aVy-YH-Z1m"/>
     </designables>
