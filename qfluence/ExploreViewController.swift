@@ -49,11 +49,18 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.subtitleText.text = self.exploreObjects[indexPath.row].name
         cell.profilePicture.downloadImageFrom(link: self.exploreObjects[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
 
-        cell.profilePicture.layer.borderWidth = 1
+        cell.profilePicture.layer.borderWidth = 2.5
+        cell.profilePicture.image = UIImage(named: "q_default_pro_pic")
         cell.profilePicture.layer.masksToBounds = false
-        cell.profilePicture.layer.borderColor = UIColor.clear.cgColor
+        cell.profilePicture.layer.borderColor = UIColor.red.cgColor
         cell.profilePicture.layer.cornerRadius = cell.profilePicture.frame.height/2
         cell.profilePicture.clipsToBounds = true
+        
+        cell.profilePicture.layer.shadowColor = UIColor.black.cgColor
+        cell.profilePicture.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
+        cell.profilePicture.layer.shadowRadius = 1.0
+        cell.profilePicture.layer.shadowOpacity = 0.7
+        cell.profilePicture.layer.shadowPath = UIBezierPath(roundedRect: cell.profilePicture.bounds, cornerRadius: cell.profilePicture.layer.cornerRadius).cgPath
     
         cell.configureCell(videoUrl: self.exploreObjects[indexPath.row].videoUrl)
         
@@ -69,8 +76,9 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if !self.firstLoad && self.totalCount - indexPath.row == 5 {
+        if !self.firstLoad && self.totalCount - indexPath.row == 7                                                                     {
             // fetch more
+            print("Fetching")
             self.firstLoad = true
             self.exploreTableView.estimatedRowHeight = 0;
             self.exploreTableView.estimatedSectionHeaderHeight = 0;
