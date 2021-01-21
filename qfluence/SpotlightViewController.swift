@@ -85,12 +85,6 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         self.featuredCollectionView.reloadData()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-        URLSession.shared.invalidateAndCancel()
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.popularCollectionView {
             return popularObjects.count

@@ -30,7 +30,8 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     func didPressButton(_ tag: Int) {
         let object = self.exploreObjects[tag]
         self.selectedObject = object
-        self.performSegue(withIdentifier: "showInfluencer", sender: self)
+
+        self.performSegue(withIdentifier: "showInfluencer", sender: nil)
     }
     
     @IBOutlet weak var tutorialView: UIView!
@@ -151,6 +152,8 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         pausePlayeVideos()
         ASVideoPlayerController.sharedVideoPlayer.mute = false
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.tintColor = UIColor.red
         
         if firstLoad {
             animationView.contentMode = .scaleAspectFill

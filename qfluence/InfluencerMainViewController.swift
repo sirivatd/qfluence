@@ -153,9 +153,6 @@ class InfluencerMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-
         self.view.addSubview(loadingIndicator)
         fetchVideos()
         
@@ -225,5 +222,12 @@ class InfluencerMainViewController: UIViewController {
             self.loadingIndicator.removeFromSuperview()
             self.mainTableView.isHidden = false
         })
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 }
