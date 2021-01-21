@@ -24,7 +24,7 @@ class OptimizeViewController: UIViewController {
             self.animationView.isHidden = true
             self.checkmark.contentMode = .scaleAspectFill
             self.checkmark.loopMode = .loop
-            self.checkmark.animationSpeed = 0.3
+            self.checkmark.animationSpeed = 0.25
             self.checkmark.play()
            }
         

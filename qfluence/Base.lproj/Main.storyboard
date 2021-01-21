@@ -34,7 +34,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="676"/>
                                                 </view>
                                                 <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXH-cJ-ciB">
-                                                    <rect key="frame" x="0.0" y="455" width="390" height="221"/>
+                                                    <rect key="frame" x="0.0" y="444" width="390" height="221"/>
                                                     <subviews>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUp-vS-3Bu">
                                                             <rect key="frame" x="19" y="33" width="346" height="74"/>
@@ -83,6 +83,14 @@
                                                         <constraint firstAttribute="width" constant="75" id="yd1-JI-iY8"/>
                                                     </constraints>
                                                 </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NY6-v5-Ce5">
+                                                    <rect key="frame" x="156.66666666666666" y="301.66666666666669" width="77" height="73"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="77" id="J53-11-jFm"/>
+                                                        <constraint firstAttribute="width" constant="77" id="o0W-Kw-kUy"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZl-0l-yx5">
                                                     <rect key="frame" x="303" y="415" width="75" height="75"/>
                                                     <constraints>
@@ -95,13 +103,15 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="NY6-v5-Ce5" firstAttribute="centerX" secondItem="X1W-qG-QPB" secondAttribute="centerX" id="B04-n8-gdX"/>
                                                 <constraint firstAttribute="bottom" secondItem="X1W-qG-QPB" secondAttribute="bottom" id="Epo-5m-1ad"/>
                                                 <constraint firstAttribute="bottom" secondItem="wte-nh-JhT" secondAttribute="bottom" constant="186" id="FRT-zy-cg8"/>
                                                 <constraint firstItem="X1W-qG-QPB" firstAttribute="leading" secondItem="hrv-5c-PQi" secondAttribute="leading" id="Fb4-iq-QO0"/>
                                                 <constraint firstItem="X1W-qG-QPB" firstAttribute="leading" secondItem="hrv-5c-PQi" secondAttribute="leading" id="INE-ak-BRu"/>
+                                                <constraint firstItem="NY6-v5-Ce5" firstAttribute="centerY" secondItem="X1W-qG-QPB" secondAttribute="centerY" id="N8A-RW-a2V"/>
                                                 <constraint firstItem="X1W-qG-QPB" firstAttribute="top" secondItem="hrv-5c-PQi" secondAttribute="top" id="OeR-0g-h1g"/>
                                                 <constraint firstAttribute="trailing" secondItem="YZl-0l-yx5" secondAttribute="trailing" constant="12" id="QJT-9q-ruM"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="FXH-cJ-ciB" secondAttribute="bottom" constant="-11" id="aLb-7B-QFa"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="FXH-cJ-ciB" secondAttribute="bottom" id="aLb-7B-QFa"/>
                                                 <constraint firstAttribute="bottom" secondItem="YZl-0l-yx5" secondAttribute="bottom" constant="186" id="clt-qk-99i"/>
                                                 <constraint firstAttribute="trailing" secondItem="wte-nh-JhT" secondAttribute="trailing" constant="12" id="egY-5i-Wwg"/>
                                                 <constraint firstAttribute="trailing" secondItem="X1W-qG-QPB" secondAttribute="trailing" id="g5h-tx-xI8"/>
@@ -2537,6 +2547,14 @@
             <point key="canvasLocation" x="-3588" y="-2859"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="0hI-zz-Z8P"/>
+        <designable name="1bt-lb-dDY"/>
+        <designable name="CoH-ep-Yxs"/>
+        <designable name="HAU-BU-0ME"/>
+        <designable name="JAP-LD-ndo"/>
+        <designable name="aVy-YH-Z1m"/>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="HCa-SR-u9b"/>
         <segue reference="1oT-Ce-Q7g"/>
@@ -2558,6 +2576,7 @@
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="newspaper.fill" catalog="system" width="128" height="111"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="q_auth_background" width="375" height="750"/>
         <image name="q_create_button" width="795" height="247"/>
         <image name="q_landing_background" width="375" height="750"/>

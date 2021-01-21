@@ -105,7 +105,6 @@ class ExploreTableViewCell: UITableViewCell, ASAutoPlayVideoLayerContainer {
 //    }
     
     override func layoutSubviews() {
-        super.layoutSubviews()
         let width: CGFloat = bounds.size.width
         let height: CGFloat = bounds.size.height
         videoLayer.frame = CGRect(x: 0, y: 0, width: width, height: height)

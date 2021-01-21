@@ -40,7 +40,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.exploreObjects.count
     }
-    
+        
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exploreCell") as! ExploreTableViewCell
         cell.cellDelegate = self
@@ -69,11 +69,21 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        // lazy load current set
-        if self.totalCount - indexPath.row < 5 {
+        if !self.firstLoad && self.totalCount - indexPath.row == 5 {
             // fetch more
-            self.exploreObjects = self.exploreObjects + self.allExploreObjects.dropLast(25)
-            self.exploreTableView.reloadData()
+            self.firstLoad = true
+            self.exploreTableView.estimatedRowHeight = 0;
+            self.exploreTableView.estimatedSectionHeaderHeight = 0;
+            self.exploreTableView.estimatedSectionFooterHeight = 0;
+            self.fetchVideos(lastKey: self.exploreObjects.last!.videoKey)
+        }
+
+        // lazy load current set
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let videoCell = cell as? ASAutoPlayVideoLayerContainer, let _ = videoCell.videoURL {
+            ASVideoPlayerController.sharedVideoPlayer.removeLayerFor(cell: videoCell)
         }
     }
     
@@ -83,10 +93,13 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     var videoURLs = Array<String>()
     var exploreObjects = Array<ExploreObject>()
     var allExploreObjects = Array<ExploreObject>()
-    var firstLoad: Bool = true
     var lastKey: String?
     var totalCount: Int = 0
     var selectedObject: ExploreObject?
+    
+    let videoRef = Database.database().reference(withPath: "videos")
+    let ref = Database.database().reference(withPath: "influencers")
+    var firstLoad: Bool = true
     
     @IBOutlet weak var exploreTableView: UITableView!
 
@@ -98,9 +111,14 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.exploreTableView.contentInsetAdjustmentBehavior = .never
     }
     
-    func fetchVideos() {
-        let videoRef = Database.database().reference(withPath: "videos").queryLimited(toLast: 500)
-        videoRef.observeSingleEvent(of: .value, with: { (snapshot) in
+    func fetchVideos(lastKey: String = "") {
+        var query: DatabaseQuery?
+        if lastKey == "" {
+            query = self.videoRef.queryOrderedByKey().queryLimited(toLast: 10)
+        } else {
+            query = self.videoRef.queryOrderedByKey().queryEnding(atValue: lastKey).queryLimited(toFirst: 10)
+        }
+        query!.observeSingleEvent(of: .value, with: { (snapshot) in
             let firebaseDispatch = DispatchGroup()
             for video in snapshot.children {
                 firebaseDispatch.enter()
@@ -115,19 +133,21 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }
             firebaseDispatch.notify(queue: .main) {
-                self.lastKey = self.allExploreObjects.last?.videoKey
-                self.totalCount = self.allExploreObjects.count
-                self.allExploreObjects = self.allExploreObjects.shuffled()
-                self.exploreObjects = Array(self.allExploreObjects.dropLast(25))
-
+//                self.lastKey = self.allExploreObjects.last?.videoKey
+//                self.totalCount = self.allExploreObjects.count
+//                self.allExploreObjects = self.allExploreObjects.shuffled()
+////                self.exploreObjects = Array(self.allExploreObjects.dropLast(30))
+//                self.exploreObjects = self.allExploreObjects
+                
                 self.exploreTableView.reloadData()
+                self.firstLoad = false
             }
         })
     }
     
     func findInfluencer(influencerId: Int, questionText: String, videoUrl: String, videoKey: String, dispatch: DispatchGroup) {
-        let ref = Database.database().reference(withPath: "influencers").child("\(influencerId)")
-        ref.observeSingleEvent(of: .value, with: {(snapshot) in
+        let tempRef = ref.child("\(influencerId)")
+        tempRef.observeSingleEvent(of: .value, with: {(snapshot) in
             let influencer = snapshot.value as? NSDictionary
             
             let imageUrl = influencer!["imageUrl"] as? String
@@ -143,7 +163,8 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
                         
             let exploreObject = ExploreObject(imageUrl: imageUrl!, name: name!, videoUrl: videoUrl, questionText: questionText, videoKey: videoKey, influencerId: influencerId)
-            self.allExploreObjects.append(exploreObject)
+            self.totalCount += 1
+            self.exploreObjects.append(exploreObject)
             dispatch.leave()
         })
     }
@@ -159,12 +180,6 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
             animationView.contentMode = .scaleAspectFill
             animationView.loopMode = .loop
             animationView.play()
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let videoCell = cell as? ASAutoPlayVideoLayerContainer, let _ = videoCell.videoURL {
-            ASVideoPlayerController.sharedVideoPlayer.removeLayerFor(cell: videoCell)
         }
     }
     

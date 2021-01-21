@@ -79,10 +79,8 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
     
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        self.featuredCollectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -107,7 +105,9 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SpotlightCollectionViewCell", for: indexPath) as! SpotlightCollectionViewCell
-            cell.featuredImage.downloadImageFrom(link: featuredObjects[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+//            cell.featuredImage.downloadImageFrom(link: featuredObjects[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+            
+//            cell.featuredImage.image = featuredObjects[indexPath.row].imageUrl
             cell.featuredLabel.text = featuredObjects[indexPath.row].label
             
             cell.contentView.layer.cornerRadius = 5.0
@@ -144,7 +144,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         popularObjects.append(popularObject4)
         popularObjects.append(popularObject5)
         
-        let ref = Database.database().reference(withPath: "influencers")
+        let ref = Database.database().reference(withPath: "influencers").queryLimited(toLast: 30)
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             for influencer in snapshot.children {
                 if let snapshot = influencer as? DataSnapshot {
