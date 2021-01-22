@@ -14,6 +14,7 @@ struct SpotlightObject {
     let imageUrl: String
     let label: String
     let influencerId: Int
+    let bioText: String
 }
 
 struct CategoryObject {
@@ -34,22 +35,71 @@ struct InfluencerObject {
     let influencerId: Int
 }
 
-class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    @IBOutlet weak var popularCollectionView: UICollectionView!
-    @IBOutlet weak var featuredCollectionView: UICollectionView!
+extension SpotlightViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        self.featuredObjects.count
+    }
     
-    private var popularObjects = [CategoryObject]()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "featuredCell") as! SpotlightTableViewCell
+        cell.parallaxImage.downloadImageFrom(link: self.featuredObjects[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+
+        cell.featuredLabel.text = self.featuredObjects[indexPath.row].label
+        cell.bioText.text = self.featuredObjects[indexPath.row].bioText
+        
+        return cell
+    }
+}
+
+extension SpotlightViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.mainTableView.frame.height
+    }
+    
+    // parallax effect
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if self.originalCellHeight == nil {
+            let indexPath = IndexPath(row: 0, section: 0)
+            let cell = self.mainTableView.cellForRow(at: indexPath) as? SpotlightTableViewCell
+            
+            self.originalCellHeight = Float(self.view.frame.height)
+        }
+        
+        let indexPath = IndexPath(row: 0, section: 0)
+        let cell = self.mainTableView.cellForRow(at: indexPath) as? SpotlightTableViewCell
+        
+        if cell != nil {
+            let y = scrollView.contentOffset.y.magnitude
+            let height = max(self.originalCellHeight! - Float(y/3), 0)
+            cell!.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: CGFloat(Float(height)))
+        } else {
+            let offsetY = self.mainTableView.contentOffset.y
+            if let questionCell = self.mainTableView.visibleCells.first as? SpotlightTableViewCell {
+                let x = questionCell.contentView.frame.origin.x
+                let w = questionCell.contentView.bounds.width
+                let h = questionCell.contentView.bounds.height
+                let y = ((offsetY - questionCell.frame.origin.y) / h) * 25
+                
+                questionCell.contentView.frame = CGRect(x: x, y: y, width: w, height: h)
+            }
+        }
+    }
+}
+
+class SpotlightViewController: UIViewController {
+//    @IBOutlet weak var popularCollectionView: UICollectionView!
+    @IBOutlet weak var mainTableView: UITableView!
+    
+//    private var popularObjects = [CategoryObject]()
     private var featuredObjects = [SpotlightObject]()
     private var selectedObject: SpotlightObject?
     private var selectedCategory: CategoryObject?
     @IBOutlet weak var animationView: CSAnimationView!
+    var originalCellHeight: Float?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        popularCollectionView.dataSource = self
-        popularCollectionView.delegate = self
-        featuredCollectionView.dataSource = self
-        featuredCollectionView.delegate = self
         
         self.view.addSubview(loadingIndicator)
         addObjects()
@@ -67,7 +117,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
             ])
         
         loadingIndicator.isAnimating = true
-        featuredCollectionView.isHidden = true
+        mainTableView.isHidden = true
         animationView.isHidden = true
     }
     
@@ -83,52 +133,37 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.popularCollectionView {
-            return popularObjects.count
-        } else {
-            return featuredObjects.count
-        }
-    }
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        if collectionView == self.popularCollectionView {
+//            return popularObjects.count
+//        } else {
+//            return featuredObjects.count
+//        }
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SpotlightCollectionViewCell", for: indexPath) as! SpotlightCollectionViewCell
+//        cell.popularImage.image = popularObjects[indexPath.row].image
+//        cell.popularLabel.text = popularObjects[indexPath.row].label
+//
+//        cell.contentView.layer.cornerRadius = 5.0
+//        cell.contentView.layer.borderWidth = 0.5
+//        cell.contentView.layer.borderColor = UIColor.clear.cgColor
+//        cell.contentView.layer.masksToBounds = true
+//
+//        return cell
+//    }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == self.popularCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SpotlightCollectionViewCell", for: indexPath) as! SpotlightCollectionViewCell
-            cell.popularImage.image = popularObjects[indexPath.row].image
-            cell.popularLabel.text = popularObjects[indexPath.row].label
-            
-            cell.contentView.layer.cornerRadius = 5.0
-            cell.contentView.layer.borderWidth = 0.5
-            cell.contentView.layer.borderColor = UIColor.clear.cgColor
-            cell.contentView.layer.masksToBounds = true
-            
-            return cell
-        } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SpotlightCollectionViewCell", for: indexPath) as! SpotlightCollectionViewCell
-//            cell.featuredImage.downloadImageFrom(link: featuredObjects[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
-            
-//            cell.featuredImage.image = featuredObjects[indexPath.row].imageUrl
-            cell.featuredLabel.text = featuredObjects[indexPath.row].label
-            
-            cell.contentView.layer.cornerRadius = 5.0
-            cell.contentView.layer.borderWidth = 0.5
-            cell.contentView.layer.borderColor = UIColor.clear.cgColor
-            cell.contentView.layer.masksToBounds = true
-            
-            return cell
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-        if collectionView == self.popularCollectionView {
-            self.selectedCategory = popularObjects[indexPath.row]
-            performSegue(withIdentifier: "toCategory", sender: self)
-        } else {
-            self.selectedObject = featuredObjects[indexPath.row]
-            performSegue(withIdentifier: "toInfluencer", sender: self)
-        }
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        collectionView.deselectItem(at: indexPath, animated: true)
+//        if collectionView == self.popularCollectionView {
+//            self.selectedCategory = popularObjects[indexPath.row]
+//            performSegue(withIdentifier: "toCategory", sender: self)
+//        } else {
+//            self.selectedObject = featuredObjects[indexPath.row]
+//            performSegue(withIdentifier: "toInfluencer", sender: self)
+//        }
+//    }
     
     func addObjects() {
         // Backfill popular section
@@ -138,19 +173,20 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         let popularObject4 = CategoryObject(image: UIImage(named: "popular_fashion")!, label: "Fashion", influencerId: 1)
         let popularObject5 = CategoryObject(image: UIImage(named: "popular_politics")!, label: "Politics", influencerId: 1)
 
-        popularObjects.append(popularObject)
-        popularObjects.append(popularObject2)
-        popularObjects.append(popularObject3)
-        popularObjects.append(popularObject4)
-        popularObjects.append(popularObject5)
+//        popularObjects.append(popularObject)
+//        popularObjects.append(popularObject2)
+//        popularObjects.append(popularObject3)
+//        popularObjects.append(popularObject4)
+//        popularObjects.append(popularObject5)
         
-        let ref = Database.database().reference(withPath: "influencers").queryLimited(toLast: 30)
+        let ref = Database.database().reference(withPath: "influencers").queryLimited(toLast: 50)
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             for influencer in snapshot.children {
                 if let snapshot = influencer as? DataSnapshot {
                     let dict = snapshot.value as? NSDictionary
                     let firstName = dict!["firstName"] as? String
                     let lastName = dict!["lastName"] as? String
+                    let bioText = dict!["bioText"] as? String
                     
                     // simple name logic
                     var influencerName: String?
@@ -160,13 +196,14 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
                         influencerName = firstName! + " " + lastName!
                     }
                     
-                    let featuredObject = SpotlightObject(imageUrl: dict!["imageUrl"] as! String, label: influencerName!, influencerId: dict!["influencerId"] as! Int)
+                    let featuredObject = SpotlightObject(imageUrl: dict!["imageUrl"] as! String, label: influencerName!, influencerId: dict!["influencerId"] as! Int, bioText: bioText!)
                     self.featuredObjects.append(featuredObject)
                 }
             }
                 
-            self.featuredCollectionView.reloadData()
-            self.featuredCollectionView.isHidden = false
+            self.mainTableView.reloadData()
+//            self.popularCollectionView.isHidden = false
+            self.mainTableView.isHidden = false
             self.animationView.isHidden = false
             
             // Remove loading indicator
@@ -175,7 +212,6 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         })
         print(self.featuredObjects)
     }
-        
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toInfluencer" {

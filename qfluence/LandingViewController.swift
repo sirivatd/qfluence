@@ -23,7 +23,7 @@ class LandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.refreshQuestion()
-        self.timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.refreshQuestion), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.refreshQuestion), userInfo: nil, repeats: true)
 
         loginButton.layer.cornerRadius = 5.0
         loginButton.layer.borderWidth = 0.5
@@ -38,15 +38,15 @@ class LandingViewController: UIViewController {
     }
     
     @objc func refreshQuestion() {
-        UIView.animate(withDuration: 3, animations: {
+        UIView.animate(withDuration: 1.0, animations: {
             self.questionView.alpha = 0
         })
         
-        let seconds = 3.0
+        let seconds = 1.0
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             self.questionText.text = self.trendingQuestions.randomElement()
-            UIView.animate(withDuration: 2, animations: {
+            UIView.animate(withDuration: 1.0, animations: {
                 self.questionView.alpha = 1
             })
         }

@@ -167,6 +167,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             for influencer in influencerData {
                 let firstName = influencer["firstName"] as! String
                 let lastName = influencer["lastName"] as! String
+                let bioText = influencer["bioText"] as! String
+                
                 var influencerName: String?
                 if lastName.lowercased() == "n/a" {
                     influencerName = firstName
@@ -174,7 +176,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                     influencerName = firstName + " " + lastName
                 }
                 
-                let featuredObject = SpotlightObject(imageUrl: influencer["imageUrl"] as! String, label: influencerName!, influencerId: influencer["influencerId"] as! Int)
+                let featuredObject = SpotlightObject(imageUrl: influencer["imageUrl"] as! String, label: influencerName!, influencerId: influencer["influencerId"] as! Int, bioText: bioText)
                 
                 self.influencers.append(featuredObject)
                 self.recentlyAdded.append(featuredObject)
