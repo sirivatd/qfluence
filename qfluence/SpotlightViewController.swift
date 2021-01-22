@@ -60,7 +60,7 @@ extension SpotlightViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.selectedObject = featuredObjects[indexPath.row]
+        self.selectedObject = featuredObjects[indexPath.row-1]
         performSegue(withIdentifier: "toInfluencer", sender: self)
     }
 }
