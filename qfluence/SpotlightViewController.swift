@@ -41,19 +41,29 @@ extension SpotlightViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "featuredCell") as! SpotlightTableViewCell
-        cell.parallaxImage.downloadImageFrom(link: self.featuredObjects[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as! UITableViewCell
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "featuredCell") as! SpotlightTableViewCell
+            cell.parallaxImage.downloadImageFrom(link: self.featuredObjects[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
 
-        cell.featuredLabel.text = self.featuredObjects[indexPath.row].label
-        cell.bioText.text = self.featuredObjects[indexPath.row].bioText
-        
-        return cell
+            cell.featuredLabel.text = self.featuredObjects[indexPath.row].label
+            cell.bioText.text = self.featuredObjects[indexPath.row].bioText
+            
+            return cell
+        }
     }
 }
 
 extension SpotlightViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.mainTableView.frame.height/3
+        if indexPath.row == 0 {
+            return 150
+        } else {
+            return self.mainTableView.frame.height/3
+        }
     }
     
     // parallax effect
@@ -230,7 +240,6 @@ class SpotlightViewController: UIViewController {
 
 extension UIImageView {
     func downloadImageFrom(link:String, contentMode: UIView.ContentMode) {
-//        self.image = nil
         URLSession.shared.dataTask( with: NSURL(string:link)! as URL, completionHandler: {
             (data, response, error) -> Void in
             DispatchQueue.main.async {

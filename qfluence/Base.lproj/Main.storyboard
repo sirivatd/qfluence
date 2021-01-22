@@ -464,7 +464,7 @@
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="pUT-23-MED" customClass="CSAnimationView">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IC5-3M-arW">
+                                    <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IC5-3M-arW">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
@@ -530,6 +530,39 @@
                                                     <outlet property="tintView" destination="tGM-Lw-or2" id="Ugk-a7-HT5"/>
                                                 </connections>
                                             </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerCell" rowHeight="126" id="r72-7x-j9y">
+                                                <rect key="frame" x="0.0" y="353" width="390" height="126"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r72-7x-j9y" id="gFP-xm-j21">
+                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="126"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qfluence_full_logo" translatesAutoresizingMaskIntoConstraints="NO" id="JrY-en-bOi">
+                                                            <rect key="frame" x="20" y="11" width="152" height="60"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="152" id="sNv-7Q-WPN"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPOTLIGHT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYX-aS-F7t">
+                                                            <rect key="frame" x="30" y="66" width="103" height="26"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="103" id="e2g-43-dyo"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="JrY-en-bOi" firstAttribute="leading" secondItem="gFP-xm-j21" secondAttribute="leadingMargin" id="6Q6-zi-SsN"/>
+                                                        <constraint firstItem="eYX-aS-F7t" firstAttribute="top" secondItem="gFP-xm-j21" secondAttribute="topMargin" constant="55" id="7NS-rl-qHh"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="JrY-en-bOi" secondAttribute="bottom" constant="44" id="YEa-tN-95K"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="eYX-aS-F7t" secondAttribute="bottom" constant="23" id="hkr-wQ-CX8"/>
+                                                        <constraint firstItem="JrY-en-bOi" firstAttribute="top" secondItem="gFP-xm-j21" secondAttribute="topMargin" id="iRJ-P4-Vdl"/>
+                                                        <constraint firstItem="eYX-aS-F7t" firstAttribute="leading" secondItem="gFP-xm-j21" secondAttribute="leadingMargin" constant="10" id="kaZ-gb-TDR"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
                                         </prototypes>
                                         <connections>
                                             <outlet property="dataSource" destination="JD0-bs-Qnl" id="aJY-wj-Ycn"/>
@@ -553,34 +586,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qfluence_full_logo" translatesAutoresizingMaskIntoConstraints="NO" id="JrY-en-bOi">
-                                <rect key="frame" x="23" y="98" width="152" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="152" id="KrE-sK-fBd"/>
-                                    <constraint firstAttribute="height" constant="60" id="xH6-45-5vL"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPOTLIGHT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYX-aS-F7t">
-                                <rect key="frame" x="31" y="152" width="103" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="Bs0-6v-bhH"/>
-                                    <constraint firstAttribute="width" constant="103" id="Puh-pQ-8jd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d7q-wn-Cuy"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="eYX-aS-F7t" firstAttribute="leading" secondItem="d7q-wn-Cuy" secondAttribute="leading" constant="31" id="7IJ-dX-cET"/>
                             <constraint firstItem="pUT-23-MED" firstAttribute="bottom" secondItem="d7q-wn-Cuy" secondAttribute="bottom" id="7ml-kB-5uL"/>
-                            <constraint firstItem="eYX-aS-F7t" firstAttribute="top" secondItem="JrY-en-bOi" secondAttribute="bottom" constant="-6" id="Qfa-TD-UiY"/>
                             <constraint firstItem="pUT-23-MED" firstAttribute="trailing" secondItem="d7q-wn-Cuy" secondAttribute="trailing" id="f8X-Pq-HBk"/>
                             <constraint firstItem="pUT-23-MED" firstAttribute="leading" secondItem="d7q-wn-Cuy" secondAttribute="leading" id="lgV-iV-3yh"/>
-                            <constraint firstItem="JrY-en-bOi" firstAttribute="top" secondItem="d7q-wn-Cuy" secondAttribute="top" constant="10" id="nRG-3h-aND"/>
-                            <constraint firstItem="JrY-en-bOi" firstAttribute="leading" secondItem="d7q-wn-Cuy" secondAttribute="leading" constant="23" id="qO0-FC-7aH"/>
                             <constraint firstItem="pUT-23-MED" firstAttribute="top" secondItem="EIY-6W-YV2" secondAttribute="top" id="qS4-uX-Rhd"/>
                         </constraints>
                     </view>
@@ -2221,7 +2233,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="q_auth_background" translatesAutoresizingMaskIntoConstraints="NO" id="4v2-QU-BLK">
-                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="766"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Enter your email address and password to get access to your account." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajv-Ia-wYC">
                                 <rect key="frame" x="21" y="246" width="338" height="82"/>
@@ -2234,7 +2246,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qRd-BS-yEW" customClass="TextField" customModule="qfluence" customModuleProvider="target">
-                                <rect key="frame" x="23.666666666666657" y="358" width="343" height="60"/>
+                                <rect key="frame" x="16" y="358" width="343" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="Fzi-wQ-gU6"/>
@@ -2250,7 +2262,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ac-VJ-L8w" customClass="TextField" customModule="qfluence" customModuleProvider="target">
-                                <rect key="frame" x="23.666666666666657" y="418" width="343" height="60"/>
+                                <rect key="frame" x="16" y="418" width="343" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="K2E-QI-6KW"/>
@@ -2330,7 +2342,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2n-Fd-oLS" customClass="CSAnimationView">
-                                <rect key="frame" x="189" y="514" width="178" height="58"/>
+                                <rect key="frame" x="174" y="514" width="178" height="58"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZn-lH-G49">
                                         <rect key="frame" x="0.0" y="0.0" width="178" height="58"/>
@@ -2366,7 +2378,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cS-G1-Vsx" customClass="CSAnimationView">
-                                <rect key="frame" x="0.0" y="712" width="390" height="105"/>
+                                <rect key="frame" x="0.0" y="712" width="375" height="105"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning" translatesAutoresizingMaskIntoConstraints="NO" id="jZg-zN-nK5">
                                         <rect key="frame" x="26" y="28" width="48" height="48"/>
