@@ -103,10 +103,10 @@ extension SpotlightViewController: UITableViewDelegate {
         }
     }
     
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "featuredCell") as! SpotlightTableViewCell
-        cell.parallaxImage.task?.cancel()
-    }
+//    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "featuredCell") as! SpotlightTableViewCell
+//        cell.parallaxImage.task?.cancel()
+//    }
 }
 
 class SpotlightViewController: UIViewController {

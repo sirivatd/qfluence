@@ -19,6 +19,7 @@ class SpotlightTableViewCell: LNParallaxTVCell {
     }
     
     override func prepareForReuse() {
+        self.parallaxImage.task?.cancel()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
