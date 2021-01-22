@@ -20,6 +20,7 @@ class SpotlightTableViewCell: LNParallaxTVCell {
     
     override func prepareForReuse() {
         self.parallaxImage.task?.cancel()
+        self.parallaxImage.image = nil
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -27,5 +28,4 @@ class SpotlightTableViewCell: LNParallaxTVCell {
 
         // Configure the view for the selected state
     }
-
 }
