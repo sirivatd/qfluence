@@ -8,6 +8,10 @@
 
 import UIKit
 
+open class CustomImageView: UIImageView {
+    open var task: URLSessionDataTask?
+}
+
 private let kMinParallaxRatio: CGFloat = 0.0
 private let kMaxParallaxRatio: CGFloat = 1.0
 private let kDefaultParallaxRatio: CGFloat = 0.5
@@ -16,7 +20,7 @@ private let kContentOffsetKey = "contentOffset"
 @IBDesignable
 open class LNParallaxTVCell: UITableViewCell {
     
-    open var parallaxImage = UIImageView()
+    open var parallaxImage = CustomImageView()
     
     @IBInspectable
     open var parallaxRatio: CGFloat = kDefaultParallaxRatio {

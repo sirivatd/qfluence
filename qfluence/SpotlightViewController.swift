@@ -47,13 +47,21 @@ extension SpotlightViewController: UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "featuredCell") as! SpotlightTableViewCell
-            cell.parallaxImage.downloadImageFrom(link: self.featuredObjects[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+            cell.parallaxImage.task = cell.parallaxImage.returnTask(link: self.featuredObjects[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+            cell.parallaxImage.task?.resume()
+//            cell.parallaxImage.downloadImageFrom(link: self.featuredObjects[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
 
             cell.featuredLabel.text = self.featuredObjects[indexPath.row].label
             cell.bioText.text = self.featuredObjects[indexPath.row].bioText
             
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.selectedObject = featuredObjects[indexPath.row]
+        performSegue(withIdentifier: "toInfluencer", sender: self)
     }
 }
 
@@ -93,6 +101,11 @@ extension SpotlightViewController: UITableViewDelegate {
                 questionCell.contentView.frame = CGRect(x: x, y: y, width: w, height: h)
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "featuredCell") as! SpotlightTableViewCell
+        cell.parallaxImage.task?.cancel()
     }
 }
 
@@ -247,5 +260,15 @@ extension UIImageView {
                 if let data = data { self.image = UIImage(data: data) }
             }
         }).resume()
+    }
+    
+    func returnTask(link:String, contentMode: UIView.ContentMode) -> URLSessionDataTask {
+        URLSession.shared.dataTask( with: NSURL(string:link)! as URL, completionHandler: {
+            (data, response, error) -> Void in
+            DispatchQueue.main.async {
+                self.contentMode =  contentMode
+                if let data = data { self.image = UIImage(data: data) }
+            }
+        })
     }
 }
