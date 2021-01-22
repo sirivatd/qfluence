@@ -37,22 +37,22 @@ struct InfluencerObject {
 
 extension SpotlightViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.featuredObjects.count + 3
+        self.featuredObjects.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+        if indexPath.row == 0 || indexPath.row == self.featuredObjects.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as! UITableViewCell
             
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "featuredCell") as! SpotlightTableViewCell
-            cell.parallaxImage.task = cell.parallaxImage.returnTask(link: self.featuredObjects[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+            cell.parallaxImage.task = cell.parallaxImage.returnTask(link: self.featuredObjects[indexPath.row - 1].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
             cell.parallaxImage.task?.resume()
-//            cell.parallaxImage.downloadImageFrom(link: self.featuredObjects[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+            cell.parallaxImage.downloadImageFrom(link: self.featuredObjects[indexPath.row-1].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
 
-            cell.featuredLabel.text = self.featuredObjects[indexPath.row].label
-            cell.bioText.text = self.featuredObjects[indexPath.row].bioText
+            cell.featuredLabel.text = self.featuredObjects[indexPath.row-1].label
+            cell.bioText.text = self.featuredObjects[indexPath.row-1].bioText
             
             return cell
         }
@@ -67,11 +67,9 @@ extension SpotlightViewController: UITableViewDataSource {
 
 extension SpotlightViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0  {
+        if indexPath.row == 0   || indexPath.row == self.featuredObjects.count {
             return 450
-        } else if indexPath.row == self.featuredObjects.count {
-            return 650
-        } else {
+        } else  {
             return self.mainTableView.frame.height/3
         }
     }
