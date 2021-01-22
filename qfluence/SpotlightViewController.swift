@@ -37,7 +37,7 @@ struct InfluencerObject {
 
 extension SpotlightViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.featuredObjects.count
+        self.featuredObjects.count + 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -67,8 +67,10 @@ extension SpotlightViewController: UITableViewDataSource {
 
 extension SpotlightViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 150
+        if indexPath.row == 0  {
+            return 450
+        } else if indexPath.row == self.featuredObjects.count {
+            return 650
         } else {
             return self.mainTableView.frame.height/3
         }
@@ -80,7 +82,7 @@ extension SpotlightViewController: UITableViewDelegate {
             let indexPath = IndexPath(row: 0, section: 0)
             let cell = self.mainTableView.cellForRow(at: indexPath) as? SpotlightTableViewCell
             
-            self.originalCellHeight = Float(self.view.frame.height/3)
+            self.originalCellHeight = Float(self.mainTableView.frame.height/3)
         }
         
         let indexPath = IndexPath(row: 0, section: 0)

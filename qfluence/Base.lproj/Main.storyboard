@@ -464,8 +464,8 @@
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="pUT-23-MED" customClass="CSAnimationView">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IC5-3M-arW">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IC5-3M-arW">
+                                        <rect key="frame" x="0.0" y="-250" width="390" height="1211"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleAspectFill" restorationIdentifier="featuredCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="featuredCell" rowHeight="325" id="4ks-NT-lZF" customClass="SpotlightTableViewCell" customModule="qfluence" customModuleProvider="target">
@@ -540,13 +540,15 @@
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qfluence_full_logo" translatesAutoresizingMaskIntoConstraints="NO" id="JrY-en-bOi">
                                                             <rect key="frame" x="20" y="11" width="152" height="60"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="152" id="sNv-7Q-WPN"/>
+                                                                <constraint firstAttribute="width" constant="152" id="0fW-Xz-EWB"/>
+                                                                <constraint firstAttribute="height" constant="60" id="mNT-6J-VAE"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPOTLIGHT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYX-aS-F7t">
                                                             <rect key="frame" x="30" y="66" width="103" height="26"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="103" id="e2g-43-dyo"/>
+                                                                <constraint firstAttribute="width" constant="103" id="0a9-VM-08t"/>
+                                                                <constraint firstAttribute="height" constant="26" id="0qC-0B-rdS"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -554,12 +556,10 @@
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="JrY-en-bOi" firstAttribute="leading" secondItem="gFP-xm-j21" secondAttribute="leadingMargin" id="6Q6-zi-SsN"/>
-                                                        <constraint firstItem="eYX-aS-F7t" firstAttribute="top" secondItem="gFP-xm-j21" secondAttribute="topMargin" constant="55" id="7NS-rl-qHh"/>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="JrY-en-bOi" secondAttribute="bottom" constant="44" id="YEa-tN-95K"/>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="eYX-aS-F7t" secondAttribute="bottom" constant="23" id="hkr-wQ-CX8"/>
-                                                        <constraint firstItem="JrY-en-bOi" firstAttribute="top" secondItem="gFP-xm-j21" secondAttribute="topMargin" id="iRJ-P4-Vdl"/>
-                                                        <constraint firstItem="eYX-aS-F7t" firstAttribute="leading" secondItem="gFP-xm-j21" secondAttribute="leadingMargin" constant="10" id="kaZ-gb-TDR"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="eYX-aS-F7t" secondAttribute="bottom" constant="23" id="7gz-za-OSV"/>
+                                                        <constraint firstItem="eYX-aS-F7t" firstAttribute="leading" secondItem="gFP-xm-j21" secondAttribute="leadingMargin" constant="10" id="VUB-9b-Qg5"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="JrY-en-bOi" secondAttribute="bottom" constant="44" id="aBb-nD-lE0"/>
+                                                        <constraint firstItem="JrY-en-bOi" firstAttribute="leading" secondItem="gFP-xm-j21" secondAttribute="leadingMargin" id="rSp-zI-ajO"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -572,9 +572,9 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="IC5-3M-arW" firstAttribute="leading" secondItem="pUT-23-MED" secondAttribute="leading" id="CT1-R9-IU6"/>
-                                    <constraint firstItem="IC5-3M-arW" firstAttribute="top" secondItem="pUT-23-MED" secondAttribute="top" id="L9C-tt-9yZ"/>
+                                    <constraint firstItem="IC5-3M-arW" firstAttribute="top" secondItem="pUT-23-MED" secondAttribute="top" constant="-250" id="L9C-tt-9yZ"/>
                                     <constraint firstAttribute="trailing" secondItem="IC5-3M-arW" secondAttribute="trailing" id="Prk-6H-ok5"/>
-                                    <constraint firstAttribute="bottom" secondItem="IC5-3M-arW" secondAttribute="bottom" id="RVJ-6y-7HE"/>
+                                    <constraint firstAttribute="bottom" secondItem="IC5-3M-arW" secondAttribute="bottom" constant="-200" id="RVJ-6y-7HE"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="type" value="fadeInUp"/>
