@@ -465,7 +465,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IC5-3M-arW">
-                                        <rect key="frame" x="0.0" y="-250" width="390" height="1211"/>
+                                        <rect key="frame" x="0.0" y="-250" width="390" height="1261"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleAspectFill" restorationIdentifier="featuredCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="featuredCell" rowHeight="325" id="4ks-NT-lZF" customClass="SpotlightTableViewCell" customModule="qfluence" customModuleProvider="target">
@@ -574,7 +574,7 @@
                                     <constraint firstItem="IC5-3M-arW" firstAttribute="leading" secondItem="pUT-23-MED" secondAttribute="leading" id="CT1-R9-IU6"/>
                                     <constraint firstItem="IC5-3M-arW" firstAttribute="top" secondItem="pUT-23-MED" secondAttribute="top" constant="-250" id="L9C-tt-9yZ"/>
                                     <constraint firstAttribute="trailing" secondItem="IC5-3M-arW" secondAttribute="trailing" id="Prk-6H-ok5"/>
-                                    <constraint firstAttribute="bottom" secondItem="IC5-3M-arW" secondAttribute="bottom" constant="-200" id="RVJ-6y-7HE"/>
+                                    <constraint firstAttribute="bottom" secondItem="IC5-3M-arW" secondAttribute="bottom" constant="-250" id="RVJ-6y-7HE"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="type" value="fadeInUp"/>
