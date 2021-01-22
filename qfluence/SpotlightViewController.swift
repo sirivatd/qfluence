@@ -53,7 +53,7 @@ extension SpotlightViewController: UITableViewDataSource {
 
 extension SpotlightViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.mainTableView.frame.height
+        return self.mainTableView.frame.height/3
     }
     
     // parallax effect
@@ -62,7 +62,7 @@ extension SpotlightViewController: UITableViewDelegate {
             let indexPath = IndexPath(row: 0, section: 0)
             let cell = self.mainTableView.cellForRow(at: indexPath) as? SpotlightTableViewCell
             
-            self.originalCellHeight = Float(self.view.frame.height)
+            self.originalCellHeight = Float(self.view.frame.height/3)
         }
         
         let indexPath = IndexPath(row: 0, section: 0)
@@ -230,7 +230,7 @@ class SpotlightViewController: UIViewController {
 
 extension UIImageView {
     func downloadImageFrom(link:String, contentMode: UIView.ContentMode) {
-        self.image = nil
+//        self.image = nil
         URLSession.shared.dataTask( with: NSURL(string:link)! as URL, completionHandler: {
             (data, response, error) -> Void in
             DispatchQueue.main.async {

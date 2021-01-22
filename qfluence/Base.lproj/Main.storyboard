@@ -464,22 +464,22 @@
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="pUT-23-MED" customClass="CSAnimationView">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IC5-3M-arW">
+                                    <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IC5-3M-arW">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleAspectFill" restorationIdentifier="featuredCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="featuredCell" rowHeight="649" id="4ks-NT-lZF" customClass="SpotlightTableViewCell" customModule="qfluence" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="390" height="649"/>
+                                            <tableViewCell contentMode="scaleAspectFill" restorationIdentifier="featuredCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="featuredCell" rowHeight="325" id="4ks-NT-lZF" customClass="SpotlightTableViewCell" customModule="qfluence" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="390" height="325"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4ks-NT-lZF" id="MSc-dP-cxc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="649"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="325"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGM-Lw-or2">
-                                                            <rect key="frame" x="0.0" y="0.0" width="390" height="649"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="390" height="325"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LL-jl-Aci">
-                                                                    <rect key="frame" x="47" y="351" width="296" height="21"/>
+                                                                    <rect key="frame" x="47" y="189" width="296" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="296" id="U78-wr-ATy"/>
                                                                         <constraint firstAttribute="height" constant="21" id="b9M-YM-TlP"/>
@@ -496,7 +496,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Juq-8n-5O5">
-                                                            <rect key="frame" x="47" y="303" width="296" height="37"/>
+                                                            <rect key="frame" x="47" y="141" width="296" height="37"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="296" id="5Ce-HY-7oo"/>
                                                                 <constraint firstAttribute="height" constant="37" id="rzR-6N-AAW"/>
