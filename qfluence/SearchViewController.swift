@@ -162,24 +162,25 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         // fetch people
         let influencerRef = Database.database().reference(withPath: "influencers")
         influencerRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            let influencerData = snapshot.value as! [[String : Any]]
-
-            for influencer in influencerData {
-                let firstName = influencer["firstName"] as! String
-                let lastName = influencer["lastName"] as! String
-                let bioText = influencer["bioText"] as! String
-                
-                var influencerName: String?
-                if lastName.lowercased() == "n/a" {
-                    influencerName = firstName
-                } else {
-                    influencerName = firstName + " " + lastName
+            for influencer in snapshot.children {
+                if let snapshot = influencer as? DataSnapshot {
+                    let dict = snapshot.value as? NSDictionary
+                    let firstName = dict!["firstName"] as? String
+                    let lastName = dict!["lastName"] as? String
+                    let bioText = dict!["bioText"] as? String
+                    
+                    // simple name logic
+                    var influencerName: String?
+                    if lastName?.lowercased() == "n/a" {
+                        influencerName = firstName
+                    } else {
+                        influencerName = firstName! + " " + lastName!
+                    }
+                    
+                    let featuredObject = SpotlightObject(imageUrl: dict!["imageUrl"] as! String, label: influencerName!, influencerId: dict!["influencerId"] as! Int, bioText: bioText!)
+                    self.influencers.append(featuredObject)
+                    self.recentlyAdded.append(featuredObject)
                 }
-                
-                let featuredObject = SpotlightObject(imageUrl: influencer["imageUrl"] as! String, label: influencerName!, influencerId: influencer["influencerId"] as! Int, bioText: bioText)
-                
-                self.influencers.append(featuredObject)
-                self.recentlyAdded.append(featuredObject)
             }
         })
         

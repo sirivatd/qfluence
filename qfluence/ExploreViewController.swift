@@ -36,9 +36,23 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var tutorialView: UIView!
     @IBOutlet weak var animationView: AnimationView!
+    @IBOutlet weak var playIcon: UIImageView!
+    
+    var isPaused: Bool = false
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.exploreObjects.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if self.isPaused {
+            ASVideoPlayerController.sharedVideoPlayer.pausePlayeVideosFor(tableView: self.exploreTableView)
+            self.playIcon.isHidden = true
+        } else {
+            ASVideoPlayerController.sharedVideoPlayer.pauseAllVideos(tableView: self.exploreTableView)
+            self.playIcon.isHidden = false
+        }
+        self.isPaused = !self.isPaused
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -179,6 +193,8 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidAppear(_ animated: Bool) {
         pausePlayeVideos()
+        self.isPaused = false
+        self.playIcon.isHidden = true
         ASVideoPlayerController.sharedVideoPlayer.mute = false
         navigationController?.setNavigationBarHidden(true, animated: animated)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -193,11 +209,13 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         pausePlayeVideos()
+        self.playIcon.isHidden = true
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate {
             pausePlayeVideos()
+            self.playIcon.isHidden = true
         }
         
         if self.tutorialView.isHidden {

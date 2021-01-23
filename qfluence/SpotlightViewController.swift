@@ -42,14 +42,13 @@ extension SpotlightViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 || indexPath.row == self.featuredObjects.count {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as! UITableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell")!
             
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "featuredCell") as! SpotlightTableViewCell
             cell.parallaxImage.task = cell.parallaxImage.returnTask(link: self.featuredObjects[indexPath.row - 1].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
             cell.parallaxImage.task?.resume()
-            cell.parallaxImage.downloadImageFrom(link: self.featuredObjects[indexPath.row-1].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
 
             cell.featuredLabel.text = self.featuredObjects[indexPath.row-1].label
             cell.bioText.text = self.featuredObjects[indexPath.row-1].bioText
@@ -77,9 +76,6 @@ extension SpotlightViewController: UITableViewDelegate {
     // parallax effect
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if self.originalCellHeight == nil {
-            let indexPath = IndexPath(row: 0, section: 0)
-            let cell = self.mainTableView.cellForRow(at: indexPath) as? SpotlightTableViewCell
-            
             self.originalCellHeight = Float(self.mainTableView.frame.height/3)
         }
         
@@ -97,7 +93,6 @@ extension SpotlightViewController: UITableViewDelegate {
                 let w = questionCell.contentView.bounds.width
                 let h = questionCell.contentView.bounds.height
                 let y = ((offsetY - questionCell.frame.origin.y) / h) * 25
-                
                 questionCell.contentView.frame = CGRect(x: x, y: y, width: w, height: h)
             }
         }
@@ -202,7 +197,7 @@ class SpotlightViewController: UIViewController {
 //        popularObjects.append(popularObject4)
 //        popularObjects.append(popularObject5)
         
-        let ref = Database.database().reference(withPath: "influencers").queryLimited(toLast: 50)
+        let ref = Database.database().reference(withPath: "influencers").queryLimited(toLast: 11)
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             for influencer in snapshot.children {
                 if let snapshot = influencer as? DataSnapshot {
