@@ -90,19 +90,19 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if !self.firstLoad && self.totalCount - indexPath.row == 7                                                                     {
+        if !self.firstLoad && self.exploreObjects.count - indexPath.row == 7                                                                     {
             // fetch more
             print("Fetching")
-            self.firstLoad = true
             self.exploreTableView.estimatedRowHeight = 0;
             self.exploreTableView.estimatedSectionHeaderHeight = 0;
             self.exploreTableView.estimatedSectionFooterHeight = 0;
-            self.fetchVideos(lastKey: self.exploreObjects.last!.videoKey)
+//            self.fetchVideos(lastKey: self.exploreObjects.last!.videoKey)
+            self.exploreObjects.append(contentsOf: self.allExploreObjects.dropLast(10))
         }
 
         // lazy load current set
     }
-    
+        
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let videoCell = cell as? ASAutoPlayVideoLayerContainer, let _ = videoCell.videoURL {
             ASVideoPlayerController.sharedVideoPlayer.removeLayerFor(cell: videoCell)
@@ -135,11 +135,13 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func fetchVideos(lastKey: String = "") {
         var query: DatabaseQuery?
-        if lastKey == "" {
-            query = self.videoRef.queryOrderedByKey().queryLimited(toLast: 10)
-        } else {
-            query = self.videoRef.queryOrderedByKey().queryEnding(atValue: lastKey).queryLimited(toFirst: 10)
-        }
+//        if lastKey == "" {
+//            query = self.videoRef.queryOrderedByKey().queryLimited(toLast: 10)
+//        } else {
+//            query = self.videoRef.queryOrderedByKey().queryEnding(atValue: lastKey).queryLimited(toFirst: 10)
+//        }
+        query = self.videoRef.queryOrderedByKey().queryLimited(toFirst: 400)
+
         query!.observeSingleEvent(of: .value, with: { (snapshot) in
             let firebaseDispatch = DispatchGroup()
             for video in snapshot.children {
@@ -157,9 +159,9 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
             firebaseDispatch.notify(queue: .main) {
 //                self.lastKey = self.allExploreObjects.last?.videoKey
 //                self.totalCount = self.allExploreObjects.count
-//                self.allExploreObjects = self.allExploreObjects.shuffled()
+                self.allExploreObjects = self.allExploreObjects.shuffled()
 ////                self.exploreObjects = Array(self.allExploreObjects.dropLast(30))
-//                self.exploreObjects = self.allExploreObjects
+                self.exploreObjects = self.allExploreObjects.dropLast(10)
                 
                 self.exploreTableView.reloadData()
                 self.firstLoad = false
@@ -186,7 +188,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
                         
             let exploreObject = ExploreObject(imageUrl: imageUrl!, name: name!, videoUrl: videoUrl, questionText: questionText, videoKey: videoKey, influencerId: influencerId)
             self.totalCount += 1
-            self.exploreObjects.append(exploreObject)
+            self.allExploreObjects.append(exploreObject)
             dispatch.leave()
         })
     }
@@ -223,7 +225,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         self.tutorialView.isHidden = true
-        self.firstLoad = false
+//        self.firstLoad = false
         ASVideoPlayerController.sharedVideoPlayer.mute = true
 
         self.performSegue(withIdentifier: "toOptimize", sender: nil)
@@ -236,7 +238,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillDisappear(_ animated: Bool) {
         ASVideoPlayerController.sharedVideoPlayer.pauseAllVideos(tableView: self.exploreTableView)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showInfluencer" {
             if let destination = segue.destination as? InfluencerMainViewController {

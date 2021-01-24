@@ -37,30 +37,36 @@ struct InfluencerObject {
 
 extension SpotlightViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.featuredObjects.count + 1
+        self.featuredObjects.count + 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 || indexPath.row == self.featuredObjects.count {
+        if indexPath.row == 0 || indexPath.row == self.featuredObjects.count + 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell")!
+            
+            return cell
+        } else if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell")!
             
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "featuredCell") as! SpotlightTableViewCell
-            cell.parallaxImage.task = cell.parallaxImage.returnTask(link: self.featuredObjects[indexPath.row - 1].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+            cell.parallaxImage.task = cell.parallaxImage.returnTask(link: self.featuredObjects[indexPath.row - 2].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
             cell.parallaxImage.task?.resume()
 
-            cell.featuredLabel.text = self.featuredObjects[indexPath.row-1].label
-            cell.bioText.text = self.featuredObjects[indexPath.row-1].bioText
+            cell.featuredLabel.text = self.featuredObjects[indexPath.row-2].label
+            cell.bioText.text = self.featuredObjects[indexPath.row-2].bioText
             
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        self.selectedObject = featuredObjects[indexPath.row-1]
-        performSegue(withIdentifier: "toInfluencer", sender: self)
+        if indexPath.row > 1 && indexPath.row < self.featuredObjects.count {
+            tableView.deselectRow(at: indexPath, animated: true)
+            self.selectedObject = featuredObjects[indexPath.row-2]
+            performSegue(withIdentifier: "toInfluencer", sender: self)
+        }
     }
 }
 
@@ -68,7 +74,9 @@ extension SpotlightViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0   || indexPath.row == self.featuredObjects.count {
             return 450
-        } else  {
+        } else if indexPath.row == 1 {
+            return 200
+        }  else {
             return self.mainTableView.frame.height/3
         }
     }
@@ -104,15 +112,16 @@ extension SpotlightViewController: UITableViewDelegate {
 //    }
 }
 
-class SpotlightViewController: UIViewController {
+class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 //    @IBOutlet weak var popularCollectionView: UICollectionView!
     @IBOutlet weak var mainTableView: UITableView!
     
-//    private var popularObjects = [CategoryObject]()
+    private var categoryObjects = [CategoryObject]()
     private var featuredObjects = [SpotlightObject]()
     private var selectedObject: SpotlightObject?
     private var selectedCategory: CategoryObject?
     @IBOutlet weak var animationView: CSAnimationView!
+    
     var originalCellHeight: Float?
 
     
@@ -151,53 +160,50 @@ class SpotlightViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        if collectionView == self.popularCollectionView {
-//            return popularObjects.count
-//        } else {
-//            return featuredObjects.count
-//        }
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SpotlightCollectionViewCell", for: indexPath) as! SpotlightCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return categoryObjects.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "individualCatCell", for: indexPath)
 //        cell.popularImage.image = popularObjects[indexPath.row].image
 //        cell.popularLabel.text = popularObjects[indexPath.row].label
 //
-//        cell.contentView.layer.cornerRadius = 5.0
-//        cell.contentView.layer.borderWidth = 0.5
-//        cell.contentView.layer.borderColor = UIColor.clear.cgColor
-//        cell.contentView.layer.masksToBounds = true
-//
-//        return cell
-//    }
+        cell.contentView.layer.cornerRadius = 5.0
+        cell.contentView.layer.borderWidth = 0.5
+        cell.contentView.layer.borderColor = UIColor.clear.cgColor
+        cell.contentView.layer.masksToBounds = true
+
+        return cell
+    }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        collectionView.deselectItem(at: indexPath, animated: true)
-//        if collectionView == self.popularCollectionView {
-//            self.selectedCategory = popularObjects[indexPath.row]
-//            performSegue(withIdentifier: "toCategory", sender: self)
-//        } else {
-//            self.selectedObject = featuredObjects[indexPath.row]
-//            performSegue(withIdentifier: "toInfluencer", sender: self)
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return  1
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
     
     func addObjects() {
         // Backfill popular section
-        let popularObject = CategoryObject(image: UIImage(named: "popular_music")!, label: "Music", influencerId: 1)
-        let popularObject2 = CategoryObject(image: UIImage(named: "popular_tech")!, label: "Tech", influencerId: 1)
-        let popularObject3 = CategoryObject(image: UIImage(named: "popular_sports")!, label: "Sports", influencerId: 1)
-        let popularObject4 = CategoryObject(image: UIImage(named: "popular_fashion")!, label: "Fashion", influencerId: 1)
-        let popularObject5 = CategoryObject(image: UIImage(named: "popular_politics")!, label: "Politics", influencerId: 1)
+        let categoryObject = CategoryObject(image: UIImage(named: "popular_music")!, label: "Music", influencerId: 1)
+        let categoryObject2 = CategoryObject(image: UIImage(named: "popular_tech")!, label: "Tech", influencerId: 1)
+        let categoryObject3 = CategoryObject(image: UIImage(named: "popular_sports")!, label: "Sports", influencerId: 1)
+        let categoryObject4 = CategoryObject(image: UIImage(named: "popular_fashion")!, label: "Fashion", influencerId: 1)
+        let categoryObject5 = CategoryObject(image: UIImage(named: "popular_politics")!, label: "Politics", influencerId: 1)
 
-//        popularObjects.append(popularObject)
-//        popularObjects.append(popularObject2)
-//        popularObjects.append(popularObject3)
-//        popularObjects.append(popularObject4)
-//        popularObjects.append(popularObject5)
+        categoryObjects.append(categoryObject)
+        categoryObjects.append(categoryObject2)
+        categoryObjects.append(categoryObject3)
+        categoryObjects.append(categoryObject4)
+        categoryObjects.append(categoryObject5)
         
-        let ref = Database.database().reference(withPath: "influencers").queryLimited(toLast: 11)
+        let ref = Database.database().reference(withPath: "influencers").queryLimited(toLast: 26)
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             for influencer in snapshot.children {
                 if let snapshot = influencer as? DataSnapshot {

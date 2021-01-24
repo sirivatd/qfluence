@@ -279,7 +279,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        self.recentlyAddedView.deviceRotated()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
