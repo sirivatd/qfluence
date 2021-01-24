@@ -178,6 +178,8 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedCategory = self.categoryObjects[indexPath.row]
+        self.performSegue(withIdentifier: "toCategory", sender: nil)
         collectionView.deselectItem(at: indexPath, animated: true)
     }
     
@@ -191,18 +193,32 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func addObjects() {
         // Backfill popular section
-        let categoryObject = CategoryObject(image: UIImage(named: "popular_music")!, label: "Music", influencerId: 1)
-        let categoryObject2 = CategoryObject(image: UIImage(named: "popular_tech")!, label: "Tech", influencerId: 1)
-        let categoryObject3 = CategoryObject(image: UIImage(named: "popular_sports")!, label: "Sports", influencerId: 1)
-        let categoryObject4 = CategoryObject(image: UIImage(named: "popular_fashion")!, label: "Fashion", influencerId: 1)
-        let categoryObject5 = CategoryObject(image: UIImage(named: "popular_politics")!, label: "Politics", influencerId: 1)
+        let categoryObject = CategoryObject(image: UIImage(named: "film")!, label: "Film", influencerId: 1)
+        let categoryObject2 = CategoryObject(image: UIImage(named: "sports")!, label: "Sports", influencerId: 1)
+        let categoryObject3 = CategoryObject(image: UIImage(named: "business")!, label: "Business", influencerId: 1)
+        let categoryObject4 = CategoryObject(image: UIImage(named: "music")!, label: "Music", influencerId: 1)
+        let categoryObject5 = CategoryObject(image: UIImage(named: "politics")!, label: "Animal", influencerId: 1)
+        let categoryObject6 = CategoryObject(image: UIImage(named: "food")!, label: "Food", influencerId: 1)
+        let categoryObject7 = CategoryObject(image: UIImage(named: "models")!, label: "Models", influencerId: 1)
+        let categoryObject8 = CategoryObject(image: UIImage(named: "politics")!, label: "Politics", influencerId: 1)
+        let categoryObject9 = CategoryObject(image: UIImage(named: "youtube")!, label: "Youtube", influencerId: 1)
+        let categoryObject10 = CategoryObject(image: UIImage(named: "education")!, label: "Education", influencerId: 1)
+        let categoryObject11 = CategoryObject(image: UIImage(named: "medicine")!, label: "Medicine", influencerId: 1)
+        let categoryObject12 = CategoryObject(image: UIImage(named: "technlogy")!, label: "Technology", influencerId: 1)
 
         categoryObjects.append(categoryObject)
         categoryObjects.append(categoryObject2)
         categoryObjects.append(categoryObject3)
         categoryObjects.append(categoryObject4)
         categoryObjects.append(categoryObject5)
-        
+        categoryObjects.append(categoryObject6)
+        categoryObjects.append(categoryObject7)
+        categoryObjects.append(categoryObject8)
+        categoryObjects.append(categoryObject9)
+        categoryObjects.append(categoryObject10)
+        categoryObjects.append(categoryObject11)
+        categoryObjects.append(categoryObject12)
+
         let ref = Database.database().reference(withPath: "influencers").queryLimited(toLast: 26)
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             for influencer in snapshot.children {
@@ -240,8 +256,8 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toInfluencer" {
             if let destination = segue.destination as? InfluencerMainViewController {
-                destination.title = selectedObject?.label
-                destination.selectedInfluencerId = selectedObject?.influencerId
+                destination.title = selectedCategory?.label
+                destination.selectedInfluencerId = selectedCategory?.influencerId
             }
         } else if segue.identifier == "toCategory" {
             if let destination = segue.destination as? CategoryViewController {
