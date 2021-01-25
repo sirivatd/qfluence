@@ -61,6 +61,7 @@ class SideMenuViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.settingTableView.tableFooterView = UIView(frame: .zero)
         setOptions()
         // Do any additional setup after loading the view.
     }
