@@ -508,14 +508,25 @@
                                                             <nil key="highlightedColor"/>
                                                             <size key="shadowOffset" width="-2" height="-2"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSX-Wm-MQ5">
+                                                            <rect key="frame" x="312" y="23" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="46" id="dJo-qf-Xyk"/>
+                                                                <constraint firstAttribute="width" constant="53" id="yEv-sY-K7P"/>
+                                                            </constraints>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" backgroundImage="heart.fill" catalog="system"/>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="Juq-8n-5O5" firstAttribute="centerX" secondItem="tGM-Lw-or2" secondAttribute="centerX" id="7ZC-fL-iQ9"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="RSX-Wm-MQ5" secondAttribute="trailing" constant="5" id="9XX-cC-7o3"/>
                                                         <constraint firstAttribute="trailing" secondItem="tGM-Lw-or2" secondAttribute="trailing" id="ELr-Bq-JKi"/>
                                                         <constraint firstAttribute="bottom" secondItem="tGM-Lw-or2" secondAttribute="bottom" id="P1I-N0-W0w"/>
                                                         <constraint firstItem="tGM-Lw-or2" firstAttribute="leading" secondItem="MSc-dP-cxc" secondAttribute="leading" id="jLq-L5-Quh"/>
                                                         <constraint firstItem="8LL-jl-Aci" firstAttribute="top" secondItem="Juq-8n-5O5" secondAttribute="bottom" constant="9" id="lrq-VR-rDQ"/>
                                                         <constraint firstItem="tGM-Lw-or2" firstAttribute="top" secondItem="MSc-dP-cxc" secondAttribute="top" id="nLa-pr-piG"/>
+                                                        <constraint firstItem="RSX-Wm-MQ5" firstAttribute="top" secondItem="MSc-dP-cxc" secondAttribute="topMargin" constant="10" id="qOD-H2-82r"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1303,6 +1314,15 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seH-AV-Sta">
+                                                    <rect key="frame" x="312" y="23" width="53" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="53" id="BoT-xU-h68"/>
+                                                        <constraint firstAttribute="height" constant="46" id="Umt-BT-11B"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" backgroundImage="heart.fill" catalog="system"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="iOM-2x-eEm" firstAttribute="bottom" secondItem="tov-Pa-f9r" secondAttribute="bottom" id="0bR-89-onm"/>
@@ -1314,11 +1334,13 @@
                                                 <constraint firstAttribute="bottom" secondItem="RQB-qY-Oh0" secondAttribute="bottom" constant="91" id="DhT-Zs-slB"/>
                                                 <constraint firstItem="jZe-Oe-ktA" firstAttribute="top" secondItem="RQB-qY-Oh0" secondAttribute="bottom" constant="33" id="HQB-4M-g7z"/>
                                                 <constraint firstItem="z3G-pi-xM2" firstAttribute="centerY" secondItem="dti-je-hR3" secondAttribute="centerY" id="IgE-NE-14f"/>
+                                                <constraint firstItem="seH-AV-Sta" firstAttribute="top" secondItem="QRs-mf-LBm" secondAttribute="topMargin" constant="10" id="N1B-bD-K1o"/>
                                                 <constraint firstItem="dti-je-hR3" firstAttribute="centerX" secondItem="tov-Pa-f9r" secondAttribute="centerX" id="PUe-Q2-Xfa"/>
                                                 <constraint firstItem="dti-je-hR3" firstAttribute="leading" secondItem="z3G-pi-xM2" secondAttribute="trailing" constant="38" id="S0m-lQ-MO3"/>
                                                 <constraint firstItem="jZe-Oe-ktA" firstAttribute="centerX" secondItem="RQB-qY-Oh0" secondAttribute="centerX" id="VFX-g7-hpL"/>
                                                 <constraint firstItem="iOM-2x-eEm" firstAttribute="centerY" secondItem="z3G-pi-xM2" secondAttribute="centerY" constant="0.16666666666674246" id="aL1-aS-F1X"/>
                                                 <constraint firstAttribute="trailing" secondItem="RQB-qY-Oh0" secondAttribute="trailing" id="cZ9-WG-e29"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="seH-AV-Sta" secondAttribute="trailing" constant="5" id="dXA-00-y43"/>
                                                 <constraint firstItem="RQB-qY-Oh0" firstAttribute="top" secondItem="QRs-mf-LBm" secondAttribute="top" id="hXd-AB-3AF"/>
                                                 <constraint firstAttribute="bottom" secondItem="tov-Pa-f9r" secondAttribute="bottom" constant="91" id="igh-HX-ZuG"/>
                                                 <constraint firstItem="tov-Pa-f9r" firstAttribute="top" secondItem="QRs-mf-LBm" secondAttribute="top" id="j4w-To-skJ"/>
@@ -2337,7 +2359,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="q_auth_background" translatesAutoresizingMaskIntoConstraints="NO" id="4v2-QU-BLK">
-                                <rect key="frame" x="0.0" y="44" width="375" height="766"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Enter your email address and password to get access to your account." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajv-Ia-wYC">
                                 <rect key="frame" x="21" y="246" width="338" height="82"/>
@@ -2350,7 +2372,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qRd-BS-yEW" customClass="TextField" customModule="qfluence" customModuleProvider="target">
-                                <rect key="frame" x="16" y="358" width="343" height="60"/>
+                                <rect key="frame" x="23.666666666666657" y="358" width="343" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="Fzi-wQ-gU6"/>
@@ -2366,7 +2388,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ac-VJ-L8w" customClass="TextField" customModule="qfluence" customModuleProvider="target">
-                                <rect key="frame" x="16" y="418" width="343" height="60"/>
+                                <rect key="frame" x="23.666666666666657" y="418" width="343" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="K2E-QI-6KW"/>
@@ -2446,7 +2468,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2n-Fd-oLS" customClass="CSAnimationView">
-                                <rect key="frame" x="174" y="514" width="178" height="58"/>
+                                <rect key="frame" x="189" y="514" width="178" height="58"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZn-lH-G49">
                                         <rect key="frame" x="0.0" y="0.0" width="178" height="58"/>
@@ -2482,7 +2504,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cS-G1-Vsx" customClass="CSAnimationView">
-                                <rect key="frame" x="0.0" y="712" width="375" height="105"/>
+                                <rect key="frame" x="0.0" y="712" width="390" height="105"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning" translatesAutoresizingMaskIntoConstraints="NO" id="jZg-zN-nK5">
                                         <rect key="frame" x="26" y="28" width="48" height="48"/>
@@ -2695,7 +2717,7 @@
         <segue reference="U6L-Z0-IcX"/>
         <segue reference="1oT-Ce-Q7g"/>
         <segue reference="v3q-wk-36r"/>
-        <segue reference="Mi1-Jy-Diq"/>
+        <segue reference="7Qf-eU-NFS"/>
         <segue reference="d9M-6M-dkn"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -2704,6 +2726,7 @@
         <image name="checkmark.icloud.fill" catalog="system" width="128" height="88"/>
         <image name="doc.on.doc.fill" catalog="system" width="116" height="128"/>
         <image name="gearshape.2.fill" catalog="system" width="128" height="100"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="icons8-spotlight-60" width="30" height="30"/>
         <image name="instagram" width="64" height="64"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
