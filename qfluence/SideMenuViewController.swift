@@ -16,7 +16,7 @@ struct SettingOption {
 
 class SideMenuViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.settingOptions.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,6 +44,8 @@ class SideMenuViewController: UITableViewController {
         case 3:
             self.tutorialPressed()
         case 4:
+            self.developerPressed()
+        case 5:
             self.logoutPressed()
         default:
             return
@@ -65,16 +67,18 @@ class SideMenuViewController: UITableViewController {
     
     func setOptions() {
         let option1 = SettingOption(name: "Terms and conditions", image: UIImage(systemName: "doc.on.clipboard.fill")!)
-        let option2 = SettingOption(name: "Contact", image: UIImage(systemName: "arrow.up.message.fill")!)
+        let option2 = SettingOption(name: "Contact", image: UIImage(systemName: "captions.bubble.fill")!)
         let option3 = SettingOption(name: "Cellular settings", image: UIImage(systemName: "iphone.homebutton")!)
         let option4 = SettingOption(name: "Tutorial", image: UIImage(systemName: "book.fill")!)
-        let option5 = SettingOption(name: "Sign out", image: UIImage(systemName: "pip.exit")!)
+        let option5 = SettingOption(name: "Developer info", image: UIImage(systemName: "terminal.fill")!)
+        let option6 = SettingOption(name: "Sign out", image: UIImage(systemName: "pip.exit")!)
         
         self.settingOptions.append(option1)
         self.settingOptions.append(option2)
         self.settingOptions.append(option3)
         self.settingOptions.append(option4)
         self.settingOptions.append(option5)
+        self.settingOptions.append(option6)
         
         self.settingTableView.reloadData()
     }
@@ -97,6 +101,11 @@ class SideMenuViewController: UITableViewController {
     
     func cellularSettingsPressed() {
         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+    }
+    
+    func developerPressed() {
+        guard let url = URL(string: "http://dsirivat.com/") else { return }
+        UIApplication.shared.open(url)
     }
 
     func logoutPressed() {
