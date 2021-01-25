@@ -8,6 +8,7 @@
 
 import UIKit
 import Canvas
+import ScalingCarousel
 
 class CategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -15,14 +16,44 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "influencerCell", for: indexPath) as! CategoryInfluencerCollectionViewCell
-        
-        cell.influencerLabel.text = self.filteredInfluencers[indexPath.row].label
-        cell.influencerImage.loadImage(urlSting: self.filteredInfluencers[indexPath.row].imageUrl)
-        
-        cell.layer.cornerRadius = 15.0
-        
-        return cell
+        if collectionView == self.listView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "influencerCell", for: indexPath) as! CategoryInfluencerCollectionViewCell
+            
+            cell.influencerLabel.text = self.filteredInfluencers[indexPath.row].label
+            cell.influencerImage.loadImage(urlSting: self.filteredInfluencers[indexPath.row].imageUrl)
+            
+            cell.layer.cornerRadius = 15.0
+            
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "galleryCell", for: indexPath) as! SpotlightCollectionViewCell
+            
+            cell.featuredImage.loadImage(urlSting: self.filteredInfluencers[indexPath.row].imageUrl)
+            cell.featuredLabel.text = self.filteredInfluencers[indexPath.row].label
+            cell.contentView.layer.cornerRadius = 10.0
+            cell.contentView.layer.borderWidth = 3.0
+            cell.contentView.layer.borderColor = UIColor.clear.cgColor
+            cell.contentView.layer.masksToBounds = true
+            
+            cell.featuredImage.layer.cornerRadius = 10.0
+            cell.featuredImage.layer.masksToBounds = true
+            
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
+            
+            return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedInfluencer = self.filteredInfluencers[indexPath.row]
+        self.performSegue(withIdentifier: "toInfluencer", sender: nil)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == self.galleryView {
+            self.galleryView.didScroll()
+        }
     }
     
     @IBOutlet weak var viewLabel: UILabel!
@@ -31,13 +62,16 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var listView: UICollectionView!
     @IBOutlet weak var animation: CSAnimationView!
+    @IBOutlet weak var galleryView: ScalingCarouselView!
     
     var selectedCategory: String?
+    var selectedInfluencer: SpotlightObject?
     var filteredInfluencers = [SpotlightObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.galleryView.isHidden = true
         viewSwitch.addTarget(self, action: #selector(stateChanged), for: .valueChanged)
     }
     
@@ -55,6 +89,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.backgroundView.backgroundColor = UIColor.secondarySystemBackground
         
         self.listView.isHidden = false
+        self.galleryView.isHidden = true
         self.animation.startCanvasAnimation()
     }
     
@@ -64,6 +99,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.backgroundView.backgroundColor = UIColor.secondarySystemFill
         
         self.listView.isHidden = true
+        self.galleryView.isHidden = false
         self.animation.startCanvasAnimation()
     }
     
@@ -85,4 +121,12 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     */
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toInfluencer" {
+            if let destination = segue.destination as? InfluencerMainViewController {
+                destination.title = selectedInfluencer!.label
+                destination.selectedInfluencerId = selectedInfluencer!.influencerId
+            }
+        }
+    }
 }

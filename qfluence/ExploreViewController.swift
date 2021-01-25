@@ -128,7 +128,6 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchVideos()
-                
         self.tutorialView.layer.cornerRadius = 15.0
         self.exploreTableView.contentInsetAdjustmentBehavior = .never
     }
@@ -162,7 +161,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.allExploreObjects = self.allExploreObjects.shuffled()
 ////                self.exploreObjects = Array(self.allExploreObjects.dropLast(30))
                 self.exploreObjects = self.allExploreObjects.dropLast(10)
-                
+                self.pausePlayeVideos()
                 self.exploreTableView.reloadData()
                 self.firstLoad = false
             }

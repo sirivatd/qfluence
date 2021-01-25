@@ -179,9 +179,10 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                     
                     let featuredObject = SpotlightObject(imageUrl: dict!["imageUrl"] as! String, label: influencerName!, influencerId: dict!["influencerId"] as! Int, bioText: bioText!)
                     self.influencers.append(featuredObject)
-                    self.recentlyAdded.append(featuredObject)
                 }
             }
+            self.influencers = self.influencers.reversed()
+            self.recentlyAdded = Array(self.influencers[0...25])
         })
         
         // fetch videos
