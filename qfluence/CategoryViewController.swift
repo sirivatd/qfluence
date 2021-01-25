@@ -13,13 +13,17 @@ class CategoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
 //        
 //        if selectedCategory != nil {
 //            navigationController?.title = selectedCategory!
 //        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
 

@@ -90,7 +90,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if !self.firstLoad && self.totalCount - indexPath.row == 7                                                                     {
+        if !self.firstLoad && self.totalCount - indexPath.row == 3                                                                     {
             // fetch more
             print("Fetching")
             self.firstLoad = true
@@ -98,6 +98,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.exploreTableView.estimatedSectionHeaderHeight = 0;
             self.exploreTableView.estimatedSectionFooterHeight = 0;
             self.fetchVideos(lastKey: self.exploreObjects.last!.videoKey)
+            print(self.exploreObjects.last!.questionText)
         }
 
         // lazy load current set
@@ -128,17 +129,17 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchVideos()
-                
         self.tutorialView.layer.cornerRadius = 15.0
         self.exploreTableView.contentInsetAdjustmentBehavior = .never
     }
     
     func fetchVideos(lastKey: String = "") {
+        print(lastKey)
         var query: DatabaseQuery?
         if lastKey == "" {
             query = self.videoRef.queryOrderedByKey().queryLimited(toLast: 10)
         } else {
-            query = self.videoRef.queryOrderedByKey().queryEnding(atValue: lastKey).queryLimited(toFirst: 10)
+            query = self.videoRef.queryOrderedByKey().queryStarting(atValue: lastKey).queryLimited(toFirst: 10)
         }
         query!.observeSingleEvent(of: .value, with: { (snapshot) in
             let firebaseDispatch = DispatchGroup()
@@ -185,6 +186,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
                         
             let exploreObject = ExploreObject(imageUrl: imageUrl!, name: name!, videoUrl: videoUrl, questionText: questionText, videoKey: videoKey, influencerId: influencerId)
+            print(questionText)
             self.totalCount += 1
             self.exploreObjects.append(exploreObject)
             dispatch.leave()
