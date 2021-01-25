@@ -41,6 +41,7 @@
 		F66EA0862585A0D600952008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66EA0842585A0D600952008 /* LaunchScreen.storyboard */; };
 		F66EA0912585A0D600952008 /* qfluenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA0902585A0D600952008 /* qfluenceTests.swift */; };
 		F66EA09C2585A0D600952008 /* qfluenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA09B2585A0D600952008 /* qfluenceUITests.swift */; };
+		F67EA28D25BE739000AA4981 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67EA28C25BE739000AA4981 /* CategoryCollectionViewCell.swift */; };
 		F6850E8225AD606B0048C2CC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6850E8125AD606B0048C2CC /* SearchViewController.swift */; };
 		F68BD02325B0E9C900F083CD /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68BD02225B0E9C900F083CD /* ExploreViewController.swift */; };
 		F68BD02825B0E9EC00F083CD /* ExploreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68BD02725B0E9EC00F083CD /* ExploreTableViewCell.swift */; };
@@ -114,6 +115,7 @@
 		F66EA0972585A0D600952008 /* qfluenceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = qfluenceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66EA09B2585A0D600952008 /* qfluenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qfluenceUITests.swift; sourceTree = "<group>"; };
 		F66EA09D2585A0D600952008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F67EA28C25BE739000AA4981 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6850E8125AD606B0048C2CC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F68BD02225B0E9C900F083CD /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		F68BD02725B0E9EC00F083CD /* ExploreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewCell.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				F6533FFA25B7443D006628C4 /* CategoryViewController.swift */,
 				F606E3A925B984D80020D034 /* OptimizeViewController.swift */,
 				F691471C25BA592F00BD5994 /* SpotlightTableViewCell.swift */,
+				F67EA28C25BE739000AA4981 /* CategoryCollectionViewCell.swift */,
 			);
 			path = qfluence;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F67EA28D25BE739000AA4981 /* CategoryCollectionViewCell.swift in Sources */,
 				F691471D25BA592F00BD5994 /* SpotlightTableViewCell.swift in Sources */,
 				F61818B625AC098900A01613 /* QuestionTableViewCell.swift in Sources */,
 				F68FD69F25ACC859008257E0 /* LandingViewController.swift in Sources */,

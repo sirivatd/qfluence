@@ -577,35 +577,35 @@
                                                             <rect key="frame" x="-1" y="0.0" width="391" height="175"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="15" id="IpY-FO-an9">
-                                                                <size key="itemSize" width="218" height="168"/>
+                                                                <size key="itemSize" width="194" height="162"/>
                                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                                 <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                                                             </collectionViewFlowLayout>
                                                             <cells>
-                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="individualCatCell" id="nBw-Ld-xNO">
-                                                                    <rect key="frame" x="16" y="3.6666666666666665" width="218" height="168"/>
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="individualCatCell" id="nBw-Ld-xNO" customClass="CategoryCollectionViewCell" customModule="qfluence" customModuleProvider="target">
+                                                                    <rect key="frame" x="16" y="6.666666666666667" width="194" height="162"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dig-gm-hgZ">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="218" height="168"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="194" height="162"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJC-Fz-Hc8">
-                                                                                <rect key="frame" x="8" y="134" width="202" height="25"/>
+                                                                                <rect key="frame" x="8" y="128" width="178" height="25"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="25" id="Tp4-2R-ou7"/>
                                                                                 </constraints>
                                                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
-                                                                                <nil key="textColor"/>
+                                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popular_politics" translatesAutoresizingMaskIntoConstraints="NO" id="cod-Rz-WeG">
-                                                                                <rect key="frame" x="0.0" y="9" width="218" height="110"/>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="popular_politics" translatesAutoresizingMaskIntoConstraints="NO" id="cod-Rz-WeG">
+                                                                                <rect key="frame" x="0.0" y="9" width="193" height="97"/>
                                                                             </imageView>
                                                                         </subviews>
                                                                         <constraints>
                                                                             <constraint firstItem="cod-Rz-WeG" firstAttribute="top" secondItem="dig-gm-hgZ" secondAttribute="top" constant="9.0000000000000764" id="8WW-gd-u2N"/>
-                                                                            <constraint firstItem="NJC-Fz-Hc8" firstAttribute="top" secondItem="cod-Rz-WeG" secondAttribute="bottom" constant="15" id="Gbu-Bc-HcP"/>
+                                                                            <constraint firstItem="NJC-Fz-Hc8" firstAttribute="top" secondItem="cod-Rz-WeG" secondAttribute="bottom" constant="22" id="Gbu-Bc-HcP"/>
                                                                             <constraint firstItem="cod-Rz-WeG" firstAttribute="centerX" secondItem="NJC-Fz-Hc8" secondAttribute="centerX" id="XIK-NA-2pQ"/>
                                                                             <constraint firstItem="cod-Rz-WeG" firstAttribute="leading" secondItem="dig-gm-hgZ" secondAttribute="leading" id="aeR-Y9-YyV"/>
                                                                             <constraint firstAttribute="bottom" secondItem="NJC-Fz-Hc8" secondAttribute="bottom" constant="9.0000000000000284" id="m2u-8y-xh0"/>
@@ -613,7 +613,11 @@
                                                                             <constraint firstItem="NJC-Fz-Hc8" firstAttribute="trailing" secondItem="dig-gm-hgZ" secondAttribute="trailingMargin" id="wBk-9m-UaH"/>
                                                                         </constraints>
                                                                     </collectionViewCellContentView>
-                                                                    <size key="customSize" width="218" height="168"/>
+                                                                    <size key="customSize" width="194" height="162"/>
+                                                                    <connections>
+                                                                        <outlet property="categoryLabel" destination="NJC-Fz-Hc8" id="Uc3-qD-Vsw"/>
+                                                                        <outlet property="imageView" destination="cod-Rz-WeG" id="xQ5-wq-ODU"/>
+                                                                    </connections>
                                                                 </collectionViewCell>
                                                             </cells>
                                                             <connections>
@@ -2637,14 +2641,6 @@
             <point key="canvasLocation" x="-3588" y="-2859"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="0hI-zz-Z8P"/>
-        <designable name="1bt-lb-dDY"/>
-        <designable name="CoH-ep-Yxs"/>
-        <designable name="HAU-BU-0ME"/>
-        <designable name="JAP-LD-ndo"/>
-        <designable name="aVy-YH-Z1m"/>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="wND-FQ-09E"/>
         <segue reference="1oT-Ce-Q7g"/>

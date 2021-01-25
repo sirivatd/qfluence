@@ -73,7 +73,7 @@ extension SpotlightViewController: UITableViewDataSource {
 extension SpotlightViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0   || indexPath.row == self.featuredObjects.count {
-            return 450
+            return 400
         } else if indexPath.row == 1 {
             return 200
         }  else {
@@ -165,14 +165,10 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "individualCatCell", for: indexPath)
-//        cell.popularImage.image = popularObjects[indexPath.row].image
-//        cell.popularLabel.text = popularObjects[indexPath.row].label
-//
-        cell.contentView.layer.cornerRadius = 5.0
-        cell.contentView.layer.borderWidth = 0.5
-        cell.contentView.layer.borderColor = UIColor.clear.cgColor
-        cell.contentView.layer.masksToBounds = true
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "individualCatCell", for: indexPath) as! CategoryCollectionViewCell
+
+        cell.categoryLabel.text = self.categoryObjects[indexPath.row].label
+        cell.imageView.image = self.categoryObjects[indexPath.row].image
 
         return cell
     }
@@ -192,19 +188,19 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func addObjects() {
-        // Backfill popular section
+        // Backfill categories
         let categoryObject = CategoryObject(image: UIImage(named: "film")!, label: "Film", influencerId: 1)
         let categoryObject2 = CategoryObject(image: UIImage(named: "sports")!, label: "Sports", influencerId: 1)
         let categoryObject3 = CategoryObject(image: UIImage(named: "business")!, label: "Business", influencerId: 1)
         let categoryObject4 = CategoryObject(image: UIImage(named: "music")!, label: "Music", influencerId: 1)
-        let categoryObject5 = CategoryObject(image: UIImage(named: "politics")!, label: "Animal", influencerId: 1)
+        let categoryObject5 = CategoryObject(image: UIImage(named: "animal")!, label: "Animal & Nature", influencerId: 1)
         let categoryObject6 = CategoryObject(image: UIImage(named: "food")!, label: "Food", influencerId: 1)
-        let categoryObject7 = CategoryObject(image: UIImage(named: "models")!, label: "Models", influencerId: 1)
+        let categoryObject7 = CategoryObject(image: UIImage(named: "fashion")!, label: "Fashion & Style", influencerId: 1)
         let categoryObject8 = CategoryObject(image: UIImage(named: "politics")!, label: "Politics", influencerId: 1)
-        let categoryObject9 = CategoryObject(image: UIImage(named: "youtube")!, label: "Youtube", influencerId: 1)
+        let categoryObject9 = CategoryObject(image: UIImage(named: "social_media")!, label: "Social media", influencerId: 1)
         let categoryObject10 = CategoryObject(image: UIImage(named: "education")!, label: "Education", influencerId: 1)
         let categoryObject11 = CategoryObject(image: UIImage(named: "medicine")!, label: "Medicine", influencerId: 1)
-        let categoryObject12 = CategoryObject(image: UIImage(named: "technlogy")!, label: "Technology", influencerId: 1)
+        let categoryObject12 = CategoryObject(image: UIImage(named: "technology")!, label: "Technology", influencerId: 1)
 
         categoryObjects.append(categoryObject)
         categoryObjects.append(categoryObject2)

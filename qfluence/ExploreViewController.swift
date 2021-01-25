@@ -140,7 +140,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
 //        } else {
 //            query = self.videoRef.queryOrderedByKey().queryEnding(atValue: lastKey).queryLimited(toFirst: 10)
 //        }
-        query = self.videoRef.queryOrderedByKey().queryLimited(toFirst: 400)
+        query = self.videoRef.queryOrderedByKey().queryLimited(toFirst: 200)
 
         query!.observeSingleEvent(of: .value, with: { (snapshot) in
             let firebaseDispatch = DispatchGroup()
