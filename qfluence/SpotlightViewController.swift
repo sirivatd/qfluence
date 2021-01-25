@@ -65,7 +65,7 @@ extension SpotlightViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row > 1 && indexPath.row < self.featuredObjects.count {
+        if indexPath.row > 1 && indexPath.row < self.featuredObjects.count + 1 {
             tableView.deselectRow(at: indexPath, animated: true)
             self.selectedObject = featuredObjects[indexPath.row-2]
             performSegue(withIdentifier: "toInfluencer", sender: self)
@@ -75,7 +75,7 @@ extension SpotlightViewController: UITableViewDataSource {
 
 extension SpotlightViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0   || indexPath.row == self.featuredObjects.count {
+        if indexPath.row == 0   || indexPath.row == self.featuredObjects.count + 1 {
             return 400
         } else if indexPath.row == 1 {
             return 200
@@ -116,6 +116,8 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
     
     private var categoryObjects = [CategoryObject]()
     private var featuredObjects = [SpotlightObject]()
+    private var allFeaturedObjects = [SpotlightObject]()
+    private var filteredObjects = [SpotlightObject]()
     private var selectedObject: SpotlightObject?
     private var selectedCategory: CategoryObject?
     @IBOutlet weak var animationView: CSAnimationView!
@@ -213,7 +215,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         categoryObjects.append(categoryObject11)
         categoryObjects.append(categoryObject12)
 
-        let ref = Database.database().reference(withPath: "influencers").queryLimited(toLast: 26)
+        let ref = Database.database().reference(withPath: "influencers")
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             for influencer in snapshot.children {
                 if let snapshot = influencer as? DataSnapshot {
@@ -231,10 +233,14 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
                     }
                     
                     let featuredObject = SpotlightObject(imageUrl: dict!["imageUrl"] as! String, label: influencerName!, influencerId: dict!["influencerId"] as! Int, bioText: bioText!)
-                    self.featuredObjects.append(featuredObject)
+                    self.allFeaturedObjects.append(featuredObject)
                 }
             }
                 
+            self.allFeaturedObjects = self.allFeaturedObjects.shuffled()
+            self.featuredObjects = Array(self.allFeaturedObjects[0...26])
+            print(self.featuredObjects.count)
+            print(self.allFeaturedObjects.count)
             self.mainTableView.reloadData()
 //            self.popularCollectionView.isHidden = false
             self.mainTableView.isHidden = false
@@ -244,7 +250,14 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
             self.loadingIndicator.removeFromSuperview()
             self.animationView.startCanvasAnimation()
         })
-        print(self.featuredObjects)
+    }
+    
+    func filterInfluencers(category: String) -> [SpotlightObject] {
+//        let filtered = self.allFeaturedObjects.filter{$0.bioText.lowercased() == self.selectedCategory!.label.lowercased()}
+//
+//        return filtered
+        
+        return self.allFeaturedObjects
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -257,6 +270,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
             if let destination = segue.destination as? CategoryViewController {
                 destination.title = selectedCategory?.label
                 destination.selectedCategory = selectedCategory?.label
+                destination.filteredInfluencers = self.filterInfluencers(category: selectedCategory!.label)
             }
         }
     }
