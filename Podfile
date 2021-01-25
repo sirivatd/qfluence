@@ -10,5 +10,6 @@ pod 'Firebase/Analytics'
 pod 'lottie-ios'
 pod 'LNParallaxTVCell'
 pod 'ScalingCarousel'
+pod 'SideMenu'
 
 end

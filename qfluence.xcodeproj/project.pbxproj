@@ -12,6 +12,8 @@
 		F606E3AA25B984D80020D034 /* OptimizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F606E3A925B984D80020D034 /* OptimizeViewController.swift */; };
 		F606E3AF25B98D630020D034 /* checkmark.json in Resources */ = {isa = PBXBuildFile; fileRef = F606E3AE25B98D630020D034 /* checkmark.json */; };
 		F606E3B425B990470020D034 /* optimize.json in Resources */ = {isa = PBXBuildFile; fileRef = F606E3B325B990470020D034 /* optimize.json */; };
+		F617285825BEC2D70007FE58 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F617285725BEC2D70007FE58 /* SideMenuViewController.swift */; };
+		F617285D25BEC53A0007FE58 /* SettingOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F617285C25BEC53A0007FE58 /* SettingOptionTableViewCell.swift */; };
 		F61818B625AC098900A01613 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61818B525AC098900A01613 /* QuestionTableViewCell.swift */; };
 		F61818B825AC0FBB00A01613 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61818B725AC0FBB00A01613 /* ProgressView.swift */; };
 		F61818BA25AC0FDF00A01613 /* ProgressShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61818B925AC0FDF00A01613 /* ProgressShapeLayer.swift */; };
@@ -86,6 +88,8 @@
 		F606E3A925B984D80020D034 /* OptimizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimizeViewController.swift; sourceTree = "<group>"; };
 		F606E3AE25B98D630020D034 /* checkmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = checkmark.json; sourceTree = "<group>"; };
 		F606E3B325B990470020D034 /* optimize.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = optimize.json; sourceTree = "<group>"; };
+		F617285725BEC2D70007FE58 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		F617285C25BEC53A0007FE58 /* SettingOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionTableViewCell.swift; sourceTree = "<group>"; };
 		F61818B525AC098900A01613 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		F61818B725AC0FBB00A01613 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		F61818B925AC0FDF00A01613 /* ProgressShapeLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressShapeLayer.swift; sourceTree = "<group>"; };
@@ -261,6 +265,8 @@
 				F67EA29D25BE777F00AA4981 /* BufferViewController.swift */,
 				F67EA2A225BE7D6C00AA4981 /* PhotoCache.swift */,
 				F67EA2A725BE8A0100AA4981 /* CategoryInfluencerCollectionViewCell.swift */,
+				F617285725BEC2D70007FE58 /* SideMenuViewController.swift */,
+				F617285C25BEC53A0007FE58 /* SettingOptionTableViewCell.swift */,
 			);
 			path = qfluence;
 			sourceTree = "<group>";
@@ -484,6 +490,7 @@
 				F61818C225AC134E00A01613 /* StrokeColorAnimation.swift in Sources */,
 				F696985C25B008DE00566999 /* QuestionCollectionViewCell.swift in Sources */,
 				F61DD0BE25AAEABD00424CB0 /* InfluencerMainViewController.swift in Sources */,
+				F617285825BEC2D70007FE58 /* SideMenuViewController.swift in Sources */,
 				F6533FFB25B7443E006628C4 /* CategoryViewController.swift in Sources */,
 				F6533F4D25B6358A006628C4 /* OnboardingViewController.swift in Sources */,
 				F6F81F4025AD2E9C00B64B87 /* ProfileViewController.swift in Sources */,
@@ -497,6 +504,7 @@
 				F68BD02D25B11FB000F083CD /* FirebaseStorageManager.swift in Sources */,
 				F66EA07C2585A0D400952008 /* AppDelegate.swift in Sources */,
 				F653403625B93A7C006628C4 /* ASVideoContainer.swift in Sources */,
+				F617285D25BEC53A0007FE58 /* SettingOptionTableViewCell.swift in Sources */,
 				F6AF3EE2258740A600474738 /* SpotlightCollectionViewCell.swift in Sources */,
 				F67EA2A825BE8A0100AA4981 /* CategoryInfluencerCollectionViewCell.swift in Sources */,
 				F68FD6A125ACC862008257E0 /* LoginViewController.swift in Sources */,

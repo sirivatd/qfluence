@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SideMenu
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var greetingText: UILabel!
@@ -19,43 +20,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var darkModeButton: UIButton!
     @IBOutlet weak var termsButton: UIButton!
     @IBOutlet weak var contactButton: UIButton!
-    
-    @IBAction func contactPressed(_ sender: Any) {
-        let email = "hello@qfluencer.com"
-        if let url = URL(string: "mailto:\(email)") {
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url)
-            } else {
-                UIApplication.shared.openURL(url)
-            }
-        }
-    }
-    
-    @IBAction func termsPressed(_ sender: Any) {
-        guard let url = URL(string: "https://qfluence.herokuapp.com") else { return }
-        UIApplication.shared.open(url)
-    }
-    @IBAction func darkModePressed(_ sender: Any) {
-        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
-    }
-
-    @IBAction func logoutPressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Signing Out", message: nil, preferredStyle: .alert)
-        alert.message = "Are you sure you want to sign out?"
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            let firebaseAuth = Auth.auth()
-            do {
-                try firebaseAuth.signOut()
-                self.dismiss(animated: true, completion: nil)
-            } catch let signOutError as NSError {
-                print("Error signing out: %@", signOutError)
-            }
-        }))
-
-        self.present(alert, animated: true)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,5 +89,12 @@ class ProfileViewController: UIViewController {
         self.termsButton.layer.shadowRadius = 5
         self.termsButton.layer.shadowPath = UIBezierPath(rect: self.termsButton.bounds).cgPath
         self.termsButton.layer.cornerRadius = 10.0
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMenu" {
+            let vc = segue.destination as! SideMenuNavigationController
+            vc.blurEffectStyle = .systemThickMaterialDark
+        }
     }
 }

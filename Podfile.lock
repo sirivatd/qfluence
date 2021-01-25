@@ -89,6 +89,7 @@ PODS:
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
   - ScalingCarousel (3.2.0)
+  - SideMenu (6.5.0)
 
 DEPENDENCIES:
   - AFBlurSegue
@@ -100,6 +101,7 @@ DEPENDENCIES:
   - LNParallaxTVCell
   - lottie-ios
   - ScalingCarousel
+  - SideMenu
 
 SPEC REPOS:
   trunk:
@@ -123,6 +125,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - ScalingCarousel
+    - SideMenu
 
 SPEC CHECKSUMS:
   AFBlurSegue: 27e55f015360f4e11117d2c3a959dbb5316eef78
@@ -145,7 +148,8 @@ SPEC CHECKSUMS:
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   ScalingCarousel: d40f0ce438af5cfb2225e2f723f7161597961128
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
-PODFILE CHECKSUM: 40eea05c416652ad7923290260c7f79346b21415
+PODFILE CHECKSUM: b1dad8ef63d69018676a199e3d0280469e03e204
 
 COCOAPODS: 1.10.1
