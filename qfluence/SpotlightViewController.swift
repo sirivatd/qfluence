@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import Canvas
+import Firebase
 
 struct SpotlightObject {
     let imageUrl: String
@@ -105,11 +106,6 @@ extension SpotlightViewController: UITableViewDelegate {
             }
         }
     }
-    
-//    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "featuredCell") as! SpotlightTableViewCell
-//        cell.parallaxImage.task?.cancel()
-//    }
 }
 
 class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
@@ -252,8 +248,8 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toInfluencer" {
             if let destination = segue.destination as? InfluencerMainViewController {
-                destination.title = selectedCategory?.label
-                destination.selectedInfluencerId = selectedCategory?.influencerId
+                destination.title = selectedObject?.label
+                destination.selectedInfluencerId = selectedObject?.influencerId
             }
         } else if segue.identifier == "toCategory" {
             if let destination = segue.destination as? CategoryViewController {
