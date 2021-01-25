@@ -477,7 +477,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="325"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGM-Lw-or2">
+                                                        <view alpha="0.34999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGM-Lw-or2">
                                                             <rect key="frame" x="0.0" y="0.0" width="390" height="325"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LL-jl-Aci">
@@ -486,7 +486,7 @@
                                                                         <constraint firstAttribute="width" constant="296" id="U78-wr-ATy"/>
                                                                         <constraint firstAttribute="height" constant="21" id="b9M-YM-TlP"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
                                                                     <color key="textColor" systemColor="systemRedColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>

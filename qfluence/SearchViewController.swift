@@ -63,7 +63,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         if collectionView == self.videoCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath) as! QuestionCollectionViewCell
             cell.questionText.text = self.matchesVideos[indexPath.row].questionText
-            cell.profilePicture.downloadImageFrom(link: self.matchesVideos[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+            cell.profilePicture.loadImage(urlSting: self.matchesVideos[indexPath.row].imageUrl)
             cell.profilePicture.layer.borderWidth = 1
             cell.profilePicture.layer.masksToBounds = false
             cell.profilePicture.layer.borderColor = UIColor.clear.cgColor
@@ -80,7 +80,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             return cell
         } else if collectionView == self.peopleCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "personCell", for: indexPath) as! SpotlightCollectionViewCell
-            cell.featuredImage.downloadImageFrom(link: self.matchedInfluencers[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+            cell.featuredImage.loadImage(urlSting: self.matchedInfluencers[indexPath.row].imageUrl)
             cell.featuredLabel.text = self.matchedInfluencers[indexPath.row].label
             cell.contentView.layer.cornerRadius = 5.0
             cell.contentView.layer.borderWidth = 0.5
@@ -90,7 +90,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recentlyAddedCell", for: indexPath) as! SpotlightCollectionViewCell
-            cell.featuredImage.downloadImageFrom(link: self.recentlyAdded[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+            cell.featuredImage.loadImage(urlSting: self.recentlyAdded[indexPath.row].imageUrl)
             cell.featuredLabel.text = self.recentlyAdded[indexPath.row].label
             cell.contentView.layer.cornerRadius = 10.0
             cell.contentView.layer.borderWidth = 3.0

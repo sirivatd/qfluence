@@ -61,7 +61,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.profileButton.tag = indexPath.row
         cell.questionText.text = self.exploreObjects[indexPath.row].questionText
         cell.subtitleText.text = self.exploreObjects[indexPath.row].name
-        cell.profilePicture.downloadImageFrom(link: self.exploreObjects[indexPath.row].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+        cell.profilePicture.loadImage(urlSting: self.exploreObjects[indexPath.row].imageUrl)
 
         cell.profilePicture.layer.borderWidth = 2.5
         cell.profilePicture.image = UIImage(named: "q_default_pro_pic")

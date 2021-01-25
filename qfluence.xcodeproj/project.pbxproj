@@ -43,6 +43,7 @@
 		F66EA09C2585A0D600952008 /* qfluenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EA09B2585A0D600952008 /* qfluenceUITests.swift */; };
 		F67EA28D25BE739000AA4981 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67EA28C25BE739000AA4981 /* CategoryCollectionViewCell.swift */; };
 		F67EA29E25BE777F00AA4981 /* BufferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67EA29D25BE777F00AA4981 /* BufferViewController.swift */; };
+		F67EA2A325BE7D6C00AA4981 /* PhotoCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67EA2A225BE7D6C00AA4981 /* PhotoCache.swift */; };
 		F6850E8225AD606B0048C2CC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6850E8125AD606B0048C2CC /* SearchViewController.swift */; };
 		F68BD02325B0E9C900F083CD /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68BD02225B0E9C900F083CD /* ExploreViewController.swift */; };
 		F68BD02825B0E9EC00F083CD /* ExploreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68BD02725B0E9EC00F083CD /* ExploreTableViewCell.swift */; };
@@ -118,6 +119,7 @@
 		F66EA09D2585A0D600952008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F67EA28C25BE739000AA4981 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F67EA29D25BE777F00AA4981 /* BufferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferViewController.swift; sourceTree = "<group>"; };
+		F67EA2A225BE7D6C00AA4981 /* PhotoCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCache.swift; sourceTree = "<group>"; };
 		F6850E8125AD606B0048C2CC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F68BD02225B0E9C900F083CD /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		F68BD02725B0E9EC00F083CD /* ExploreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewCell.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				F691471C25BA592F00BD5994 /* SpotlightTableViewCell.swift */,
 				F67EA28C25BE739000AA4981 /* CategoryCollectionViewCell.swift */,
 				F67EA29D25BE777F00AA4981 /* BufferViewController.swift */,
+				F67EA2A225BE7D6C00AA4981 /* PhotoCache.swift */,
 			);
 			path = qfluence;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				F61818B625AC098900A01613 /* QuestionTableViewCell.swift in Sources */,
 				F67EA29E25BE777F00AA4981 /* BufferViewController.swift in Sources */,
 				F68FD69F25ACC859008257E0 /* LandingViewController.swift in Sources */,
+				F67EA2A325BE7D6C00AA4981 /* PhotoCache.swift in Sources */,
 				F6AF3EDE25873D7900474738 /* SpotlightViewController.swift in Sources */,
 				F606E3AA25B984D80020D034 /* OptimizeViewController.swift in Sources */,
 				F61DD0C225AAF99300424CB0 /* InfluencerVideoTableViewCell.swift in Sources */,

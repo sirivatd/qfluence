@@ -52,8 +52,10 @@ extension SpotlightViewController: UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "featuredCell") as! SpotlightTableViewCell
-            cell.parallaxImage.task = cell.parallaxImage.returnTask(link: self.featuredObjects[indexPath.row - 2].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
-            cell.parallaxImage.task?.resume()
+//            cell.parallaxImage.task = cell.parallaxImage.returnTask(link: self.featuredObjects[indexPath.row - 2].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+//            cell.parallaxImage.task?.resume()
+            
+            cell.parallaxImage.loadImage(urlSting: self.featuredObjects[indexPath.row - 2].imageUrl)
 
             cell.featuredLabel.text = self.featuredObjects[indexPath.row-2].label
             cell.bioText.text = self.featuredObjects[indexPath.row-2].bioText
@@ -218,7 +220,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
                     let dict = snapshot.value as? NSDictionary
                     let firstName = dict!["firstName"] as? String
                     let lastName = dict!["lastName"] as? String
-                    let bioText = dict!["bioText"] as? String
+                    let bioText = dict!["category"] as? String
                     
                     // simple name logic
                     var influencerName: String?
@@ -257,27 +259,5 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
                 destination.selectedCategory = selectedCategory?.label
             }
         }
-    }
-}
-
-extension UIImageView {
-    func downloadImageFrom(link:String, contentMode: UIView.ContentMode) {
-        URLSession.shared.dataTask( with: NSURL(string:link)! as URL, completionHandler: {
-            (data, response, error) -> Void in
-            DispatchQueue.main.async {
-                self.contentMode =  contentMode
-                if let data = data { self.image = UIImage(data: data) }
-            }
-        }).resume()
-    }
-    
-    func returnTask(link:String, contentMode: UIView.ContentMode) -> URLSessionDataTask {
-        URLSession.shared.dataTask( with: NSURL(string:link)! as URL, completionHandler: {
-            (data, response, error) -> Void in
-            DispatchQueue.main.async {
-                self.contentMode =  contentMode
-                if let data = data { self.image = UIImage(data: data) }
-            }
-        })
     }
 }

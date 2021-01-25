@@ -16,7 +16,7 @@ extension InfluencerMainViewController: UITableViewDataSource {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "influencerHeader") as! InfluencerHeaderTableViewCell
             if self.selectedInfluencer != nil {
-                cell.profilePicture.downloadImageFrom(link: selectedInfluencer!.imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
+                cell.profilePicture.loadImage(urlSting: selectedInfluencer!.imageUrl)
                 
                 cell.bioText.text = selectedInfluencer!.bioText
                 
