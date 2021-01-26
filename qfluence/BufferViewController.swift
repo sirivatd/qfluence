@@ -24,6 +24,7 @@ class BufferViewController: UIViewController {
             if user != nil {
                 let ref = Database.database().reference(withPath: "users")
                 ref.child(user!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                    let uid = user!.uid
                     let user = snapshot.value as? NSDictionary
                     
                     let firstName = user!["firstName"] as? String ?? ""
@@ -32,7 +33,8 @@ class BufferViewController: UIViewController {
                     let joinedAt = user!["timeCreated"] as? String ?? ""
                     let follows = user!["follows"] as? [Int] ?? []
                     
-                    let foundUser = UserObject(firstName: firstName, lastName: lastName, emailAddress: emailAddress, joinedAt: joinedAt, follows: follows)
+                    let foundUser = UserObject(firstName: firstName, lastName: lastName, emailAddress: emailAddress, joinedAt: joinedAt, follows: follows, uid: uid)
+                    
                     currentUser = foundUser
                     self.performSegue(withIdentifier: "toMainApp", sender: self)
                 })

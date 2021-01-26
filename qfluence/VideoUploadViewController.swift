@@ -59,7 +59,6 @@ class VideoUploadViewController: UIViewController, UIImagePickerControllerDelega
         
         do {
             let data = try Data(contentsOf: movieUrl)
-            print("YESSSSSSSSS")
             
             let uploadTask = videosRef.putData(data, metadata: nil) { (metadata, error) in
               guard let metadata = metadata else {
@@ -76,8 +75,6 @@ class VideoUploadViewController: UIViewController, UIImagePickerControllerDelega
                 }
                 self.checkmark.isHidden = false
                 self.videoUrl = "\(downloadURL)"
-                print("===========================================")
-                print(self.videoUrl)
               }
             }
         } catch {

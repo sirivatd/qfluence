@@ -36,7 +36,22 @@ struct InfluencerObject {
     let influencerId: Int
 }
 
-extension SpotlightViewController: UITableViewDataSource {
+extension SpotlightViewController: UITableViewDataSource, SpotlightTableViewCellDelegate {
+    func didPressFollowButton(_ tag: Int) {
+        // follow or unfollow
+        let followedId = self.featuredObjects[tag].influencerId
+        if currentUser!.follows.contains(followedId) {
+            // unfollow
+            let indexToRemove = currentUser?.follows.index(of: followedId)
+            currentUser?.follows.remove(at: indexToRemove!)
+        } else {
+            // follow
+            currentUser?.follows.append(followedId)
+        }
+        
+        self.mainTableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.featuredObjects.count + 2
     }
@@ -52,11 +67,22 @@ extension SpotlightViewController: UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "featuredCell") as! SpotlightTableViewCell
-            
+            cell.spotlightTableViewCellDelegate = self
+
             cell.parallaxImage.loadImage(urlSting: self.featuredObjects[indexPath.row - 2].imageUrl)
 
             cell.featuredLabel.text = self.featuredObjects[indexPath.row-2].label
             cell.bioText.text = self.featuredObjects[indexPath.row-2].bioText
+            cell.followButton.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
+            cell.followButton.tag = indexPath.row - 2
+            
+            if currentUser?.follows != nil {
+                let followIds = currentUser!.follows
+                let currentId = self.featuredObjects[indexPath.row-2].influencerId
+                if followIds.contains(currentId) {
+                    cell.followButton.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
+                }
+            }
             
             return cell
         }
@@ -121,6 +147,7 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet weak var animationView: CSAnimationView!
     
     var originalCellHeight: Float?
+    private var ref: DatabaseReference?
 
     
     override func viewDidLoad() {
@@ -213,8 +240,8 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         categoryObjects.append(categoryObject11)
         categoryObjects.append(categoryObject12)
 
-        let ref = Database.database().reference(withPath: "influencers")
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+        self.ref = Database.database().reference(withPath: "influencers")
+        self.ref!.observeSingleEvent(of: .value, with: { (snapshot) in
             for influencer in snapshot.children {
                 if let snapshot = influencer as? DataSnapshot {
                     let dict = snapshot.value as? NSDictionary
@@ -237,10 +264,8 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
                 
             self.allFeaturedObjects = self.allFeaturedObjects.shuffled()
             self.featuredObjects = Array(self.allFeaturedObjects[0...26])
-            print(self.featuredObjects.count)
-            print(self.allFeaturedObjects.count)
+  
             self.mainTableView.reloadData()
-//            self.popularCollectionView.isHidden = false
             self.mainTableView.isHidden = false
             self.animationView.isHidden = false
             
@@ -248,6 +273,22 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
             self.loadingIndicator.removeFromSuperview()
             self.animationView.startCanvasAnimation()
         })
+    }
+    
+    func saveFollowData() {
+        let userId = currentUser?.uid
+        let followData = currentUser?.follows
+        
+        print(currentUser)
+        
+        self.ref = Database.database().reference()
+        self.ref = ref!.child("users").child(userId!)
+        self.ref?.setValue(["follows": Array(arrayLiteral: followData)])
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // save data to Firebase
+        saveFollowData()
     }
     
     func filterInfluencers(category: String) -> [SpotlightObject] {

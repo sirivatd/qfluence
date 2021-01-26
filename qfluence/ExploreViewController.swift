@@ -92,7 +92,6 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if !self.firstLoad && self.exploreObjects.count - indexPath.row == 7                                                                     {
             // fetch more
-            print("Fetching")
             self.exploreTableView.estimatedRowHeight = 0;
             self.exploreTableView.estimatedSectionHeaderHeight = 0;
             self.exploreTableView.estimatedSectionFooterHeight = 0;

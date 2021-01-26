@@ -15,6 +15,7 @@ struct SettingOption {
 }
 
 class SideMenuViewController: UITableViewController {
+    var vc = ProfileViewController()
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.settingOptions.count
     }
@@ -118,9 +119,8 @@ class SideMenuViewController: UITableViewController {
             let firebaseAuth = Auth.auth()
             do {
                 try firebaseAuth.signOut()
-                self.dismiss(animated: true, completion: nil)
+                self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
             } catch let signOutError as NSError {
-                print("Error signing out: %@", signOutError)
             }
         }))
 

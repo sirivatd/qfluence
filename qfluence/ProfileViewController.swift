@@ -98,8 +98,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
 //        updateGreeting()
 
-        print(currentUser!.follows)
-        print(currentUser!.firstName)
         fetchFollows()
     }
     
@@ -143,9 +141,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
      
                 let newObject: SpotlightObject = SpotlightObject(imageUrl: imageUrlString, label: name!, influencerId: id, bioText: bioText)
                 self.likedObjects.append(newObject)
-                print(self.likedObjects)
-                print(self.likedObjects.count)
             }
+
+            currentUser?.follows = self.likedObjects.map{$0.influencerId}
             self.mainView.reloadData()
         });
     }
@@ -179,6 +177,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             if let destination = segue.destination as? InfluencerMainViewController {
                 destination.title = self.selectedObject?.label
                 destination.selectedInfluencerId = self.selectedObject?.influencerId
+            }
+        }
+        if segue.identifier == "toMenu" {
+            if let destination = segue.destination as? SideMenuViewController {
+                destination.vc = self
             }
         }
     }

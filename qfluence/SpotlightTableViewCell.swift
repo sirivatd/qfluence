@@ -13,19 +13,22 @@ class SpotlightTableViewCell: LNParallaxTVCell {
     @IBOutlet weak var featuredLabel: UILabel!
     @IBOutlet weak var tintView: UIView!
     @IBOutlet weak var bioText: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    @IBOutlet weak var followButton: UIButton!
     
-    override func prepareForReuse() {
-        self.parallaxImage.task?.cancel()
-        self.parallaxImage.image = nil
+    var spotlightTableViewCellDelegate: SpotlightTableViewCellDelegate?
+    
+    @IBAction func followPressed(_  sender: UIButton) {
+        spotlightTableViewCellDelegate?.didPressFollowButton(sender.tag)
+        print("Hello")
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state
+//    }
+}
 
-        // Configure the view for the selected state
-    }
+protocol SpotlightTableViewCellDelegate {
+    func didPressFollowButton(_ tag: Int)
 }

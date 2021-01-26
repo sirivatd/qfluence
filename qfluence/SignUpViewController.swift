@@ -11,11 +11,12 @@ import Firebase
 import Canvas
 
 struct UserObject {
-    let firstName: String
-    let lastName: String
-    let emailAddress: String
-    let joinedAt: String
-    let follows: [Int]
+    var firstName: String
+    var lastName: String
+    var emailAddress: String
+    var joinedAt: String
+    var follows: [Int]
+    var uid: String
 }
 var currentUser: UserObject?
 var isFirstTime: Bool = false
@@ -107,10 +108,8 @@ class SignUpViewController: UIViewController {
             ref.child(user.uid).setValue(userDict) {
                 (error: Error?, ref: DatabaseReference) in
                 if let error = error {
-                    print("Error saving user")
                 } else {
-                    print("Data saved successfully!")
-                    currentUser = UserObject(firstName: self.firstNameField.text!, lastName: self.lastNameField.text!, emailAddress: String(emailAddress), joinedAt: "\(Date())", follows: [])
+                    currentUser = UserObject(firstName: self.firstNameField.text!, lastName: self.lastNameField.text!, emailAddress: String(emailAddress), joinedAt: "\(Date())", follows: [], uid: user.uid)
                     isFirstTime = true
                     self.performSegue(withIdentifier: "toMainApp", sender: nil)
                 }

@@ -144,7 +144,6 @@ class InfluencerMainViewController: UIViewController {
             nameQuery = self.selectedInfluencer!.firstName.trimmingCharacters(in: .whitespacesAndNewlines) + "+" + self.selectedInfluencer!.lastName.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         nameQuery = nameQuery!.filter { !"[ !\"#$%&'()*+,-./:;<=>?@\\[\\\\\\]^_`{|}~]+".contains($0) }
-        print(nameQuery)
         guard let url = URL(string: "https://www.google.com/search?q=\(nameQuery!)") else {
             return
         }
@@ -180,10 +179,6 @@ class InfluencerMainViewController: UIViewController {
                 if let snapshot = video as? DataSnapshot {
                     let dict = snapshot.value as? NSDictionary
                     let influencerId = dict!["influencerId"] as? Int
-                    if influencerId == nil {
-                        print(snapshot.key)
-                    }
-                    
                         
                     if self.selectedInfluencerId != influencerId {
                         continue

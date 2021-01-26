@@ -48,7 +48,6 @@ public extension Animation {
       return animation
     } catch {
       /// Decoding error.
-      print(error)
       return nil
     }
   }

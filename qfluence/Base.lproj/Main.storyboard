@@ -422,7 +422,10 @@
                                                                 <constraint firstAttribute="width" constant="53" id="yEv-sY-K7P"/>
                                                             </constraints>
                                                             <color key="tintColor" systemColor="systemRedColor"/>
-                                                            <state key="normal" backgroundImage="heart.fill" catalog="system"/>
+                                                            <state key="normal" backgroundImage="heart" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="followPressed:" destination="4ks-NT-lZF" eventType="touchUpInside" id="mSZ-QG-w8w"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -448,6 +451,7 @@
                                                 <connections>
                                                     <outlet property="bioText" destination="8LL-jl-Aci" id="1Bc-dG-tr2"/>
                                                     <outlet property="featuredLabel" destination="Juq-8n-5O5" id="hP5-J7-e2U"/>
+                                                    <outlet property="followButton" destination="RSX-Wm-MQ5" id="yMU-sm-cYc"/>
                                                     <outlet property="tintView" destination="tGM-Lw-or2" id="Ugk-a7-HT5"/>
                                                 </connections>
                                             </tableViewCell>
@@ -1419,7 +1423,7 @@
                                                         <constraint firstAttribute="height" constant="46" id="Umt-BT-11B"/>
                                                     </constraints>
                                                     <color key="tintColor" systemColor="systemRedColor"/>
-                                                    <state key="normal" backgroundImage="heart.fill" catalog="system"/>
+                                                    <state key="normal" backgroundImage="heart" catalog="system"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -2932,14 +2936,14 @@
         <segue reference="U6L-Z0-IcX"/>
         <segue reference="1oT-Ce-Q7g"/>
         <segue reference="v3q-wk-36r"/>
-        <segue reference="5Yq-At-XrY"/>
-        <segue reference="bXB-0k-Ta5"/>
+        <segue reference="Mi1-Jy-Diq"/>
+        <segue reference="d9M-6M-dkn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="checkmark.icloud.fill" catalog="system" width="128" height="88"/>
         <image name="food" width="344.5" height="174"/>
-        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="icons8-spotlight-60" width="30" height="30"/>
         <image name="instagram" width="64" height="64"/>
         <image name="lightbulb.fill" catalog="system" width="113" height="128"/>
