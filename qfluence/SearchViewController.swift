@@ -277,22 +277,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
 //        self.view.addGestureRecognizer(tap)
     }
     
-    func setTimer() {
-        self.timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(SearchViewController.autoScroll), userInfo: nil, repeats: true)
-    }
-    
-    var x = 1
-    @objc func autoScroll() {
-        if self.x < self.recentlyAdded.count {
-          let indexPath = IndexPath(item: x, section: 0)
-            self.recentlyAddedView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-          self.x = self.x + 1
-        }else{
-          self.x = 0
-          self.recentlyAddedView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
-        }
-    }
-    
     @objc func dismissMyKeyboard() {
         view.endEditing(true)
     }
@@ -300,8 +284,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: animated)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        
-        setTimer()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

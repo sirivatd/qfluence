@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         switch indexPath.row {
         case 0:
             // Greeting cell
-            return 200
+            return 225
         case 1:
             // Other info cell
             return 5
@@ -40,22 +40,26 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         case 0:
             // Greeting cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "greetingCell", for: indexPath)
+            cell.backgroundColor = .clear
             
             return cell
         case 1:
             // Other info cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "otherInfoCell", for: indexPath)
-            
+            cell.backgroundColor = .clear
+
             return cell
         case 2:
             // Likes header cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath)
-            
+            cell.backgroundColor = .clear
+
             return cell
         case self.likedObjects.count + 3:
             // Referral cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "referralCell", for: indexPath)
-            
+            cell.backgroundColor = .clear
+
             return cell
         default:
             // Follow cell
@@ -64,7 +68,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.profilePicture.loadImage(urlSting: self.likedObjects[indexPath.row-3].imageUrl)
             cell.profilePicture.layer.cornerRadius = cell.profilePicture.frame.width / 2            
             cell.subtitle.text = self.likedObjects[indexPath.row-3].bioText
-            
+            cell.backgroundColor = .clear
+
             return cell
         }
     }
@@ -138,7 +143,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 if lastName.lowercased() == "n/a" {
                     name = firstName
                 } else {
-                    name = firstName + " " + lastName.lowercased()
+                    name = firstName + " " + lastName
                 }
      
                 let newObject: SpotlightObject = SpotlightObject(imageUrl: imageUrlString, label: name!, influencerId: id, bioText: bioText)

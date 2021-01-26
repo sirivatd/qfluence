@@ -12,11 +12,12 @@ class FollowTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var subtitle: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
-
+    @IBOutlet weak var backdrop: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.contentView.layer.cornerRadius = 15.0
+        self.backdrop.layer.cornerRadius = 15.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
