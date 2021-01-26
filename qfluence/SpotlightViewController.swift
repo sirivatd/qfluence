@@ -279,11 +279,11 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
         let userId = currentUser?.uid
         let followData = currentUser?.follows
         
-        print(currentUser)
+        print(followData)
         
         self.ref = Database.database().reference()
-        self.ref = ref!.child("users").child(userId!)
-        self.ref?.setValue(["follows": Array(arrayLiteral: followData)])
+        self.ref = ref!.child("users/\(userId!)/follows")
+        self.ref?.setValue(followData)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

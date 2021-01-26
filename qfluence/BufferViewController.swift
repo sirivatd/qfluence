@@ -27,11 +27,11 @@ class BufferViewController: UIViewController {
                     let uid = user!.uid
                     let user = snapshot.value as? NSDictionary
                     
-                    let firstName = user!["firstName"] as? String ?? ""
-                    let lastName = user!["lastName"] as? String ?? ""
-                    let emailAddress = user!["emailAddress"] as? String ?? ""
-                    let joinedAt = user!["timeCreated"] as? String ?? ""
-                    let follows = user!["follows"] as? [Int] ?? []
+                    let firstName = user?["firstName"] as? String ?? ""
+                    let lastName = user?["lastName"] as? String ?? ""
+                    let emailAddress = user?["emailAddress"] as? String ?? ""
+                    let joinedAt = user?["timeCreated"] as? String ?? ""
+                    let follows = user?["follows"] as? [Int] ?? []
                     
                     let foundUser = UserObject(firstName: firstName, lastName: lastName, emailAddress: emailAddress, joinedAt: joinedAt, follows: follows, uid: uid)
                     

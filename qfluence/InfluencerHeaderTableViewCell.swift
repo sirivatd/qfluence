@@ -18,6 +18,13 @@ class InfluencerHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var animationTwo: CSAnimationView!
     @IBOutlet weak var animationThree: CSAnimationView!
     @IBOutlet weak var panelView: UIView!
+    @IBOutlet weak var followButton: UIButton!
+    
+    var influencerHeaderTableViewCellDelegate: InfluencerHeaderTableViewCellDelegate?
+    
+    @IBAction func followPressed(_ sender: UIButton) {
+        influencerHeaderTableViewCellDelegate?.didPressFollowButton(sender.tag)
+    }
     
     
     override func awakeFromNib() {
@@ -44,5 +51,9 @@ class InfluencerHeaderTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+}
+
+protocol InfluencerHeaderTableViewCellDelegate {
+    func didPressFollowButton(_ tag: Int)
 }
 

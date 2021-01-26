@@ -11,7 +11,22 @@ import Firebase
 import AVKit
 
 
-extension InfluencerMainViewController: UITableViewDataSource {
+extension InfluencerMainViewController: UITableViewDataSource, InfluencerHeaderTableViewCellDelegate {
+    func didPressFollowButton(_ tag: Int) {
+        // follow or unfollow
+        let followedId = self.selectedInfluencerId!
+        if currentUser!.follows.contains(followedId) {
+            // unfollow
+            let indexToRemove = currentUser?.follows.index(of: followedId)
+            currentUser?.follows.remove(at: indexToRemove!)
+        } else {
+            // follow
+            currentUser?.follows.append(followedId)
+        }
+        
+        self.mainTableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "influencerHeader") as! InfluencerHeaderTableViewCell
@@ -32,6 +47,14 @@ extension InfluencerMainViewController: UITableViewDataSource {
                     cell.animationTwo.startCanvasAnimation()
                     cell.animationThree.startCanvasAnimation()
                 }
+            }
+            
+            cell.tag = 0
+            cell.influencerHeaderTableViewCellDelegate = self
+            cell.followButton.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
+            // set up follow logic
+            if currentUser!.follows.contains(self.selectedInfluencerId!) {
+                cell.followButton.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
             }
         
             return cell
@@ -125,6 +148,7 @@ class InfluencerMainViewController: UIViewController {
     var playerView = AVPlayer()
     var firstLoad: Bool = true
     var originalCellHeight: Float?
+    private var ref: DatabaseReference?
     
     @IBAction func instagramButtonPressed(_ sender: Any) {
         guard let url = URL(string: self.selectedInfluencer!.instagramLink) else { return }
@@ -217,6 +241,23 @@ class InfluencerMainViewController: UIViewController {
             self.loadingIndicator.removeFromSuperview()
             self.mainTableView.isHidden = false
         })
+    }
+    
+    func saveFollowData() {
+        let userId = currentUser?.uid
+        let followData = currentUser?.follows
+        
+        print(currentUser)
+        
+        self.ref = Database.database().reference()
+        self.ref = ref!.child("users/\(userId!)/follows")
+        self.ref?.setValue(followData!)
+        print(followData)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // save data to Firebase
+        saveFollowData()
     }
     
     override func viewWillAppear(_ animated: Bool) {

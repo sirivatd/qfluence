@@ -1424,6 +1424,9 @@
                                                     </constraints>
                                                     <color key="tintColor" systemColor="systemRedColor"/>
                                                     <state key="normal" backgroundImage="heart" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="followPressed:" destination="8dO-c8-jOf" eventType="touchUpInside" id="dl5-Jh-fVd"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1457,6 +1460,7 @@
                                             <outlet property="animationThree" destination="dti-je-hR3" id="OzZ-mZ-pS5"/>
                                             <outlet property="animationTwo" destination="kWr-rg-5gk" id="eKg-v6-iLz"/>
                                             <outlet property="bioText" destination="jZe-Oe-ktA" id="kFd-gN-h5v"/>
+                                            <outlet property="followButton" destination="seH-AV-Sta" id="O2P-Qq-2AW"/>
                                             <outlet property="instagramButton" destination="joG-Vg-9LX" id="IPf-dY-AWA"/>
                                             <outlet property="panelView" destination="iOM-2x-eEm" id="WAb-nc-qkg"/>
                                             <outlet property="profilePicture" destination="RQB-qY-Oh0" id="f1f-oF-HUp"/>
