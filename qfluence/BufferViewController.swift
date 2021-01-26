@@ -30,8 +30,9 @@ class BufferViewController: UIViewController {
                     let lastName = user!["lastName"] as? String ?? ""
                     let emailAddress = user!["emailAddress"] as? String ?? ""
                     let joinedAt = user!["timeCreated"] as? String ?? ""
+                    let follows = user!["follows"] as? [Int] ?? []
                     
-                    let foundUser = UserObject(firstName: firstName, lastName: lastName, emailAddress: emailAddress, joinedAt: joinedAt)
+                    let foundUser = UserObject(firstName: firstName, lastName: lastName, emailAddress: emailAddress, joinedAt: joinedAt, follows: follows)
                     currentUser = foundUser
                     self.performSegue(withIdentifier: "toMainApp", sender: self)
                 })

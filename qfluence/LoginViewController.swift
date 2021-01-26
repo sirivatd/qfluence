@@ -53,8 +53,9 @@ class LoginViewController: UIViewController {
                         let lastName = user!["lastName"] as? String ?? ""
                         let emailAddress = user!["emailAddress"] as? String ?? ""
                         let joinedAt = user!["timeCreated"] as? String ?? ""
+                        let follows = user!["follows"] as? [Int] ?? []
                         
-                        currentUser = UserObject(firstName: firstName, lastName: lastName, emailAddress: emailAddress, joinedAt: joinedAt)
+                        currentUser = UserObject(firstName: firstName, lastName: lastName, emailAddress: emailAddress, joinedAt: joinedAt, follows: follows)
                         strongSelf.performSegue(withIdentifier: "toMainApp", sender: self)
                     })
             }

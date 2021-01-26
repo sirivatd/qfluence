@@ -15,6 +15,7 @@ struct UserObject {
     let lastName: String
     let emailAddress: String
     let joinedAt: String
+    let follows: [Int]
 }
 var currentUser: UserObject?
 var isFirstTime: Bool = false
@@ -102,14 +103,14 @@ class SignUpViewController: UIViewController {
                 return
             }
             let ref = Database.database().reference(withPath: "users")
-            let userDict: [String: String] = ["firstName": self.firstNameField.text!, "lastName": self.lastNameField.text!, "emailAddress": "\(emailAddress)", "timeCreated": "\(Date())"]
+            let userDict: [String: String] = ["firstName": self.firstNameField.text!, "lastName": self.lastNameField.text!, "emailAddress": "\(emailAddress)", "timeCreated": "\(Date())", "follows": "[]"]
             ref.child(user.uid).setValue(userDict) {
                 (error: Error?, ref: DatabaseReference) in
                 if let error = error {
                     print("Error saving user")
                 } else {
                     print("Data saved successfully!")
-                    currentUser = UserObject(firstName: self.firstNameField.text!, lastName: self.lastNameField.text!, emailAddress: String(emailAddress), joinedAt: "\(Date())")
+                    currentUser = UserObject(firstName: self.firstNameField.text!, lastName: self.lastNameField.text!, emailAddress: String(emailAddress), joinedAt: "\(Date())", follows: [])
                     isFirstTime = true
                     self.performSegue(withIdentifier: "toMainApp", sender: nil)
                 }

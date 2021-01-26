@@ -16,6 +16,7 @@ class SpotlightCollectionViewCell: ScalingCarouselCell {
     @IBOutlet weak var featuredImage: UIImageView!
     @IBOutlet weak var featuredLabel: UILabel!
     @IBOutlet weak var tintView: UIView!
+    @IBOutlet weak var followButton: UIButton!
     
     override func prepareForReuse() {
         if self.featuredLabel != nil {

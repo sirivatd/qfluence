@@ -52,8 +52,6 @@ extension SpotlightViewController: UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "featuredCell") as! SpotlightTableViewCell
-//            cell.parallaxImage.task = cell.parallaxImage.returnTask(link: self.featuredObjects[indexPath.row - 2].imageUrl, contentMode: UIView.ContentMode.scaleAspectFill)
-//            cell.parallaxImage.task?.resume()
             
             cell.parallaxImage.loadImage(urlSting: self.featuredObjects[indexPath.row - 2].imageUrl)
 
