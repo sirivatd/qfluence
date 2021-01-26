@@ -11,7 +11,6 @@
 		9C2B497625AEB18900AAC9F7 /* OHCircleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2B497525AEB18900AAC9F7 /* OHCircleSegue.swift */; };
 		F606E3AA25B984D80020D034 /* OptimizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F606E3A925B984D80020D034 /* OptimizeViewController.swift */; };
 		F606E3AF25B98D630020D034 /* checkmark.json in Resources */ = {isa = PBXBuildFile; fileRef = F606E3AE25B98D630020D034 /* checkmark.json */; };
-		F606E3B425B990470020D034 /* optimize.json in Resources */ = {isa = PBXBuildFile; fileRef = F606E3B325B990470020D034 /* optimize.json */; };
 		F617285825BEC2D70007FE58 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F617285725BEC2D70007FE58 /* SideMenuViewController.swift */; };
 		F617285D25BEC53A0007FE58 /* SettingOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F617285C25BEC53A0007FE58 /* SettingOptionTableViewCell.swift */; };
 		F61818B625AC098900A01613 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61818B525AC098900A01613 /* QuestionTableViewCell.swift */; };
@@ -57,6 +56,7 @@
 		F68FD6A325ACC870008257E0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FD6A225ACC870008257E0 /* SignUpViewController.swift */; };
 		F691471D25BA592F00BD5994 /* SpotlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F691471C25BA592F00BD5994 /* SpotlightTableViewCell.swift */; };
 		F695275825BFA538005EC00C /* FollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695275725BFA538005EC00C /* FollowTableViewCell.swift */; };
+		F695277025BFE316005EC00C /* first-impression.json in Resources */ = {isa = PBXBuildFile; fileRef = F695276F25BFE315005EC00C /* first-impression.json */; };
 		F696985725B0011900566999 /* CountingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696985625B0011900566999 /* CountingLabel.swift */; };
 		F696985C25B008DE00566999 /* QuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696985B25B008DE00566999 /* QuestionCollectionViewCell.swift */; };
 		F6AF3EDE25873D7900474738 /* SpotlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */; };
@@ -88,7 +88,6 @@
 		E50E4099EF16CCFD024EFA22 /* Pods-qfluence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qfluence.release.xcconfig"; path = "Target Support Files/Pods-qfluence/Pods-qfluence.release.xcconfig"; sourceTree = "<group>"; };
 		F606E3A925B984D80020D034 /* OptimizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimizeViewController.swift; sourceTree = "<group>"; };
 		F606E3AE25B98D630020D034 /* checkmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = checkmark.json; sourceTree = "<group>"; };
-		F606E3B325B990470020D034 /* optimize.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = optimize.json; sourceTree = "<group>"; };
 		F617285725BEC2D70007FE58 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		F617285C25BEC53A0007FE58 /* SettingOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionTableViewCell.swift; sourceTree = "<group>"; };
 		F61818B525AC098900A01613 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
@@ -137,6 +136,7 @@
 		F68FD6A225ACC870008257E0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F691471C25BA592F00BD5994 /* SpotlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightTableViewCell.swift; sourceTree = "<group>"; };
 		F695275725BFA538005EC00C /* FollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowTableViewCell.swift; sourceTree = "<group>"; };
+		F695276F25BFE315005EC00C /* first-impression.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "first-impression.json"; sourceTree = "<group>"; };
 		F696985625B0011900566999 /* CountingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountingLabel.swift; sourceTree = "<group>"; };
 		F696985B25B008DE00566999 /* QuestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightViewController.swift; sourceTree = "<group>"; };
@@ -227,13 +227,13 @@
 				F6533FC525B63F37006628C4 /* 45056-contact-us.json */,
 				F606E3AE25B98D630020D034 /* checkmark.json */,
 				F653403A25B94923006628C4 /* swipe-up.json */,
+				F695276F25BFE315005EC00C /* first-impression.json */,
 				F66EA07B2585A0D400952008 /* AppDelegate.swift */,
 				F61818C125AC134E00A01613 /* StrokeColorAnimation.swift */,
 				F6533FD925B6B8BE006628C4 /* support-system.json */,
 				F6533FDE25B6C6CF006628C4 /* online-school.json */,
 				9C2B497525AEB18900AAC9F7 /* OHCircleSegue.swift */,
 				F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */,
-				F606E3B325B990470020D034 /* optimize.json */,
 				F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */,
 				F61DD0BD25AAEABD00424CB0 /* InfluencerMainViewController.swift */,
 				F66EA07F2585A0D500952008 /* Main.storyboard */,
@@ -405,10 +405,10 @@
 				F66EA0832585A0D600952008 /* Assets.xcassets in Resources */,
 				F6533FDF25B6C6D0006628C4 /* online-school.json in Resources */,
 				F6533FC625B63F37006628C4 /* 45056-contact-us.json in Resources */,
+				F695277025BFE316005EC00C /* first-impression.json in Resources */,
 				F66EA0812585A0D500952008 /* Main.storyboard in Resources */,
 				F653403B25B94923006628C4 /* swipe-up.json in Resources */,
 				F61DD0CB25ABD0A100424CB0 /* GoogleService-Info.plist in Resources */,
-				F606E3B425B990470020D034 /* optimize.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

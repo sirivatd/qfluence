@@ -92,6 +92,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private var likedObjects: [SpotlightObject] = []
     private var ref: DatabaseReference?
+    private var backgroundRef: DatabaseReference?
     private var selectedObject: SpotlightObject?
     
     override func viewDidLoad() {
@@ -106,16 +107,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func fetchFollows() {
-        if currentUser?.follows != nil {
-            if (currentUser?.follows.count)! > 0 {
-                for index in 1...(currentUser?.follows.count)! {
-                    let influencerId = currentUser?.follows[index-1]
-                    queryAndAppendInfluencer(id: influencerId!)
+        self.backgroundRef = Database.database().reference(withPath: "users").child(
+            currentUser!.uid)
+        self.backgroundRef!.observe(DataEventType.value, with: { (snapshot) in
+            self.likedObjects = []
+            if let user = snapshot.value as? NSDictionary {
+                let follows = user["follows"] as? [Int] ?? []
+                for id in follows {
+                    self.queryAndAppendInfluencer(id: id)
                 }
-            } else {
-                return
             }
-        }
+        });
     }
     
     func queryAndAppendInfluencer(id: Int) {
@@ -143,7 +145,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.likedObjects.append(newObject)
             }
 
-            currentUser?.follows = self.likedObjects.map{$0.influencerId}
+//            currentUser?.follows = self.likedObjects.map{$0.influencerId}
             self.mainView.reloadData()
         });
     }
