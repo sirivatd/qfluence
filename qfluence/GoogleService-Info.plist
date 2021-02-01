@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>607100118579-110u3066dvov5fkoc4tflv5klilm7lau.apps.googleusercontent.com</string>
+	<string>607100118579-5qf2jqgsefllbholonrk43cacsaj8g92.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.607100118579-110u3066dvov5fkoc4tflv5klilm7lau</string>
+	<string>com.googleusercontent.apps.607100118579-5qf2jqgsefllbholonrk43cacsaj8g92</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCBsJsN89U0ucTAdarFdB41yj3dwBZBhks</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>donsirivat.qfluence</string>
+	<string>com.donsirivat.qfluence</string>
 	<key>PROJECT_ID</key>
 	<string>qfluence</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:607100118579:ios:46be50954c88845f882546</string>
+	<string>1:607100118579:ios:e013a8cf49f1d981882546</string>
 	<key>DATABASE_URL</key>
 	<string>https://qfluence-default-rtdb.firebaseio.com</string>
 </dict>
