@@ -20,12 +20,6 @@ class SpotlightTableViewCell: LNParallaxTVCell {
     @IBAction func followPressed(_  sender: UIButton) {
         spotlightTableViewCellDelegate?.didPressFollowButton(sender.tag)
     }
-
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
 }
 
 protocol SpotlightTableViewCellDelegate {

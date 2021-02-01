@@ -103,7 +103,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 //        updateGreeting()
-
+//        addBlurEffect()
         fetchFollows()
     }
     
@@ -123,6 +123,18 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }
         });
+    }
+    
+    func addBlurEffect() {
+        let bounds = self.navigationController?.navigationBar.bounds
+        self.navigationController?.view.backgroundColor = .black
+        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        visualEffectView.frame = bounds ?? CGRect.zero
+        visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.navigationController?.navigationBar.addSubview(visualEffectView)
+
+        // Here you can add visual effects to any UIView control.
+        // Replace custom view with navigation bar in the above code to add effects to the custom view.
     }
     
     func queryAndAppendInfluencer(id: Int) {

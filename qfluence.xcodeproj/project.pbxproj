@@ -19,6 +19,9 @@
 		F61818BC25AC101F00A01613 /* StrokeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61818BB25AC101F00A01613 /* StrokeAnimation.swift */; };
 		F61818BE25AC127500A01613 /* RotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61818BD25AC127500A01613 /* RotationAnimation.swift */; };
 		F61818C225AC134E00A01613 /* StrokeColorAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61818C125AC134E00A01613 /* StrokeColorAnimation.swift */; };
+		F61830A725C0CBB600416BA7 /* infinity.json in Resources */ = {isa = PBXBuildFile; fileRef = F61830A625C0CBB500416BA7 /* infinity.json */; };
+		F61830AC25C0D1AC00416BA7 /* infinite.gif in Resources */ = {isa = PBXBuildFile; fileRef = F61830AB25C0D1AA00416BA7 /* infinite.gif */; };
+		F61830B125C0D1ED00416BA7 /* ini.json in Resources */ = {isa = PBXBuildFile; fileRef = F61830B025C0D1ED00416BA7 /* ini.json */; };
 		F61DD0BE25AAEABD00424CB0 /* InfluencerMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61DD0BD25AAEABD00424CB0 /* InfluencerMainViewController.swift */; };
 		F61DD0C025AAF98300424CB0 /* InfluencerHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61DD0BF25AAF98300424CB0 /* InfluencerHeaderTableViewCell.swift */; };
 		F61DD0C225AAF99300424CB0 /* InfluencerVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61DD0C125AAF99300424CB0 /* InfluencerVideoTableViewCell.swift */; };
@@ -96,6 +99,9 @@
 		F61818BB25AC101F00A01613 /* StrokeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeAnimation.swift; sourceTree = "<group>"; };
 		F61818BD25AC127500A01613 /* RotationAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationAnimation.swift; sourceTree = "<group>"; };
 		F61818C125AC134E00A01613 /* StrokeColorAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeColorAnimation.swift; sourceTree = "<group>"; };
+		F61830A625C0CBB500416BA7 /* infinity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = infinity.json; sourceTree = "<group>"; };
+		F61830AB25C0D1AA00416BA7 /* infinite.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = infinite.gif; sourceTree = "<group>"; };
+		F61830B025C0D1ED00416BA7 /* ini.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ini.json; sourceTree = "<group>"; };
 		F61DD0BD25AAEABD00424CB0 /* InfluencerMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerMainViewController.swift; sourceTree = "<group>"; };
 		F61DD0BF25AAF98300424CB0 /* InfluencerHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		F61DD0C125AAF99300424CB0 /* InfluencerVideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerVideoTableViewCell.swift; sourceTree = "<group>"; };
@@ -233,6 +239,7 @@
 				F6533FD925B6B8BE006628C4 /* support-system.json */,
 				F6533FDE25B6C6CF006628C4 /* online-school.json */,
 				9C2B497525AEB18900AAC9F7 /* OHCircleSegue.swift */,
+				F61830A625C0CBB500416BA7 /* infinity.json */,
 				F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */,
 				F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */,
 				F61DD0BD25AAEABD00424CB0 /* InfluencerMainViewController.swift */,
@@ -249,8 +256,10 @@
 				F66EA0872585A0D600952008 /* Info.plist */,
 				F61DD0CA25ABD0A100424CB0 /* GoogleService-Info.plist */,
 				F68FD69E25ACC859008257E0 /* LandingViewController.swift */,
+				F61830AB25C0D1AA00416BA7 /* infinite.gif */,
 				F68FD6A025ACC862008257E0 /* LoginViewController.swift */,
 				F68FD6A225ACC870008257E0 /* SignUpViewController.swift */,
+				F61830B025C0D1ED00416BA7 /* ini.json */,
 				F6F81F3F25AD2E9C00B64B87 /* ProfileViewController.swift */,
 				F6850E8125AD606B0048C2CC /* SearchViewController.swift */,
 				F696985625B0011900566999 /* CountingLabel.swift */,
@@ -404,11 +413,14 @@
 				F66EA0862585A0D600952008 /* LaunchScreen.storyboard in Resources */,
 				F66EA0832585A0D600952008 /* Assets.xcassets in Resources */,
 				F6533FDF25B6C6D0006628C4 /* online-school.json in Resources */,
+				F61830B125C0D1ED00416BA7 /* ini.json in Resources */,
 				F6533FC625B63F37006628C4 /* 45056-contact-us.json in Resources */,
+				F61830AC25C0D1AC00416BA7 /* infinite.gif in Resources */,
 				F695277025BFE316005EC00C /* first-impression.json in Resources */,
 				F66EA0812585A0D500952008 /* Main.storyboard in Resources */,
 				F653403B25B94923006628C4 /* swipe-up.json in Resources */,
 				F61DD0CB25ABD0A100424CB0 /* GoogleService-Info.plist in Resources */,
+				F61830A725C0CBB600416BA7 /* infinity.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
