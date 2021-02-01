@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             return 55
         case currentUser!.follows.count + 3:
             // Referral cell
-            return 250
+            return 350
         default:
             // Follow cell
             return 115
@@ -51,14 +51,26 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             return cell
         case 2:
             // Likes header cell
-            let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as! FollowingHeaderTableViewCell
+            cell.headerLabel.text = "FOLLOWING (\(currentUser!.follows.count))"
             cell.backgroundColor = .clear
 
             return cell
         case self.likedObjects.count + 3:
             // Referral cell
-            let cell = tableView.dequeueReusableCell(withIdentifier: "referralCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "referralCell", for: indexPath) as! ReferralTableViewCell
+            cell.becomeAQfluencer.layer.cornerRadius = 15.0
+            cell.becomeAQfluencer.layer.borderWidth = 0.5
+            cell.becomeAQfluencer.layer.borderColor = UIColor.clear.cgColor
+            cell.becomeAQfluencer.layer.masksToBounds = true
+            cell.becomeAQfluencer.layer.shadowColor = UIColor.darkGray.cgColor
+            cell.becomeAQfluencer.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
+            cell.becomeAQfluencer.layer.shadowRadius = 1.0
+            cell.becomeAQfluencer.layer.shadowOpacity = 0.7
+            cell.becomeAQfluencer.layer.masksToBounds = false
+            cell.becomeAQfluencer.layer.shadowPath = UIBezierPath(roundedRect: cell.becomeAQfluencer.bounds, cornerRadius: cell.becomeAQfluencer.layer.cornerRadius).cgPath
             cell.backgroundColor = .clear
+
 
             return cell
         default:

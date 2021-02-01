@@ -62,6 +62,8 @@
 		F6AF3EDE25873D7900474738 /* SpotlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */; };
 		F6AF3EE2258740A600474738 /* SpotlightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */; };
 		F6E49BC425C7C5300080DE1F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6E49BC325C7C5300080DE1F /* GoogleService-Info.plist */; };
+		F6E49BCC25C8C61E0080DE1F /* ReferralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E49BCB25C8C61E0080DE1F /* ReferralTableViewCell.swift */; };
+		F6E49BD125C8C8DA0080DE1F /* FollowingHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E49BD025C8C8DA0080DE1F /* FollowingHeaderTableViewCell.swift */; };
 		F6F81F4025AD2E9C00B64B87 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F81F3F25AD2E9C00B64B87 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +147,8 @@
 		F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightViewController.swift; sourceTree = "<group>"; };
 		F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6E49BC325C7C5300080DE1F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F6E49BCB25C8C61E0080DE1F /* ReferralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferralTableViewCell.swift; sourceTree = "<group>"; };
+		F6E49BD025C8C8DA0080DE1F /* FollowingHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		F6F81F3F25AD2E9C00B64B87 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -277,6 +281,8 @@
 				F617285725BEC2D70007FE58 /* SideMenuViewController.swift */,
 				F617285C25BEC53A0007FE58 /* SettingOptionTableViewCell.swift */,
 				F695275725BFA538005EC00C /* FollowTableViewCell.swift */,
+				F6E49BCB25C8C61E0080DE1F /* ReferralTableViewCell.swift */,
+				F6E49BD025C8C8DA0080DE1F /* FollowingHeaderTableViewCell.swift */,
 			);
 			path = qfluence;
 			sourceTree = "<group>";
@@ -495,6 +501,7 @@
 				F6AF3EDE25873D7900474738 /* SpotlightViewController.swift in Sources */,
 				F606E3AA25B984D80020D034 /* OptimizeViewController.swift in Sources */,
 				F61DD0C225AAF99300424CB0 /* InfluencerVideoTableViewCell.swift in Sources */,
+				F6E49BD125C8C8DA0080DE1F /* FollowingHeaderTableViewCell.swift in Sources */,
 				F653403525B93A7C006628C4 /* ASVideoPlayerController.swift in Sources */,
 				F61DD0C025AAF98300424CB0 /* InfluencerHeaderTableViewCell.swift in Sources */,
 				F68BD03225B1207600F083CD /* VideoUploadViewController.swift in Sources */,
@@ -517,6 +524,7 @@
 				F66EA07C2585A0D400952008 /* AppDelegate.swift in Sources */,
 				F653403625B93A7C006628C4 /* ASVideoContainer.swift in Sources */,
 				F617285D25BEC53A0007FE58 /* SettingOptionTableViewCell.swift in Sources */,
+				F6E49BCC25C8C61E0080DE1F /* ReferralTableViewCell.swift in Sources */,
 				F6AF3EE2258740A600474738 /* SpotlightCollectionViewCell.swift in Sources */,
 				F67EA2A825BE8A0100AA4981 /* CategoryInfluencerCollectionViewCell.swift in Sources */,
 				F68FD6A125ACC862008257E0 /* LoginViewController.swift in Sources */,
@@ -708,7 +716,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.donsirivat.qfluence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -730,7 +738,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.donsirivat.qfluence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
