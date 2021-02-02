@@ -1314,11 +1314,11 @@
             <objects>
                 <viewController storyboardIdentifier="influencerMain" id="9YI-gQ-MFO" customClass="InfluencerMainViewController" customModule="qfluence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sBJ-d3-tSR">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QgW-JV-TFg">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="673"/>
                                 <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="influencerHeader" rowHeight="530" id="8dO-c8-jOf" customClass="InfluencerHeaderTableViewCell" customModule="qfluence" customModuleProvider="target">
@@ -1843,11 +1843,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAU-BU-0ME" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="HAU-BU-0ME" customClass="AnimationView" customModule="Lottie">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="first-impression"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loading2"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hI-zz-Z8P" customClass="AnimationView" customModule="Lottie">
@@ -1861,12 +1861,21 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Optimizing your experience" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGJ-At-EXU">
-                                <rect key="frame" x="38" y="72" width="314" height="67"/>
+                                <rect key="frame" x="38" y="671" width="314" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="Eod-fB-fIS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(rendering a ton of videos)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fP1-ej-xyj">
+                                <rect key="frame" x="60" y="728" width="270" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="EZd-Sa-l49"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -1878,9 +1887,12 @@
                             <constraint firstItem="zGJ-At-EXU" firstAttribute="leading" secondItem="ZcO-Hk-UIY" secondAttribute="leading" constant="38" id="9Lb-Kf-yWY"/>
                             <constraint firstItem="0hI-zz-Z8P" firstAttribute="centerY" secondItem="ZcO-Hk-UIY" secondAttribute="centerY" constant="-5" id="HfL-r2-9vc"/>
                             <constraint firstItem="HAU-BU-0ME" firstAttribute="top" secondItem="rrn-gj-ZQY" secondAttribute="top" id="NEx-K8-VyR"/>
+                            <constraint firstItem="fP1-ej-xyj" firstAttribute="leading" secondItem="ZcO-Hk-UIY" secondAttribute="leading" constant="60" id="RbC-Ue-oX5"/>
+                            <constraint firstItem="ZcO-Hk-UIY" firstAttribute="trailing" secondItem="fP1-ej-xyj" secondAttribute="trailing" constant="60" id="bTh-RE-SsT"/>
                             <constraint firstItem="ZcO-Hk-UIY" firstAttribute="trailing" secondItem="zGJ-At-EXU" secondAttribute="trailing" constant="38" id="c0B-2V-5sQ"/>
                             <constraint firstAttribute="trailing" secondItem="HAU-BU-0ME" secondAttribute="trailing" id="db4-rM-vMG"/>
-                            <constraint firstItem="zGJ-At-EXU" firstAttribute="top" secondItem="ZcO-Hk-UIY" secondAttribute="top" constant="28" id="ncG-jm-Szk"/>
+                            <constraint firstItem="ZcO-Hk-UIY" firstAttribute="bottom" secondItem="zGJ-At-EXU" secondAttribute="bottom" constant="72" id="mRO-FE-EDa"/>
+                            <constraint firstItem="ZcO-Hk-UIY" firstAttribute="bottom" secondItem="fP1-ej-xyj" secondAttribute="bottom" constant="51" id="r0r-UH-qdf"/>
                             <constraint firstItem="HAU-BU-0ME" firstAttribute="leading" secondItem="rrn-gj-ZQY" secondAttribute="leading" id="uVW-g0-Xbm"/>
                         </constraints>
                     </view>
@@ -2980,7 +2992,7 @@
         <segue reference="wND-FQ-09E"/>
         <segue reference="G7I-ky-qKg"/>
         <segue reference="ewS-T1-VxR"/>
-        <segue reference="Mi1-Jy-Diq"/>
+        <segue reference="5Yq-At-XrY"/>
         <segue reference="d9M-6M-dkn"/>
     </inferredMetricsTieBreakers>
     <resources>
