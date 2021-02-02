@@ -63,14 +63,16 @@ extension InfluencerMainViewController: UITableViewDataSource, InfluencerHeaderT
             let questionObject = questionObjects[indexPath.row - 1]
             cell.questionText.text = questionObject.questionText
 
+            let number = Int.random(in: 0...11)
+            
             if indexPath.row % 4 == 0 {
-                cell.parallaxImage.image = UIImage(named: "q_black_cell_0")
+                cell.parallaxImage.image = UIImage(named: "q_black_cell_\(number)")
             } else if indexPath.row % 4 == 1 {
-                cell.parallaxImage.image = UIImage(named: "q_orange_cell_0")
+                cell.parallaxImage.image = UIImage(named: "q_orange_cell_\(number)")
             } else if indexPath.row % 4 == 2 {
-                cell.parallaxImage.image = UIImage(named: "q_black_cell_0")
+                cell.parallaxImage.image = UIImage(named: "q_black_cell_\(number)")
             } else {
-                cell.parallaxImage.image = UIImage(named: "q_red_cell_0")
+                cell.parallaxImage.image = UIImage(named: "q_red_cell_\(number)")
             }
             
             return cell
