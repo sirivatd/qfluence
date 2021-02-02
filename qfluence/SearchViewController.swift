@@ -32,10 +32,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.recentlyAddedView.didScroll()
-    
-        if timer != nil {
-            timer!.invalidate()
-        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -124,6 +120,13 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var questionCount: AnimatedLabel!
     @IBOutlet weak var resultsView: CSAnimationView!
     @IBOutlet var initialView: UIView!
+    @IBOutlet weak var backToSearch: UIButton!
+    
+    @IBAction func backToSearchPressed(_ sender: Any) {
+        resultsView.isHidden = true
+        backToSearch.isHidden = true
+        initialView.isHidden = false
+    }
     
     @IBAction func searchPressed(_ sender: Any) {
         self.view.endEditing(true)
@@ -141,7 +144,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     private var matchedInfluencers = [SpotlightObject]()
     private var matchesVideos = [SearchVideoResult]()
     private var recentlyAdded = [SpotlightObject]()
-    private var timer: Timer?
     var playerViewController = AVPlayerViewController()
     var playerView = AVPlayer()
     var selectedInfluencer: SpotlightObject?
@@ -152,6 +154,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         searchButton.layer.cornerRadius = 10
         searchField.layer.cornerRadius = 10
         resultsView.isHidden = true
+        backToSearch.isHidden = true
         
         fetchData()
         initializeHideKeyboard()
@@ -254,9 +257,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         
         self.initialView.isHidden = true
-        if timer != nil {
-            timer!.invalidate()
-        }
+        self.backToSearch.isHidden = false
         self.updateResults()
     }
     
@@ -284,12 +285,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: animated)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        if timer != nil {
-            timer!.invalidate()
-        }
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

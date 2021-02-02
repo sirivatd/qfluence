@@ -251,15 +251,19 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
                     }
                     
                     let featuredObject = SpotlightObject(imageUrl: dict!["imageUrl"] as! String, label: influencerName!, influencerId: dict!["influencerId"] as! Int, bioText: bioText!)
-                    if self.spotlightIds.contains(dict!["influencerId"] as! Int) {
-                        self.allFeaturedObjects.append(featuredObject)
-                    }
+             
+                    self.allFeaturedObjects.append(featuredObject)
                 }
             }
                 
             self.allFeaturedObjects = self.allFeaturedObjects.shuffled()
-            self.featuredObjects = self.allFeaturedObjects
-  
+            
+            for object in self.allFeaturedObjects {
+                if self.spotlightIds.contains(object.influencerId) {
+                    self.featuredObjects.append(object)
+                }
+            }
+              
             self.mainTableView.reloadData()
             self.mainTableView.isHidden = false
             self.animationView.isHidden = false
