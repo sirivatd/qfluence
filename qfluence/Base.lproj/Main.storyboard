@@ -2115,17 +2115,17 @@
                                 <rect key="frame" x="0.0" y="209" width="390" height="553"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vri-j1-KID">
-                                        <rect key="frame" x="7" y="40" width="360" height="270"/>
+                                        <rect key="frame" x="0.0" y="40" width="390" height="270"/>
                                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="m1S-rL-rd2">
                                             <size key="itemSize" width="225" height="268"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="sectionInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="personCell" id="zDo-0j-5Wt" customClass="SpotlightCollectionViewCell" customModule="qfluence" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="1" width="225" height="268"/>
+                                                <rect key="frame" x="15" y="1" width="225" height="268"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="225" height="268"/>
@@ -2196,11 +2196,11 @@
                                             <size key="itemSize" width="296" height="163"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="sectionInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="videoCell" id="2Hp-SD-80x" customClass="QuestionCollectionViewCell" customModule="qfluence" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="3.6666666666666665" width="296" height="163"/>
+                                                <rect key="frame" x="15" y="3.6666666666666665" width="296" height="163"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="296" height="163"/>
@@ -2257,14 +2257,14 @@
                                     <constraint firstItem="W9z-5b-f67" firstAttribute="top" secondItem="vri-j1-KID" secondAttribute="bottom" constant="29" id="38h-RB-P7f"/>
                                     <constraint firstItem="31K-NQ-6fi" firstAttribute="leading" secondItem="W9z-5b-f67" secondAttribute="leading" id="JPK-V3-8Va"/>
                                     <constraint firstItem="o1I-U9-TRk" firstAttribute="top" secondItem="W9z-5b-f67" secondAttribute="bottom" constant="20" id="RaI-Fi-D34"/>
-                                    <constraint firstItem="vri-j1-KID" firstAttribute="leading" secondItem="o1I-U9-TRk" secondAttribute="leading" constant="7" id="TmW-Lr-Jo0"/>
-                                    <constraint firstItem="vri-j1-KID" firstAttribute="trailing" secondItem="lUE-WC-XOm" secondAttribute="trailingMargin" constant="-15" id="UQo-1m-iK4"/>
+                                    <constraint firstItem="vri-j1-KID" firstAttribute="leading" secondItem="o1I-U9-TRk" secondAttribute="leading" id="TmW-Lr-Jo0"/>
+                                    <constraint firstItem="vri-j1-KID" firstAttribute="trailing" secondItem="lUE-WC-XOm" secondAttribute="trailingMargin" constant="8" id="UQo-1m-iK4"/>
                                     <constraint firstItem="vri-j1-KID" firstAttribute="top" secondItem="31K-NQ-6fi" secondAttribute="bottom" constant="8" id="Wfh-Zx-usu"/>
-                                    <constraint firstItem="vri-j1-KID" firstAttribute="trailing" secondItem="o1I-U9-TRk" secondAttribute="trailing" constant="-23" id="Yu2-qo-5zb"/>
+                                    <constraint firstItem="vri-j1-KID" firstAttribute="trailing" secondItem="o1I-U9-TRk" secondAttribute="trailing" id="Yu2-qo-5zb"/>
                                     <constraint firstItem="31K-NQ-6fi" firstAttribute="trailing" secondItem="W9z-5b-f67" secondAttribute="trailing" id="Zax-dP-YuJ"/>
                                     <constraint firstItem="31K-NQ-6fi" firstAttribute="leading" secondItem="lUE-WC-XOm" secondAttribute="leading" constant="12" id="air-1I-G2F"/>
                                     <constraint firstAttribute="bottom" secondItem="o1I-U9-TRk" secondAttribute="bottom" id="dJ3-W4-ySU"/>
-                                    <constraint firstItem="vri-j1-KID" firstAttribute="centerX" secondItem="lUE-WC-XOm" secondAttribute="centerX" constant="-8" id="gQ6-ME-3GZ"/>
+                                    <constraint firstItem="vri-j1-KID" firstAttribute="centerX" secondItem="lUE-WC-XOm" secondAttribute="centerX" id="gQ6-ME-3GZ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="type" value="fadeInRight"/>
