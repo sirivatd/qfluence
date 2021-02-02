@@ -114,10 +114,25 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        updateGreeting()
-//        addBlurEffect()
+        self.view.addSubview(loadingIndicator)
+        NSLayoutConstraint.activate([
+            loadingIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            loadingIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            loadingIndicator.widthAnchor.constraint(equalToConstant: 50),
+            loadingIndicator.heightAnchor.constraint(equalTo: self.loadingIndicator.widthAnchor)
+            ])
+        
+        loadingIndicator.isAnimating = true
+        self.mainView.isHidden = true
+        
         fetchFollows()
     }
+    
+    let loadingIndicator: ProgressView = {
+        let progress = ProgressView(colors: [.red, .orange, .darkGray], lineWidth: 5)
+        progress.translatesAutoresizingMaskIntoConstraints = false
+        return progress
+    }()
     
     @objc func onMenuButtonPressed(sender: UIButton) {
         
@@ -135,6 +150,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }
         });
+        self.loadingIndicator.removeFromSuperview()
+        self.mainView.isHidden = false
     }
     
     func addBlurEffect() {
