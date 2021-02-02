@@ -39,8 +39,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         switch indexPath.row {
         case 0:
             // Greeting cell
-            let cell = tableView.dequeueReusableCell(withIdentifier: "greetingCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "greetingCell", for: indexPath) as! GreetingHeaderTableViewCell
             cell.backgroundColor = .clear
+            cell.firstNameLabel.text = currentUser!.firstName
             
             return cell
         case 1:

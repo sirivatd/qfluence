@@ -115,6 +115,7 @@ class SideMenuViewController: UITableViewController {
             let firebaseAuth = Auth.auth()
             do {
                 try firebaseAuth.signOut()
+                currentUser = nil
                 self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
             } catch let signOutError as NSError {
             }

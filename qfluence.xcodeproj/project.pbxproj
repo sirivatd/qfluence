@@ -61,6 +61,7 @@
 		F6AF3EDE25873D7900474738 /* SpotlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */; };
 		F6AF3EE2258740A600474738 /* SpotlightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */; };
 		F6DA993E25C9C68700CE1AF7 /* first-impression.json in Resources */ = {isa = PBXBuildFile; fileRef = F6DA993D25C9C68700CE1AF7 /* first-impression.json */; };
+		F6DA994325C9C88100CE1AF7 /* GreetingHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DA994225C9C88100CE1AF7 /* GreetingHeaderTableViewCell.swift */; };
 		F6E49BC425C7C5300080DE1F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6E49BC325C7C5300080DE1F /* GoogleService-Info.plist */; };
 		F6E49BCC25C8C61E0080DE1F /* ReferralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E49BCB25C8C61E0080DE1F /* ReferralTableViewCell.swift */; };
 		F6E49BD125C8C8DA0080DE1F /* FollowingHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E49BD025C8C8DA0080DE1F /* FollowingHeaderTableViewCell.swift */; };
@@ -146,6 +147,7 @@
 		F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightViewController.swift; sourceTree = "<group>"; };
 		F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6DA993D25C9C68700CE1AF7 /* first-impression.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "first-impression.json"; sourceTree = "<group>"; };
+		F6DA994225C9C88100CE1AF7 /* GreetingHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		F6E49BC325C7C5300080DE1F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6E49BCB25C8C61E0080DE1F /* ReferralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferralTableViewCell.swift; sourceTree = "<group>"; };
 		F6E49BD025C8C8DA0080DE1F /* FollowingHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				F695275725BFA538005EC00C /* FollowTableViewCell.swift */,
 				F6E49BCB25C8C61E0080DE1F /* ReferralTableViewCell.swift */,
 				F6E49BD025C8C8DA0080DE1F /* FollowingHeaderTableViewCell.swift */,
+				F6DA994225C9C88100CE1AF7 /* GreetingHeaderTableViewCell.swift */,
 			);
 			path = qfluence;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				F653403525B93A7C006628C4 /* ASVideoPlayerController.swift in Sources */,
 				F61DD0C025AAF98300424CB0 /* InfluencerHeaderTableViewCell.swift in Sources */,
 				F68BD03225B1207600F083CD /* VideoUploadViewController.swift in Sources */,
+				F6DA994325C9C88100CE1AF7 /* GreetingHeaderTableViewCell.swift in Sources */,
 				F68FD6A325ACC870008257E0 /* SignUpViewController.swift in Sources */,
 				F61818C225AC134E00A01613 /* StrokeColorAnimation.swift in Sources */,
 				F696985C25B008DE00566999 /* QuestionCollectionViewCell.swift in Sources */,
