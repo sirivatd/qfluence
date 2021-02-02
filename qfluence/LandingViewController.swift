@@ -21,7 +21,7 @@ class LandingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.refreshQuestion), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(self.refreshQuestion), userInfo: nil, repeats: true)
 
         loginButton.layer.cornerRadius = 5.0
         loginButton.layer.borderWidth = 0.5

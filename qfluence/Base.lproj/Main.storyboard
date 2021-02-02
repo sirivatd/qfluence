@@ -1851,7 +1851,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loading2"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="first-impression"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hI-zz-Z8P" customClass="AnimationView" customModule="Lottie">
@@ -1865,38 +1865,38 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Optimizing your experience" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGJ-At-EXU">
-                                <rect key="frame" x="38" y="671" width="314" height="67"/>
+                                <rect key="frame" x="38" y="59" width="314" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="Eod-fB-fIS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(rendering a ton of videos)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fP1-ej-xyj">
-                                <rect key="frame" x="60" y="728" width="270" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(rendering hundreds of personalized videos)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fP1-ej-xyj">
+                                <rect key="frame" x="16" y="126" width="358" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="EZd-Sa-l49"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZcO-Hk-UIY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="HAU-BU-0ME" secondAttribute="bottom" id="2no-jz-26Z"/>
                             <constraint firstItem="0hI-zz-Z8P" firstAttribute="centerX" secondItem="ZcO-Hk-UIY" secondAttribute="centerX" id="517-bW-seE"/>
                             <constraint firstItem="zGJ-At-EXU" firstAttribute="leading" secondItem="ZcO-Hk-UIY" secondAttribute="leading" constant="38" id="9Lb-Kf-yWY"/>
+                            <constraint firstItem="zGJ-At-EXU" firstAttribute="top" secondItem="ZcO-Hk-UIY" secondAttribute="top" constant="15" id="Amq-MZ-Urh"/>
                             <constraint firstItem="0hI-zz-Z8P" firstAttribute="centerY" secondItem="ZcO-Hk-UIY" secondAttribute="centerY" constant="-5" id="HfL-r2-9vc"/>
                             <constraint firstItem="HAU-BU-0ME" firstAttribute="top" secondItem="rrn-gj-ZQY" secondAttribute="top" id="NEx-K8-VyR"/>
-                            <constraint firstItem="fP1-ej-xyj" firstAttribute="leading" secondItem="ZcO-Hk-UIY" secondAttribute="leading" constant="60" id="RbC-Ue-oX5"/>
-                            <constraint firstItem="ZcO-Hk-UIY" firstAttribute="trailing" secondItem="fP1-ej-xyj" secondAttribute="trailing" constant="60" id="bTh-RE-SsT"/>
+                            <constraint firstItem="fP1-ej-xyj" firstAttribute="leading" secondItem="ZcO-Hk-UIY" secondAttribute="leading" constant="16" id="RbC-Ue-oX5"/>
+                            <constraint firstItem="ZcO-Hk-UIY" firstAttribute="trailing" secondItem="fP1-ej-xyj" secondAttribute="trailing" constant="16" id="bTh-RE-SsT"/>
                             <constraint firstItem="ZcO-Hk-UIY" firstAttribute="trailing" secondItem="zGJ-At-EXU" secondAttribute="trailing" constant="38" id="c0B-2V-5sQ"/>
                             <constraint firstAttribute="trailing" secondItem="HAU-BU-0ME" secondAttribute="trailing" id="db4-rM-vMG"/>
-                            <constraint firstItem="ZcO-Hk-UIY" firstAttribute="bottom" secondItem="zGJ-At-EXU" secondAttribute="bottom" constant="72" id="mRO-FE-EDa"/>
-                            <constraint firstItem="ZcO-Hk-UIY" firstAttribute="bottom" secondItem="fP1-ej-xyj" secondAttribute="bottom" constant="51" id="r0r-UH-qdf"/>
+                            <constraint firstItem="fP1-ej-xyj" firstAttribute="top" secondItem="zGJ-At-EXU" secondAttribute="bottom" id="k07-ry-OCp"/>
                             <constraint firstItem="HAU-BU-0ME" firstAttribute="leading" secondItem="rrn-gj-ZQY" secondAttribute="leading" id="uVW-g0-Xbm"/>
                         </constraints>
                     </view>

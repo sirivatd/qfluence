@@ -20,7 +20,7 @@ class OptimizeViewController: UIViewController {
         animationView.loopMode = .loop
         animationView.play()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7.0) {
             self.animationView.isHidden = true
             self.checkmark.contentMode = .scaleAspectFill
             self.checkmark.loopMode = .loop
@@ -28,7 +28,7 @@ class OptimizeViewController: UIViewController {
             self.checkmark.play()
            }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 7.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 9.0) {
             self.dismiss(animated: true, completion: nil)
            }
     }

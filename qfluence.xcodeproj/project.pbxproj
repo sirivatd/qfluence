@@ -60,7 +60,7 @@
 		F696985C25B008DE00566999 /* QuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696985B25B008DE00566999 /* QuestionCollectionViewCell.swift */; };
 		F6AF3EDE25873D7900474738 /* SpotlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */; };
 		F6AF3EE2258740A600474738 /* SpotlightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */; };
-		F6DA990225C8FAEB00CE1AF7 /* loading2.json in Resources */ = {isa = PBXBuildFile; fileRef = F6DA990125C8FAEA00CE1AF7 /* loading2.json */; };
+		F6DA993E25C9C68700CE1AF7 /* first-impression.json in Resources */ = {isa = PBXBuildFile; fileRef = F6DA993D25C9C68700CE1AF7 /* first-impression.json */; };
 		F6E49BC425C7C5300080DE1F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6E49BC325C7C5300080DE1F /* GoogleService-Info.plist */; };
 		F6E49BCC25C8C61E0080DE1F /* ReferralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E49BCB25C8C61E0080DE1F /* ReferralTableViewCell.swift */; };
 		F6E49BD125C8C8DA0080DE1F /* FollowingHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E49BD025C8C8DA0080DE1F /* FollowingHeaderTableViewCell.swift */; };
@@ -145,7 +145,7 @@
 		F696985B25B008DE00566999 /* QuestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightViewController.swift; sourceTree = "<group>"; };
 		F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightCollectionViewCell.swift; sourceTree = "<group>"; };
-		F6DA990125C8FAEA00CE1AF7 /* loading2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading2.json; sourceTree = "<group>"; };
+		F6DA993D25C9C68700CE1AF7 /* first-impression.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "first-impression.json"; sourceTree = "<group>"; };
 		F6E49BC325C7C5300080DE1F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6E49BCB25C8C61E0080DE1F /* ReferralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferralTableViewCell.swift; sourceTree = "<group>"; };
 		F6E49BD025C8C8DA0080DE1F /* FollowingHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -243,9 +243,9 @@
 				F61830A625C0CBB500416BA7 /* infinity.json */,
 				F6AF3EDD25873D7900474738 /* SpotlightViewController.swift */,
 				F6AF3EE1258740A600474738 /* SpotlightCollectionViewCell.swift */,
+				F6DA993D25C9C68700CE1AF7 /* first-impression.json */,
 				F61DD0BD25AAEABD00424CB0 /* InfluencerMainViewController.swift */,
 				F66EA07F2585A0D500952008 /* Main.storyboard */,
-				F6DA990125C8FAEA00CE1AF7 /* loading2.json */,
 				F61818BD25AC127500A01613 /* RotationAnimation.swift */,
 				F61818B725AC0FBB00A01613 /* ProgressView.swift */,
 				F61818B925AC0FDF00A01613 /* ProgressShapeLayer.swift */,
@@ -422,7 +422,7 @@
 				F61830AC25C0D1AC00416BA7 /* infinite.gif in Resources */,
 				F66EA0812585A0D500952008 /* Main.storyboard in Resources */,
 				F653403B25B94923006628C4 /* swipe-up.json in Resources */,
-				F6DA990225C8FAEB00CE1AF7 /* loading2.json in Resources */,
+				F6DA993E25C9C68700CE1AF7 /* first-impression.json in Resources */,
 				F61830A725C0CBB600416BA7 /* infinity.json in Resources */,
 				F6E49BC425C7C5300080DE1F /* GoogleService-Info.plist in Resources */,
 			);
