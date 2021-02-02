@@ -138,7 +138,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
 //        } else {
 //            query = self.videoRef.queryOrderedByKey().queryEnding(atValue: lastKey).queryLimited(toFirst: 10)
 //        }
-        query = self.videoRef.queryOrderedByKey().queryLimited(toFirst: 200)
+        query = self.videoRef.queryOrderedByKey().queryLimited(toFirst: 400)
 
         query!.observeSingleEvent(of: .value, with: { (snapshot) in
             let firebaseDispatch = DispatchGroup()
@@ -159,7 +159,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
 //                self.totalCount = self.allExploreObjects.count
                 self.allExploreObjects = self.allExploreObjects.shuffled()
 ////                self.exploreObjects = Array(self.allExploreObjects.dropLast(30))
-                self.exploreObjects = self.allExploreObjects.dropLast(10)
+                self.exploreObjects = self.allExploreObjects.dropLast(200)
                 self.pausePlayeVideos()
                 self.exploreTableView.reloadData()
                 self.firstLoad = false
