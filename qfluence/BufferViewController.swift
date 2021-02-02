@@ -17,13 +17,12 @@ class BufferViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.timer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(self.showAnimation), userInfo: nil, repeats: false)
-        animationView.animationSpeed = 3
-        animationView.play()
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        self.timer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(self.showAnimation), userInfo: nil, repeats: false)
+        animationView.animationSpeed = 3
+        animationView.play()
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
                 let ref = Database.database().reference(withPath: "users")

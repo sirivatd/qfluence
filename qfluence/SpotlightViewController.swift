@@ -104,14 +104,14 @@ extension SpotlightViewController: UITableViewDelegate {
         } else if indexPath.row == 1 {
             return 200
         }  else {
-            return self.mainTableView.frame.height/2.5
+            return self.mainTableView.frame.height/4
         }
     }
     
     // parallax effect
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if self.originalCellHeight == nil {
-            self.originalCellHeight = Float(self.mainTableView.frame.height/2.5)
+            self.originalCellHeight = Float(self.mainTableView.frame.height/4)
         }
         
         let indexPath = IndexPath(row: 0, section: 0)
@@ -119,17 +119,8 @@ extension SpotlightViewController: UITableViewDelegate {
         
         if cell != nil {
             let y = scrollView.contentOffset.y.magnitude
-            let height = max(self.originalCellHeight! - Float(y/2.5), 0)
+            let height = max(self.originalCellHeight! - Float(y/4), 0)
             cell!.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: CGFloat(Float(height)))
-        } else {
-//            let offsetY = self.mainTableView.contentOffset.y
-//            if let questionCell = self.mainTableView.visibleCells.first as? SpotlightTableViewCell {
-//                let x = questionCell.contentView.frame.origin.x
-//                let w = questionCell.contentView.bounds.width
-//                let h = questionCell.contentView.bounds.height
-//                let y = ((offsetY - questionCell.frame.origin.y) / h) * 25
-//                questionCell.contentView.frame = CGRect(x: x, y: y, width: w, height: h)
-//            }
         }
     }
 }
@@ -292,11 +283,9 @@ class SpotlightViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func filterInfluencers(category: String) -> [SpotlightObject] {
-//        let filtered = self.allFeaturedObjects.filter{$0.bioText.lowercased() == self.selectedCategory!.label.lowercased()}
-//
-//        return filtered
-        
-        return self.allFeaturedObjects
+        let filtered = self.allFeaturedObjects.filter{$0.bioText.lowercased() == self.selectedCategory!.label.lowercased()}
+
+        return filtered
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

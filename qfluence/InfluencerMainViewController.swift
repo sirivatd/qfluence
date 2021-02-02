@@ -246,13 +246,10 @@ class InfluencerMainViewController: UIViewController {
     func saveFollowData() {
         let userId = currentUser?.uid
         let followData = currentUser?.follows
-        
-        print(currentUser)
-        
+                
         self.ref = Database.database().reference()
         self.ref = ref!.child("users/\(userId!)/follows")
         self.ref?.setValue(followData!)
-        print(followData)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
