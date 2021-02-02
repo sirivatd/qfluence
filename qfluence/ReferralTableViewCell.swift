@@ -12,6 +12,13 @@ class ReferralTableViewCell: UITableViewCell {
 
     @IBOutlet weak var becomeAQfluencer: UIButton!
     
+    @IBAction func actionPressed(_ sender: Any) {
+        let email = "hello@qfluencer.com"
+        if let url = URL(string: "mailto:\(email)") {
+          UIApplication.shared.openURL(url)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

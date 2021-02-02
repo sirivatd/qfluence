@@ -88,11 +88,7 @@ class SideMenuViewController: UITableViewController {
     func contactPressed() {
         let email = "hello@qfluencer.com"
         if let url = URL(string: "mailto:\(email)") {
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url)
-            } else {
-                UIApplication.shared.openURL(url)
-            }
+          UIApplication.shared.openURL(url)
         }
     }
     

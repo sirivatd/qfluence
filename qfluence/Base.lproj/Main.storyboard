@@ -332,6 +332,9 @@
                                                     <state key="normal" title="Become a Qfluencer">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="actionPressed:" destination="Xlw-gV-q6f" eventType="touchUpInside" id="DD3-xR-wuB"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
